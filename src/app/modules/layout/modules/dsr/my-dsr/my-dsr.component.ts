@@ -130,33 +130,6 @@ export class MyDsrComponent implements OnInit {
       return date >= start && date <= end;
     });
   }
-  // filterPredicate(data, selectedOption) {
-  //   let hours = +data.hours.split(':')[0];
-  //   let minutes = +data.hours.split(':')[1];
-
-  //   switch (selectedOption) {
-  //     case 'Less than 5 Hours':
-  //       return hours < 5;
-  //     case 'Greater than 5 and Less than equal to 8':
-  //       return hours > 5 && (hours < 8 || (hours === 8 && minutes === 0));
-  //     case 'Greater than 8':
-  //       return hours > 8 || (hours === 8 && minutes > 0);
-  //     case 'Greater than 10':
-  //       return hours > 10 || (hours === 10 && minutes > 0);
-  //     default:
-  //       return true;
-  //   }
-  // }
-
-  // applyFilter(selectedOption) {
-  //   console.log(selectedOption, 'selectedOption');
-  //   this.dataSource.filterPredicate = (data) => {
-  //     console.log(data);
-
-  //     return this.filterPredicate(data, selectedOption);
-  //   };
-  //   this.dataSource.filter = selectedOption;
-  // }
   dataCheck(data){
     console.log(data);
     this.filterSelect = data
@@ -219,11 +192,16 @@ export class MyDsrComponent implements OnInit {
       this.dsrForm.value["hours"] = this.dsrFormControl['hours'].value,
       this.dsrForm.value["sno"] = serialNumber,
       this.dsrForm.value["id"] = this.table_data.length+1,
+      this.dsrForm.value["status"] = 'Submitted',
+      this.dsrForm.value["pm_approval"] = 'N/A',
+      this.dsrForm.value["am_approval"] = 'N/A',
+      this.dsrForm.value["rm_approval"] = 'N/A',
+      this.dsrForm.value["final_approve"] = 'Pending',
       this._store.dispatch(getAddDsrDataAction(this.dsrForm.value))
       this.dataSource = new MatTableDataSource<any>(this.table_data);
       console.log(this.dsrForm.value);
 
-      // this.dsrForm.reset();
+      this.dsrForm.reset();
     } else {
       this.dsrForm.markAllAsTouched();
     }
