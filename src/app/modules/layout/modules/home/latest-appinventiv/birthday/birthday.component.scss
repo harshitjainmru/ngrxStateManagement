@@ -1,0 +1,20 @@
+@import "../awards/awards.component.scss";
+@import "../../../../../../scss/var";
+
+section {
+  .award-card {
+    .award-header {
+      .dot {
+        height: 15px;
+        width: 15px;
+        background-color: $birthday-dot-color;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+    }
+    .message {
+      padding: 20px 0px;
+    }
+  }
+}

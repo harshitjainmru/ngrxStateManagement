@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AACE,OADK,CACL,WAAW,CAAC;EACV,OAAO,EAAE,cAAc;EACvB,gBAAgB,EAAE,IAAI;CAWvB;;AAdH,AAKM,OALC,CACL,WAAW,CAGT,OAAO,CACL,YAAY,CAAC;EACX,KAAK,ECGM,OAAO;EDFlB,SAAS,EAAE,IAAI;EACf,YAAY,EAAE,GAAG;EACjB,OAAO,EAAE,mBAAmB;EAC5B,WAAW,EAAE,GAAG;EAChB,aAAa,EAAE,GAAG,CAAC,KAAK,CCPlB,SAAS;CDQhB",
+    "sources": [
+        "shift.component.scss",
+        "../../../../../scss/_var.scss"
+    ],
+    "names": [],
+    "file": "shift.component.css"
+}

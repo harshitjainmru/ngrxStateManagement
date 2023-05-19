@@ -1,0 +1,44 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+section {
+  .header {
+    .header_text {
+      color: $button-color;
+      font-weight: 500;
+    }
+  }
+  .referral-list {
+    @include gridbox();
+    grid-template-columns: auto auto;
+    gap: 20px;
+    .list-data {
+      background-color: $layout-content-background;
+      text-align: center;
+      padding: 20px;
+      width: auto;
+      .bonus {
+        font-size: 50px;
+        margin: 20px;
+        color: $button-color;
+        font-weight: 500;
+      }
+      .list-text {
+        font-weight: 500;
+        margin-top: 30px;
+      }
+      .from-to-year {
+        font-size: 10px;
+      }
+    }
+  }
+}
+@media (max-width:1780px){
+  section{
+    .referral-list{
+      grid-template-columns: auto;
+    }
+  }
+}
+
+
+

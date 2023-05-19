@@ -1,0 +1,23 @@
+<section>
+  <form [formGroup]="editDSRForm" class="containerGroup" (ngSubmit)="onUpdate()">
+  <div class="left-container">
+    <div>
+      <app-common-input [data]="uiText.project_label" [myControlName]="this.editFormControl?.projectname"></app-common-input>
+    </div>
+    <div class="inline-division">
+    <div>
+      <app-common-input [data]="uiText.date_label" [myControlName]="this.editFormControl?.date"></app-common-input>
+    </div>
+    <div>
+      <app-common-time-picker [data]="uiText.hour_label" [formControlname]="this.editFormControl?.hours"></app-common-time-picker>
+    </div>
+  </div>
+  </div>
+  <div class="right-container">
+    <app-common-editor [labelData]="uiText.editor_label" [formControlname]="this.editFormControl?.dsr"></app-common-editor>
+  </div>
+  <div class="buttonGroup">
+    <button class="classyButton" type="submit">{{uiText.update_button}}</button>
+  </div>
+</form>
+</section>

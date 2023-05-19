@@ -1,0 +1,14 @@
+<section>
+  <header class="cancel-icon">
+    <mat-icon (click)="crossClick()">close</mat-icon>
+  </header>
+  <div class="content">
+    <h1 class="question">{{uiText.QUESTION_VALUE}}</h1>
+    <div class="buttonGroup">
+      <a [href]="uiText.linkios" target="_blank"><button class="cancelButton"
+          (click)="onConfirmClick()"> <i class="fab fa-apple btn-icon-prepend"></i> {{uiText.BUTTON1}}</button></a>
+      <a [href]="uiText.linkAndroid" target="_blank"><button class="classyButton"
+          (click)="onConfirmClick()"> <i class="fa-solid fa-robot"></i> {{uiText.BUTTON2}}</button></a>
+    </div>
+  </div>
+</section>

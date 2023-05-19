@@ -1,0 +1,32 @@
+<section>
+  <div class="left container">
+    <div class="title">
+      <h1 class="title-text">{{uiText.punch_title}}</h1>
+    </div>
+    <div class="content">
+      <form [formGroup]="PunchForm">
+        <div class="formfield">
+          <label class="label">{{uiText.date_label}}</label>
+          <mat-form-field appearance="outline">
+            <input formControlName="date" matInput>
+          </mat-form-field>
+        </div>
+        <span class="dropdown">
+          <app-dropdown [label]="uiText.company_label" [Data]="uiText.company_data" [formfieldCSS]="'manualFormfield'" [myControlName]="this.PunchFormControl.company"></app-dropdown>
+        </span>
+        <div class="buttonGroup">
+          <button class="classyButton">{{uiText.get_button}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="right container">
+    <div class="title">
+      <h1 class="title-text">{{uiText.punch_title}}</h1>
+    </div>
+    <div class="table-card">
+      <app-common-table [columns]="uiText.table_heading" [dataSource]="dataSource" [isPageable]="false"
+        [isSearchText]="false"></app-common-table>
+    </div>
+  </div>
+</section>

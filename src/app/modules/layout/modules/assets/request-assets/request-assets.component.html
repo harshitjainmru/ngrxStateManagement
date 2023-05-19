@@ -1,0 +1,73 @@
+<section class="newRequestForm">
+  <div class="button">
+    <button class="assetsButton" mat-raised-button (click)="showForm()">
+      <mat-icon class="addIcon">add</mat-icon>{{uiText.button_asset_request}}
+    </button>
+  </div>
+  <div class="newRequest">
+    <form [formGroup]="assetRequestForm">
+      <div class="form">
+        <span class="dropDown 1">
+          <app-dropdown [label]="uiText.category_label" [errorType]="this.assetRequestFormControl.category"
+            [myControlName]="this.assetRequestFormControl.category" [Data]="uiText.category_data"
+            [showRequiredStar]="true" [formfieldCSS]="'dsrFilterFormfield'"></app-dropdown>
+        </span>
+        <span class="dropDown 2">
+          <app-dropdown [label]="uiText.quantity_label" [errorType]="this.assetRequestFormControl.quantity"
+            [myControlName]="this.assetRequestFormControl.quantity" [Data]="uiText.quantity_data"
+            [showRequiredStar]="true" [formfieldCSS]="'dsrFilterFormfield'"></app-dropdown>
+        </span>
+        <span class="dropDown 3">
+          <app-dropdown [label]="uiText.priority_label" [errorType]="this.assetRequestFormControl.priority"
+            [myControlName]="this.assetRequestFormControl.priority" [Data]="uiText.priority_data"
+            [showRequiredStar]="true" [formfieldCSS]="'dsrFilterFormfield'"></app-dropdown>
+        </span>
+        <div class="formfield 3">
+          <label class="label">{{uiText.require_date_label}}<span class="required">*</span></label>
+          <mat-form-field appearance="outline" class="increaseFormfield">
+            <input matInput [matDatepicker]="picker1" [min]="yesterday" (click)="picker1.open()" formControlName="date" readonly>
+            <mat-error *ngFor="let error of errorMessage?.date">
+              <mat-error *ngIf="assetRequestForm?.get('date')?.hasError(error?.type)" class="alertMessage">
+                <span class="errorMessage">{{error.message}}</span>
+              </mat-error>
+            </mat-error>
+            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <span class="dropDown 4">
+        <app-dropdown [formfieldCSS]="'allocationFormfield'" [label]="uiText.type_label"
+          [errorType]="this.assetRequestFormControl.type" [myControlName]="this.assetRequestFormControl.type"
+          [Data]="uiText.type_data" [showRequiredStar]="true" [formfieldCSS]="'dsrFilterFormfield'"></app-dropdown>
+      </span>
+      <div class="formfield">
+        <label class="label">{{uiText.reason_label}}<span class="required">*</span></label>
+        <mat-form-field appearance="outline" class="">
+          <textarea type="text" (keydown)="noSpace($event)" placeholder="Message" class="inputMessage" matInput cdkTextareaAutosize
+            cdkAutosizeMinRows="4" cdkAutosizeMaxRows="7" [placeholder]="uiText.reason_label"
+            formControlName="reason" ></textarea>
+          <mat-error *ngFor="let error of errorMessage?.reason">
+            <mat-error *ngIf="assetRequestForm?.get('reason')?.hasError(error?.type)" class="alertMessage">
+              <span class="errorMessage">{{error.message}}</span>
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="buttonGroup" (click)="submit()">
+        <button class="classyButton">{{uiText.submit_button}}</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section>
+  <div class="content">
+    <div class="header">
+      <h1 class="header-text">{{uiText.assets_inventory_title}}</h1>
+    </div>
+    <app-common-table [columns]="heading" [dataSource]="dataSource" [isPageable]="true" [isSearchText]="true">
+    </app-common-table>
+  </div>
+</section>

@@ -1,0 +1,56 @@
+<section>
+  <div class="header">
+    <h1 class="heading-text">{{headerValue.HEADER_VALUE}}</h1>
+  </div>
+  <div class="filter-field">
+    <form class="form" [formGroup]="directoryFilterformGroup">
+      <div class="formfield 3">
+        <label class="label">{{headerValue.NAME_LABEL}}</label>
+        <mat-form-field appearance="outline" class="increaseFormfield">
+          <input [placeholder]="headerValue.NAME_PLACEHOLDER" (keyup)="keyup($event)" formControlName="employeename"  matInput >
+        </mat-form-field>
+      </div>
+      <span>
+        <app-dropdown [formfieldCSS]="'departmentDropdown'" [labelStyle]="'labelStyle'" [label]="headerValue.DEPARTMENT_LABEL" [myControlName]="directoryFilterformGroupControl.departmentname" (eventEmitter)="filter($event)" [Data]="dropDownData"></app-dropdown>
+      </span>
+      <div class="buttonGroup" >
+        <button class="button-view" (click)="reset()">
+          {{headerValue.BUTTON_RESET}}
+        </button>
+        <div class="search" (click)="onSubmit()">
+          <button class="button-refer classyButton">
+            <i class="fas fa-search"></i>  {{headerValue.BUTTON_SEARCH}}
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="directory-card">
+    <ng-container *ngFor="let item of empData">
+      <div class="our-team">
+        <div class="card-hover">&nbsp;</div>
+        <div class="img picture">
+          <img [src]="item.IMAGE" class="emp-pic">
+        </div>
+        <div class="team-content">
+          <h3 class="emp-name name">{{item.EMP_NAME}}</h3>
+          <h4 class="emp-designation-tech title">{{item.EMP_DESIGNATION}} - {{item.EMP_TECHNOLOGY}}</h4>
+        </div>
+        <div class="emp-detail">
+          <div class="emp email">
+            <i [class]="item.EMAIL_ICON" class="icon"></i>
+            <p class="email emailvalue">{{item.EMAIL}}</p>
+          </div>
+          <div class="emp birthday">
+            <i [class]="item.BIRTH_ICON" class="icon"></i>
+            <p class="birth value">{{item.BIRTH_DATE}},{{item.BIRTH_MONTH}}</p>
+          </div>
+        </div>
+        <div class="social">&nbsp;</div>
+      </div>
+    </ng-container>
+  </div>
+  <div  *ngIf="!empData.length">
+   <h3 class="noResultFound"> No Result Found!</h3>
+  </div>
+</section>

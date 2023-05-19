@@ -1,0 +1,52 @@
+@import "../../scss/var";
+@import "../../scss/mixins.scss";
+@import "../../scss/dialog-cancel-icon";
+@import "../../scss/job-opening-button";
+section {
+  header {
+      margin: -10px !important;
+      justify-content: flex-end !important;
+  }
+  .warning {
+    text-align: center;
+    margin-right: 50px;
+    padding-top: 40px;
+    .error_outline {
+      font-size: 5rem;
+      color: $error_outline_icon-color;
+    }
+  }
+  .details {
+    @include fpos(center,center);
+    flex-direction: column;
+    margin-top: 10px;
+    .heading-value {
+      font-size: 30px;
+      font-weight: 500;
+    }
+    .instructions {
+      margin-bottom: 5px !important;
+      color: $instruction-helpdialog-color;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: normal;
+      text-align: center;
+      word-spacing: normal;
+      word-wrap: break-word;
+    }
+    .email-value {
+      font-size: 20px;
+      font-weight: 400;
+    }
+    .classyButton{
+      margin-top: 20px;
+      padding: 15px 30px;
+    }
+
+  }
+}
+::ng-deep{
+  .cdk-overlay-dark-backdrop{
+    background: rgba(0, 0, 0, 0.80);
+  }
+}

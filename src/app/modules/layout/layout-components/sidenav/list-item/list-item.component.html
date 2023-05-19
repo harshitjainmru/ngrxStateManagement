@@ -1,0 +1,50 @@
+<section>
+  <mat-list-item (click)="showSideNav(navlist)" class="parent" [routerLink]=navlist.routerLink
+    [ngClass]="{'disable':!navlist.isActive, 'focus':parentChecker(navlist) || navlist.subMenuClicked}"
+    [routerLinkActive]="navlist.routerLink ? 'active':''">
+    <span class="list-content">
+      <i class="sidenav-icon" [class]="navlist.icon"></i>
+      <ng-container *ngIf="navlist.title == 'Logout'; else otherSidenav">
+        <span class="sidenav-label" *ngIf="isShowing" (click)="logout()">
+          <p>{{navlist.title}}</p>
+          <!-- <i class="new-menu" [class]="navlist.rightIcon"></i> -->
+        </span>
+      </ng-container>
+      <ng-template #otherSidenav>
+        <span class="sidenav-label" *ngIf="isShowing">
+          <p>{{navlist.title}}</p>
+          <div *ngIf="navlist.rightIcon">
+            <i class="new-menu" [class]="navlist.rightIcon"></i>
+          </div>
+        </span>
+      </ng-template>
+      <span>
+        <mat-icon class="menu-button" [ngClass]="{ rotated: navlist.subMenuClicked}" *ngIf="navlist.options">expand_more
+        </mat-icon>
+      </span>
+    </span>
+  </mat-list-item>
+  <ng-container *ngIf="navlist.options && navlist.options.length;">
+    <div class="submenu" [ngClass]="{'expanded' : navlist.subMenuClicked}" *ngIf="navlist.subMenuClicked && isShowing">
+      <span *ngFor="let item of navlist.options">
+        <ng-container *ngIf="item.routerLink; else anchor">
+          <mat-list-item [routerLink]="item.routerLink" [ngClass]="{'disable':!item.isActive}"
+            [routerLinkActive]="item.routerLink ? 'active':''">
+            <span class="sublist-content">
+              <mat-icon class="sidenav-icon">{{item.subicon}}</mat-icon>
+              <span class="sublabel">{{item.subTitle}}</span>
+            </span>
+          </mat-list-item>
+        </ng-container>
+        <ng-template #anchor>
+          <mat-list-item>
+            <a [href]="item.link" target="_blank" class="sublist-content anchorLink">
+              <mat-icon class="sidenav-icon">{{item.subicon}}</mat-icon>
+              <span class=" sublabel">{{item.subTitle}}</span>
+            </a>
+          </mat-list-item>
+        </ng-template>
+      </span>
+    </div>
+  </ng-container>
+</section>

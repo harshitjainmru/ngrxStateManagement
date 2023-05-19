@@ -1,0 +1,14 @@
+<section>
+  <div class="header">
+    <h1 class="due">{{uiText.header_value}}</h1>
+    <h2 class="coupon">{{uiText.available_coupon_label}} {{couponAvailable}}</h2>
+  </div>
+  <div class="middle">
+    <h3 class="amountDue">₹</h3>
+    <span class="amount">{{value || 0}}</span>
+  </div>
+  <div class="last">
+    <app-note [note_label]="uiText.note_label" [note_data]="uiText.amount_due_note"></app-note>
+    <button *ngIf="showButton" class="viewDetails" (click)="viewTable()">{{uiText.button_view}}</button>
+  </div>
+</section>

@@ -1,0 +1,53 @@
+<section>
+    <div class="main-container">
+      <div class="title">
+        <h1 class="title-text">{{uiText.header_value}}</h1>
+        <div class="buttonGroup" (click)="showDiv()">
+          <mat-icon class="addIcon">add</mat-icon>
+          <button class="add-new">
+            {{uiText.add_button}}
+          </button>
+        </div>
+      </div>
+      <div class="content">
+        <ng-container [formGroup]="ticketForm">
+          <div class="left container">
+        <span>
+          <app-common-input [data]="uiText.subject_label" [myControlName]="ticketFormControl.subject">
+          </app-common-input>
+        </span>
+        <span>
+          <app-dropdown [label]="uiText.department_label" [Data]="uiText.department_data" [formfieldCSS]="'requestDropdown'"
+            [myControlName]="ticketFormControl.department"></app-dropdown>
+        </span>
+        <span>
+          <app-dropdown [label]="uiText.category_label" [Data]="uiText.category_data" [formfieldCSS]="'requestDropdown'"
+            [myControlName]="ticketFormControl.ticketCategory"></app-dropdown>
+        </span>
+        <span>
+          <app-dropdown [label]="uiText.priority_label" [Data]="uiText.priority_data" [formfieldCSS]="'requestDropdown'"
+            [myControlName]="ticketFormControl.priority"></app-dropdown>
+        </span>
+        </div>
+        <div class="right container">
+          <app-common-editor [labelData]="uiText.description_label" [formControlname]="this.ticketFormControl.editor">
+          </app-common-editor>
+        </div>
+        <div class="buttonGroup">
+          <button class="classyButton save-button" mat-raised-button
+            (click)="submitHandler()">{{uiText.saveButton}}</button>
+        </div>
+      </ng-container>
+      </div>
+    </div>
+  <div class="last-container">
+    <div class="content">
+      <div class="header">
+        <h1 class="header-text">{{uiText.list_ticket}}</h1>
+      </div>
+      <app-common-table [columns]="uiText.table_heading" [dataSource]="dataSource" [isPageable]="true"
+        [isSearchText]="true">
+      </app-common-table>
+    </div>
+  </div>
+</section>

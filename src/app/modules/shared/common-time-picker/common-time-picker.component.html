@@ -1,0 +1,11 @@
+<div class="formfield">
+  <label class="label">{{data}}</label>
+  <mat-form-field appearance="outline" [ngClass]="formFieldCSS||'increaseFormfield'">
+    <input matInput [formControl]="formControlname" [ngxMatTimepicker]="picker" [format]="24">
+    <ngx-mat-timepicker #picker></ngx-mat-timepicker>
+    <mat-error class="alertMessage">
+      <span class="errorMessage">{{formControlname | validation : data }}</span>
+    </mat-error>
+
+  </mat-form-field>
+</div>

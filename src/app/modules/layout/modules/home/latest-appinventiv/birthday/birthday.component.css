@@ -1,0 +1,103 @@
+section .award-card {
+  border: 1px solid gainsboro;
+  padding: 16px;
+  border-radius: 5px;
+}
+
+section .award-card .award-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+}
+
+section .award-card .award-header .dot {
+  height: 15px;
+  width: 15px;
+  background-color: #c136cd;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+section .award-card .award-header .award-title {
+  font-size: 20px;
+}
+
+section .award-card .dear {
+  color: #606167;
+}
+
+section .award-card figure {
+  position: relative;
+  width: 190px;
+  height: 150px;
+  margin: 0px;
+  border: 1px solid gainsboro;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0)), to(#151515));
+  background: linear-gradient(180deg, rgba(22, 22, 22, 0) 0%, #151515 100%);
+}
+
+section .award-card figure img {
+  padding: 4px;
+  border-radius: 5px;
+  width: 185px;
+}
+
+section .award-card figure .emp-info {
+  position: absolute;
+  bottom: -15px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 5px 10px;
+  font-size: 12px;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(22, 22, 22, 0)), to(#151515));
+  background: linear-gradient(180deg, rgba(22, 22, 22, 0) 0%, #151515 100%);
+}
+
+section .award-card figure .emp-info .emp-name {
+  color: white;
+  font-weight: 700;
+  margin-bottom: 0px !important;
+}
+
+section .award-card figure .emp-info .emp-designation {
+  color: #96A5CF;
+  font-weight: 600;
+  margin-bottom: 0px !important;
+}
+
+section .award-card figure .emp-info .emp-date {
+  color: #96A5CF;
+  font-weight: 600;
+}
+
+section .award-card .message {
+  color: #606167;
+  padding: 30px 0px;
+  font-size: 12px;
+}
+
+section .award-card footer .cheers {
+  color: #606167;
+}
+
+section .award-card footer .company-name {
+  font-size: 12px;
+  color: #199CFF;
+  font-weight: 600;
+  margin-top: -10px;
+}
+
+section .award-card .award-header .dot {
+  height: 15px;
+  width: 15px;
+  background-color: #36C4CD;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+section .award-card .message {
+  padding: 20px 0px;
+}
+/*# sourceMappingURL=birthday.component.css.map */

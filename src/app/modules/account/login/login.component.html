@@ -1,0 +1,12 @@
+<section>
+  <ng-container *ngIf="loginWithGoogle">
+    <app-login-with-google></app-login-with-google>
+  </ng-container>
+  <ng-container *ngIf="!loginWithGoogle">
+    <app-login-with-credentials></app-login-with-credentials>
+  </ng-container>
+
+  <div class="buttongoogle" (click)="loginWithGoogle = !loginWithGoogle">
+    <button class="credentialButton">{{loginWithGoogle ? message.CREDENTIAL_BUTTON : message.LOGIN_WITH_GOOGLE}}</button>
+  </div>
+</section>

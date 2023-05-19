@@ -1,0 +1,17 @@
+<section>
+  <span class="header">
+    <h3 class="header_text">{{uiMessage.HEADER}}</h3>
+  </span>
+  <div class="referral-list">
+    <div class="list-data" *ngFor="let item of uiReferralData">
+
+      <h1 class="bonus">
+        {{item.referralPrice}}{{uiMessage.AMOUNT}}
+      </h1>
+
+      <p class="list-text">{{uiMessage.TEXT}}</p>
+      <p class="from-to-year"> {{uiMessage.FOR_TEXT}} {{item.fromYear}} {{uiMessage.TO_TEXT}} {{item.toYear}}
+        {{uiMessage.YEAR_TEXT}}</p>
+    </div>
+  </div>
+</section>

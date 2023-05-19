@@ -1,0 +1,133 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+@import "../../../../../scss/job-opening-button";
+@import "../../../../../scss/editoroverrideStyle";
+@import "../../../../../scss/overrideMatcheckbox";
+@import "../../../../../scss/minimize&maximizeDiv";
+section {
+  margin: 30px;
+  .formfield {
+    display: flex;
+    flex-direction: column;
+    .label {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.4;
+      // margin-bottom: 4px;
+    }
+  }
+  .save-button{
+    background-color: $training-status-background;
+    padding: 10px 12px;
+    border-radius: 0px !important;
+    font-size: 15px;
+    margin: 60px 0px;
+  }
+    .inputFields {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      align-items: center;
+      gap: 25px;
+    }
+  .middle-conatiner {
+    background-color: $button-text-color;
+    margin: 30px 0px;
+    .inputs {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      align-items: center;
+      gap: 15px;
+      padding: 20px 25px;
+    }
+    .buttonGroup {
+      display: flex;
+      gap: 10px;
+      .classyButton {
+        padding: 12px 25px;
+        width: 100px;
+        font-size: 15px;
+      }
+      .cancel_button{
+        padding: 12px 25px;
+        width: 100px;
+        font-size: 15px;
+        border: 1px solid #ccd2da;
+        background: transparent;
+        color: $directory-header-color;
+        border-radius: 10px;
+
+      }
+    }
+  }
+  .last-container {
+    margin: 30px 0px;
+    background-color: $button-text-color;
+    border-radius: 10px;
+    .content {
+      padding: 20px;
+      .header {
+        border-bottom: 1px solid $border-color;
+        .header-text {
+          color: $header-text-color;
+          font-weight: 500;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  ::ng-deep {
+    .mat-datepicker-toggle {
+      color: $border-color;
+      position: absolute;
+      right: -12px;
+      top: -5px;
+    }
+  }
+}
+@media (max-width:1488px){
+  section{
+    .inputFields{
+      grid-template-columns: auto auto;
+    }
+  }
+}
+@media (max-width:1214px){
+  section{
+    .inputFields{
+      grid-template-columns: auto;
+    }
+  }
+}
+@media (max-width: 1189px) {
+  section {
+    .middle-conatiner {
+      .inputs {
+        grid-template-columns: auto auto auto;
+      }
+    }
+  }
+}
+@media (max-width: 720px) {
+  section {
+    .save-button{
+      margin-top: 0px;
+    }
+    .middle-conatiner {
+      .inputs {
+        grid-template-columns: auto auto;
+      }
+    }
+  }
+}
+@media (max-width: 495px) {
+  section {
+    .save-button{
+      margin-top: 0px;
+    }
+    .middle-conatiner {
+      .inputs {
+        grid-template-columns: auto;
+      }
+    }
+  }
+}

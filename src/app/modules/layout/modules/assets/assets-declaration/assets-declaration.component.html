@@ -1,0 +1,73 @@
+<section class="newRequestForm">
+  <div class="button">
+    <button class="assetsButton" mat-raised-button (click)="showForm()">
+      <mat-icon class="addIcon">add</mat-icon>{{uiText.button_asset_request}}
+    </button>
+  </div>
+  <div class="newRequest">
+    <form [formGroup]="assetDeclarationForm">
+      <div class="form">
+        <span>
+          <app-common-input [data]="uiText.id_label" [data2]="uiText.id" [formFieldCSS]="'allocationFormfield'"
+            [myControlName]="assetDeclarationFormControl.id"></app-common-input>
+        </span>
+        <span>
+          <app-common-input [data]="uiText.code_label" [formFieldCSS]="'allocationFormfield'"
+            [myControlName]="assetDeclarationFormControl.code"></app-common-input>
+        </span>
+        <span>
+          <app-common-input [data]="uiText.serial_label" [formFieldCSS]="'allocationFormfield'"
+            [assetDeclaration]="true" (instruction)="openDialogSerial()" [myControlName]="assetDeclarationFormControl.serialnumber"></app-common-input>
+        </span>
+        <span>
+          <app-common-input [data]="uiText.model_label" [formFieldCSS]="'allocationFormfield'" [assetDeclaration]="true" (instruction)="openDialogModel()"
+            [myControlName]="assetDeclarationFormControl.modelnumber"></app-common-input>
+        </span>
+
+        <span class="dropDown 3">
+          <app-dropdown [label]="uiText.os_label" [errorType]="this.assetDeclarationFormControl.os"
+            [myControlName]="this.assetDeclarationFormControl.os" [Data]="uiText.os_data"></app-dropdown>
+        </span>
+        <span>
+          <app-common-input [data]="uiText.os_version_label" [formFieldCSS]="'allocationFormfield'"
+            [myControlName]="assetDeclarationFormControl.osversion"></app-common-input>
+        </span>
+        <span>
+          <app-common-input [data]="uiText.brand_label" [formFieldCSS]="'allocationFormfield'"
+            [myControlName]="assetDeclarationFormControl.brand"></app-common-input>
+        </span>
+        <span>
+          <app-common-input [data]="uiText.color_label" [formFieldCSS]="'allocationFormfield'"
+            [myControlName]="assetDeclarationFormControl.color"></app-common-input>
+        </span>
+        <span class="dropDown 3">
+          <app-dropdown [label]="uiText.work_condition_label"
+            [errorType]="this.assetDeclarationFormControl.workingcondition"
+            [myControlName]="this.assetDeclarationFormControl.workingcondition" [Data]="uiText.work_condition_data"
+            [formfieldCSS]="'allocationFormfield'"></app-dropdown>
+        </span>
+      </div>
+      <span>
+        <app-common-file-upload [labelData]="uiText.asset_image_label" [alertData]="uiText.instruction_label"
+          [assetDeclaration]="true" [formcontrolname]="this.assetDeclarationFormControl.assetimage"
+          [accept]="'image/png, image/gif, image/jpeg, image/jpg'" [formFieldCSS]="'fileField'">
+        </app-common-file-upload>
+      </span>
+
+      <div class="buttonGroup" (click)="submit()">
+        <button class="classyButton">{{uiText.submit_button}}</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+<section>
+  <div class="content">
+    <div class="header">
+      <h1 class="header-text">{{uiText.assets_inventory_title}}</h1>
+    </div>
+    <app-common-table [columns]="heading" [dataSource]="dataSource" [isPageable]="true" [isSearchText]="true">
+    </app-common-table>
+  </div>
+</section>

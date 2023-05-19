@@ -1,0 +1,9 @@
+.formfield {
+  display: flex;
+  flex-direction: column;
+  .label {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+}

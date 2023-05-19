@@ -1,0 +1,26 @@
+<section>
+  <div class="card">
+    <div class="header">
+      <p class="text">{{uiMessage.HEADER}}</p>
+    </div>
+    <app-carousel [listToShow]="dataSource" [buttonShow]="buttonShow" [carouselConfiguration]="carouselConfig"></app-carousel>
+    <ng-container *ngFor="let member of listOfNewFamilyMembers">
+      <ng-template #listofDivs>
+        <div class="img-card">
+          <div class="content">
+            <figure>
+              <img src="../../../../../../assets/images/default_male.jpg" class="defaultImage">
+            </figure>
+            <div class="name">
+              <p>{{uiMessage.EMP_NAME | titlecase}}</p>
+            </div>
+            <div class="designation">
+              <p>{{uiMessage.DESIGNATION | titlecase}}</p>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </ng-container>
+  </div>
+</section>
+

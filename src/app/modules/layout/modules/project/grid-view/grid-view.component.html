@@ -1,0 +1,36 @@
+<section>
+<ng-container *ngFor="let data of uiText">
+    <div class="card">
+      <header>
+        <h1 class="project-heading" >{{data.project_name}}</h1>
+        <i class="fa fa-ellipsis-h icon"></i>
+      </header>
+      <div class="number">
+        <i class="fa fa-user-circle icon"> <span class="number-text"> 1 </span> </i>
+      </div>
+      <div class="time">
+        <p class="material">{{data.timeandmaterial}}</p>
+        <p class="progress">{{data.progress}}</p>
+      </div>
+      <span class="no-milestones">{{data.no_milestones}}</span>
+      <div class="resources">
+        <div class="resource-length">
+          <i class="fas fa-users icon"></i>
+          <span class="text">{{data.number_of_resources}}</span>
+          <span class="label">{{data.resources}}</span>
+        </div>
+        <div class="hour">
+          <span class="text">{{data.hours_data}}</span>
+          <span class="label">{{data.hours}}</span>
+        </div>
+      </div>
+      <div class="images">
+      <ng-container *ngFor="let imgItem of data.images">
+          <img [src]="imgItem.img" [alt]="imgItem.alt" [title]="imgItem.alt" class="emp-image">
+        </ng-container>
+      </div>
+      <h3 class="complete">{{data.project_complete}}</h3>
+      <p class="complete-project">0</p>
+    </div>
+  </ng-container>
+</section>

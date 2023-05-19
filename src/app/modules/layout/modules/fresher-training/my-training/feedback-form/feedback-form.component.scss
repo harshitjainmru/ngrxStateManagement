@@ -1,0 +1,164 @@
+@import "../../../../../../scss/dialog-cancel-icon";
+@import "../../../../../../scss/var";
+@import "../../../../../../scss/job-opening-button";
+@import "../../../../../../scss/error";
+@import "../../../../../../scss/matradiooverride";
+@mixin buttonSize() {
+  padding: 0 25px;
+  height: 40px;
+}
+section {
+  width: 614px !important;
+  max-height: 950px;
+  .header {
+    background-color: #f3f3f3;
+    @include fpos(baseline, space-between);
+    .heading {
+      padding: 16px 16px 5px 16px;
+      font-size: 20px;
+      color: $directory-header-color;
+      font-weight: 500;
+      line-height: 1.5;
+      margin: 0;
+    }
+    .cancel-icon {
+      height: 15px;
+      .fa-xmark {
+        padding-top: 8px;
+        margin-right: 10px !important;
+      }
+    }
+  }
+  .topContent {
+    padding: 16px 16px 0px 16px;
+    .content {
+      display: grid;
+      grid-template-columns: 25% auto;
+      align-items: baseline;
+    }
+    .title {
+      font-size: 14px;
+      color: #4e5155 !important;
+      font-weight: 500;
+      font-family: sans-serif;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+    .titleData {
+      color: #000;
+      font-size: 14px;
+    }
+    .dateData {
+      @include grid("grid-template-columns", "auto auto");
+      border-bottom: 1px solid $border-color;
+
+      .date-content {
+        @include grid("grid-template-columns", "50%  auto");
+
+        align-items: baseline;
+      }
+    }
+  }
+  .form {
+    padding: 16px;
+    .question {
+      font-size: 14px;
+      color: #4e5155 !important;
+      font-weight: 500;
+      font-family: sans-serif;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+    .goalfulfilled {
+    }
+    .feedback {
+      padding: 15px 0px;
+      .feedback-question {
+        .presented {
+          margin-bottom: -2px !important;
+        }
+      }
+      .feedback-content {
+        @include fpos(baseline, space-between);
+        padding: 0px 3px 0px 6px;
+        .inputMessage {
+          width: 100% !important;
+          margin-bottom: 10px;
+        }
+        .text {
+          width: 15%;
+          .text-danger {
+            color: $error-color;
+            font-weight: 400;
+            font-size: 14px;
+          }
+        }
+        .success {
+          width: 16%;
+          .success-text {
+            color: #02bc77 !important;
+            font-weight: 400;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    .buttonGroup {
+      @include flexbox();
+      justify-content: flex-end;
+      gap: 20px;
+      padding: 35px 0px 0px;
+      .cancelButton {
+        @include buttonTransparent();
+        border-radius: 10px;
+        color: $directory-font-color;
+        border: 1.5px solid $directory-font-color;
+        @include buttonSize();
+      }
+      .classyButton {
+        @include buttonSize();
+      }
+    }
+  }
+}
+@media (max-height: 800px) {
+  ::ng-deep {
+    .mat-dialog-container {
+      max-height: 500px;
+      @include scrollbarStyle();
+      border-radius: 10px !important;
+    }
+  }
+}
+@media (max-width: 773px) {
+  section {
+    width: auto !important;
+    .topContent {
+      .dateData {
+        grid-template-columns: auto;
+        .date-content {
+          grid-template-columns: 25% auto;
+        }
+      }
+    }
+    .form {
+      .feedback-content {
+        flex-direction: column;
+        .inputMessage {
+          width: auto !important;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 452px) {
+  section {
+    width: auto !important;
+    .topContent {
+      .content {
+        grid-template-columns: auto;
+      }
+    }
+  }
+}

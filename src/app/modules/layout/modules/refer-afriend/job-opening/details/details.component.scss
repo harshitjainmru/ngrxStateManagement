@@ -1,0 +1,159 @@
+@import "../../../../../../scss/var";
+@import "../../../../../../scss/mixins.scss";
+section {
+  padding: 30px 50px;
+  .breadcrumbs {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    color: $directory-font-color;
+    .home-link {
+      color: $directory-header-color !important;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .job-link {
+    }
+    .present-link {
+    }
+  }
+  .card {
+    background-color: $button-text-color;
+    padding: 20px;
+    .job {
+      border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+      margin: 20px 0px;
+      display: flex;
+      justify-content: space-between;
+      .detail-value {
+        margin-bottom: 10px !important ;
+        font-size: 18px;
+        line-height: 1.32;
+        margin-bottom: 0;
+      }
+      button{
+        @include buttonTransparent();
+        border-radius: 50%;
+        background-color:$honour-background-color-review ;
+        color: $blue;
+        width: 40px;
+        height: 40px;
+        margin-top: -3px;
+      }
+      .detail {
+        margin-bottom: 10px !important ;
+      }
+    }
+    .field {
+      display: flex;
+      gap: 5px;
+      .label {
+        min-width: 160px;
+        font-size: 14px;
+        color: $award-text-color;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+      .expValue {
+        display: flex;
+        gap: 5px;
+        .refer {
+          background-color: $jobdetail-skill-bacground;
+          padding: 8px;
+          margin-top: -10px;
+          border-radius: 5px;
+          font-size: 14px !important;
+          line-height: 17px !important;
+          .bonus-amount {
+            margin-top: -1px !important;
+            color: $directory-header-color;
+            font-weight: 500;
+            margin-bottom: 0px !important;
+          }
+          .link {
+            color: $directory-header-color;
+            font-weight: 500;
+            cursor: pointer;
+          }
+        }
+      }
+      .value {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+    }
+    .fieldGroup {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      .skills-item {
+        padding: 6px 12px;
+        border-radius: 4px;
+        background-color: $jobdetail-skill-bacground;
+        text-align: center;
+        margin: 5px;
+        font-size: 14px;
+        color: $directory-header-color;
+        min-width: fit-content;
+        max-width: 200px;
+        font-weight: 500;
+        line-height: 1.5;
+      }
+    }
+    .job-intro-value {
+      background-color: $jobdetail-background-color;
+      border-radius: 5px;
+      padding: 25px;
+      .value-intro {
+        margin-bottom: 0px !important;
+      }
+    }
+    .description-value {
+      background-color: $jobdetail-background-color;
+      border-radius: 5px;
+      padding: 20px 30px;
+      .should-have {
+        margin-top: 20px !important;
+      }
+      .description-label {
+        font-size: 14px;
+        color: $award-text-color;
+        font-weight: 500;
+        line-height: 1.5;
+        margin-bottom: 5px !important ;
+      }
+      .list {
+        font-size: 14px;
+        color: $award-text-color !important;
+      }
+      .list-type {
+        list-style: none;
+      }
+    }
+  }
+}
+@media (max-width:1142px){
+  .field {
+    .expValue {
+      flex-direction: column;
+    }
+  }
+}
+@media (max-width:812px){
+  .fieldGroup{
+    grid-template-columns: auto !important;
+  }
+}
+@media (max-width:378px){
+  .field {
+    .label {
+      min-width: 80px !important;
+    }
+  }
+}

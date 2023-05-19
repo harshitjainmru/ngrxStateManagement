@@ -1,0 +1,46 @@
+@import "../../../../../scss/mixins.scss";
+section {
+  .card {
+    .header {
+      .text {
+        font-size: 20px;
+        font-weight: 500;
+      }
+    }
+    .img-card {
+      background-image: url("../../../../../../assets/images/new-family-card.png");
+      height: 442px;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        figure {
+          .defaultImage {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+          }
+        }
+      }
+    }
+  }
+}
+@media(max-width:390px){
+  section{
+    .card{
+      .header{
+        .text{
+          width: 150px;
+        }
+      }
+    }
+  }
+}

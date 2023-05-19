@@ -1,0 +1,225 @@
+.classyButton {
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+          box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 2px 0.8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.classyButton:hover, .classyButton:focus {
+  opacity: 0.8;
+}
+
+.classyButton:active {
+  background-color: #0064bd;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.job-detail-card {
+  margin-top: 19px;
+  padding: 16px;
+  border-radius: 5px;
+  border: 1px solid gainsboro;
+  background: white;
+}
+
+.job-detail-card .image {
+  background: #F3F7FC;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+.job-detail-card .image figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.job-detail-card .image .address {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.job-detail-card .image .address .location {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 10px;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  background-color: white;
+  border-radius: 50px;
+  padding: 5px;
+}
+
+.job-detail-card .image .address .location #location-icon {
+  color: red;
+}
+
+.job-detail-card .image .address .location .location-name {
+  font-size: 12px;
+  margin-bottom: 0px !important;
+}
+
+.job-detail-card .area h1 {
+  font-weight: 500;
+}
+
+.job-detail-card .area p {
+  font-size: 12px;
+  color: gray;
+}
+
+.job-detail-card .requirement {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-top: 1px solid gainsboro;
+  padding-top: 10px;
+  font-size: 12px;
+  color: gray;
+}
+
+.job-detail-card .requirement1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid gainsboro;
+  font-weight: 500;
+}
+
+.job-detail-card .buttonGroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  padding-top: 10px;
+}
+
+.job-detail-card .buttonGroup .button-view {
+  padding: 13px 0px;
+  width: 225px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #0095ff;
+  border-radius: 10px;
+  border: 1px solid gainsboro;
+}
+
+.job-detail-card .buttonGroup .button-refer {
+  padding: 13px 0px;
+  width: 225px;
+  font-size: 16px;
+}
+
+@media (max-width: 1385px) {
+  .experiencenumber {
+    margin-right: 100px;
+  }
+  .experience {
+    margin-right: 100px;
+  }
+  .buttonGroup {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0px;
+  }
+}
+
+@media (min-width: 200px) and (max-width: 519px) {
+  .buttonGroup {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 0px;
+  }
+  .buttonGroup .button-view {
+    width: 140px !important;
+    padding: 0px 10px;
+  }
+  .buttonGroup .button-refer {
+    width: 140px !important;
+    padding: 0px 10px;
+  }
+}
+
+@media (max-width: 392px) {
+  .address {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+section {
+  margin: 1rem 2rem;
+}
+
+section .header .heading {
+  color: #199CFF;
+  font-size: 24px;
+  font-weight: 500;
+  margin-top: 5px;
+}
+
+section .card-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  gap: 20px;
+}
+
+@media (max-width: 1109px) {
+  section .card-content {
+    -ms-grid-columns: auto auto;
+        grid-template-columns: auto auto;
+  }
+}
+/*# sourceMappingURL=job-opening.component.css.map */

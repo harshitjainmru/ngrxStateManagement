@@ -1,0 +1,10 @@
+@import "../scss/var";
+section {
+  padding: 40px;
+  .header {
+    color: $directory-header-color;
+    .heading-text {
+      font-weight: 500;
+    }
+  }
+}

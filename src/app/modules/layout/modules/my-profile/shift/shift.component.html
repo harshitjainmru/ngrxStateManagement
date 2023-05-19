@@ -1,0 +1,10 @@
+<section @slideInRight>
+  <mat-card class="basic-card">
+    <div class="header">
+      <p class="header-text">{{uiMessage.SHIFT_HEADER}}</p>
+    </div>
+    <div class="table">
+      <app-common-table [columns]="heading" [dataSource]="dataSource" [isPageable]="false"  [isSearchText]="false"></app-common-table>
+    </div>
+  </mat-card>
+</section>

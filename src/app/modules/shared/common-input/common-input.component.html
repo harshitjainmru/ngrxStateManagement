@@ -1,0 +1,12 @@
+<div class="formfield">
+  <label [ngClass]="labelStyle||'label'">{{data}} {{data2}} <i class="fa fa-question-circle" (click)="showInstruction($event)" *ngIf="assetDeclaration"></i></label>
+  <mat-form-field appearance="outline" [ngClass]=" formFieldCSS">
+    <span  *ngIf="formFieldCSS !== 'yearFormfield'">
+      <input [placeholder]="data"  [type]="type" appTrimDirective matInput [readonly]="readonly" [formControl]="myControlName" >
+    </span>
+    <input [placeholder]="data" min="0" [max]="max" [type]="type" appInputMinMaxValue appNumberOnly matInput [formControl]="myControlName" [allowDecimal]="true" *ngIf="formFieldCSS == 'yearFormfield'">
+    <mat-error class="alertMessage">
+      <span class="errorMessage">{{myControlName | validation : data }}</span>
+    </mat-error>
+  </mat-form-field>
+</div>

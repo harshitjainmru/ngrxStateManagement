@@ -1,0 +1,70 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+// @import "../../../../../scss/tablebackgroundwhite";
+section {
+  padding: 40px;
+  .header {
+    color: $directory-header-color;
+    .heading-text {
+      font-weight: 500;
+    }
+  }
+  .table-card {
+    margin: 20px;
+    padding: 30px;
+    background-color: $button-text-color;
+    border: 1px solid rgba(150, 165, 184, 0.3);
+    border-radius: 10px;
+    ::ng-deep {
+      table {
+        margin-top: -20px;
+        border: none;
+        th {
+          border-right: none !important;
+          border-top: none !important;
+          color: $directory-font-color !important;
+          padding-left: 28px;
+          border-bottom: 1px solid #EDF2F6;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 1.5;
+        }
+        tr {
+          text-align: start;
+          padding-left: 10px;
+        }
+        td {
+          background-color: white;
+          border-right: none !important;
+          border-bottom: 1px solid #EDF2F6 !important;
+          padding: 25px;
+          color: $award-text-color;
+          .imageLogo{
+            margin:0px 5px -8px;
+          }
+          .download-link{
+            background-color: $download-table-button-background;
+            padding: 8px 12px;
+            border-radius: 8px;
+            .dataLink{
+              color:$directory-header-color;
+              text-decoration: none;
+              font-size: 16px;
+              @include fpos(center,center);
+              gap: 10px;
+            }
+            &:hover{
+              box-shadow: 0 0 2px rgb(71, 71, 71);
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+@media (max-width:1069px){
+  .table-card{
+    overflow: scroll;
+  }
+}

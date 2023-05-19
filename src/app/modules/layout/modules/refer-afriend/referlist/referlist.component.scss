@@ -1,0 +1,29 @@
+@import "../../../../../scss/job-opening-button";
+@import "../.../../../../../../scss/var";
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .list-card{
+    margin: 7rem 5rem;
+    width: 100%;
+    padding: 5rem 14rem;
+    .instruction{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .text{
+        font-style: normal;
+        font-weight: 500;
+        font-size:26px;
+        line-height: 24px;
+        color: $award-text-color;
+      }
+    }
+  .classyButton{
+    margin-top:30px ;
+    padding: 10px 20px;
+  }
+  }
+}

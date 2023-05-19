@@ -1,0 +1,77 @@
+.classyButton {
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+          box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 2px 0.8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.classyButton:hover, .classyButton:focus {
+  opacity: 0.8;
+}
+
+.classyButton:active {
+  background-color: #0064bd;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.page-not-found {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 100vh;
+  padding: 50px 20px;
+  background-color: #eaeaea;
+}
+
+.page-not-found h1 {
+  font-size: 100px;
+  letter-spacing: 7px;
+  color: #3073b9;
+}
+
+.page-not-found h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  color: #3073b9;
+}
+
+.page-not-found .classyButton {
+  margin-top: 20px;
+  padding: 15px 30px;
+}
+/*# sourceMappingURL=not-found.component.css.map */

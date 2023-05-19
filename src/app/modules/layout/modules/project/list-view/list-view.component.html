@@ -1,0 +1,9 @@
+<section class="container">
+  <div class="content">
+    <div class="header">
+      <h1 class="header-text">{{uiText.header_value}}</h1>
+    </div>
+    <app-common-table [columns]="uiText.table_heading" [dataSource]="dataSource" [isPageable]="false" [isSearchText]="false" (linkIndex)="index($event)">
+    </app-common-table>
+  </div>
+</section>

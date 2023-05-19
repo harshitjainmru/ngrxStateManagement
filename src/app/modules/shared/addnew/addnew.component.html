@@ -1,0 +1,49 @@
+<section>
+  <div class="title">
+    <h1 class="title-text">{{title}}</h1>
+    <div class="buttonGroup" (click)="showDiv()">
+      <mat-icon class="addIcon">add</mat-icon>
+      <button class="add-new">
+        {{button}}
+      </button>
+    </div>
+  </div>
+  <div class="content" *ngIf="isSaved">
+    <div class="left container">
+      <ng-content></ng-content>
+    </div>
+    <div class="right container">
+      <div class="formfield">
+        <label class="label">{{labelData}}</label>
+        <editor [init]="{
+      height: 300,
+      base_url:'/tinymce',
+      suffix:'.min',
+      plugins: [
+         'advlist','autolink',
+        'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+        'fullscreen','insertdatetime','media','table','help','wordcount'
+      ],
+      toolbar:
+       'undo redo | casechange blocks | bold italic backcolor | \
+       alignleft aligncenter alignright alignjustify | \
+       bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+    }" [formControl]="formControlname" ></editor>
+      </div>
+      <mat-error *ngIf="formControlname.touched && formControlname.hasError('required')" class="alertMessage">
+        <span class="errorMessage" style="margin-left: 1px;">Editor field is required</span>
+      </mat-error>
+    </div>
+    <ng-content select=".buttonGroup"></ng-content>
+    <ng-content select=".saveButton" (click)="isSaved"></ng-content>
+    <ng-content select=".cancelButton" (click)="close()"></ng-content>
+
+  </div>
+</section>
+
+
+<!-- plugins: [
+'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
+'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
+], -->

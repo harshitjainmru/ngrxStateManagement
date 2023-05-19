@@ -1,0 +1,90 @@
+@import "../../../../../../scss/var";
+@import "../../../../../../scss/mixins.scss";
+@import "../../../../../../scss/job-opening-button";
+@import "../../../../../../scss/inputFieldStyle";
+section {
+  .last-container {
+    margin: 20px 0px;
+    background-color: $button-text-color;
+    border-radius: 10px;
+    .content {
+      padding: 20px;
+      .header {
+        border-bottom: 1px solid $border-color;
+        .header-text {
+          color: $header-text-color;
+          font-weight: 500;
+          font-size: 20px;
+        }
+      }
+      .inputs{
+        margin: 20px 0px;
+        // @include grid('grid-template-columns', 'auto auto auto auto');
+        @include grid('grid-template-columns', '24% 24% 24% 24%');
+        gap: 20px;
+        align-items: center;
+        .buttonGroup{
+          display: flex;
+          gap: 20px;
+        }
+      }
+      .classyButton{
+        background-color: $purple-color;
+        border-radius: 5px !important;
+        padding: 15px 20px;
+        font-size: 18px;
+        margin: 10px 0px;
+      }
+      .analysis{
+        @include fpos(center,space-between);
+        .analysis-title{
+          color: #3246d3;
+          font-size: 18px;
+          font-weight: 500;
+        }
+      }
+
+    }
+  }
+  ::ng-deep{
+    .mat-datepicker-toggle {
+      color: $border-color;
+      position: absolute;
+      right: -12px;
+      top: -5px;
+    }
+  }
+}
+@media (max-width:1580px){
+  section{
+    .last-container{
+      .content{
+        .inputs{
+          grid-template-columns: auto auto auto ;
+        }
+      }
+    }
+  }
+}
+@media (max-width:900px){
+  section{
+    .last-container{
+      .content{
+        .inputs{
+          grid-template-columns: auto auto;
+        }
+      }
+    }
+  }
+}
+@media (max-width:550px){
+  section{
+    .last-container{
+      .content{
+        .inputs{
+          grid-template-columns: auto;
+        }
+      }
+    }
+  }
+}

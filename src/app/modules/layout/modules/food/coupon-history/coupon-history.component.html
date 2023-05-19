@@ -1,0 +1,35 @@
+<div class="container">
+  <header class="cancel-icon">
+    <h1 class="value">Coupons History</h1>
+    <mat-icon (click)="onClose()">close</mat-icon>
+  </header>
+  <section class="mb-10">
+    <p class="label">Month</p>
+    <select name="cars" id="cars">
+      <option value="4">April</option>
+      <option value="saab">March</option>
+      <option value="mercedes">Febraury</option>
+      <option value="audi">January</option>
+    </select>
+    <table class="mt-10">
+      <tr>
+        <th *ngFor="let item of tableHeading"> {{item}} </th>
+      </tr>
+      <tr *ngFor="let item of tableData">
+        <td>
+          {{item.transaction_date}}
+        </td>
+        <td>
+          {{item.coupon_date}}
+        </td>
+        <td>
+          {{item.transaction_type}}
+        </td>
+        <td>
+          {{item.amount}}
+        </td>
+      </tr>
+
+    </table>
+  </section>
+</div>

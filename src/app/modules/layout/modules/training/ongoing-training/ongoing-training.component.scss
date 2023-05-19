@@ -1,0 +1,16 @@
+@import "../../../../../scss/header";
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+section{
+  .card{
+    border: 1px solid rgba(150, 165, 184, 0.3);
+    border-radius: 15px;
+    background-color: $button-text-color;
+    .title{
+      padding: 50px 0px;
+     @include fpos(center, center);
+      font-size: 35px;
+      font-weight: 400;
+    }
+  }
+}

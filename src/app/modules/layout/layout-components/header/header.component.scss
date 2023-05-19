@@ -1,0 +1,108 @@
+@import "../../../../scss/mixins.scss";
+@import "../../../../scss/var";
+$gap: 5px;
+$font-weight: 550;
+$font-size: 10px;
+.container {
+  @include flexJustify(space-between);
+  position: relative;
+  background: $button-text-color;
+  padding: 15px;
+  .button {
+    @include buttonTransparent();
+  }
+  .icon {
+    color: $font-color;
+    font-weight: $font-weight;
+  }
+  .left-content {
+    @include fpos(center, flex-start);
+    gap: $gap;
+    .image {
+      .appinventivLogo {
+        height: 35px;
+      }
+      .rightImage {
+        width: 182px;
+      }
+    }
+    .menu {
+      margin-top: -6px;
+      font-size: 29px;
+      font-weight: $font-weight;
+    }
+  }
+  .login {
+    margin: -10px 30px 0px 0px;
+    .lastLogin {
+      margin-left: 30px;
+      .headerLastLogin {
+        font-size: $font-size;
+        color: $font-color;
+      }
+      .headerLastLoginTime {
+        font-size: $font-size;
+        color: $font-color;
+      }
+    }
+    .right-content {
+      @include fpos(center, space-around);
+      gap: $gap;
+      margin-top: -5px;
+      .userDetails {
+        @include fpos(center, center);
+        .userName {
+          margin: 0px 2px;
+          padding: 0px 10px;
+
+          .name {
+            margin: 0px !important;
+            // color: $font-color;
+            font-size: 13px;
+            font-weight: $font-weight;
+          }
+        }
+        .logo {
+          border: 1px solid $border-color;
+          height: 30px;
+          .defaultImage {
+            width: 25px;
+            height: 25px;
+            padding: 2px;
+          }
+        }
+        .menuIcon {
+          margin-top: 8px;
+          .icon-arrow {
+            .keyboard_arrow_down {
+              font-weight: $font-weight;
+            }
+          }
+        }
+      }
+      .helpButton {
+        margin-top: -5px;
+        .help {
+          background-color: $error-color;
+          color: $button-text-color;
+          margin-right: 30px;
+          font-weight: $font-weight;
+        }
+      }
+    }
+  }
+
+}
+@media only screen and (max-width:600px){
+  .container{
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .login{
+      margin-top: 15px;
+    }
+    .right-content{
+      justify-content: flex-start;
+    }
+  }
+}

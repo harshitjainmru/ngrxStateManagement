@@ -1,0 +1,16 @@
+@import "../../../scss/error";
+@import "../../../scss/var";
+@import "../../../scss/inputFieldStyle";
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+.star{
+  color: $error-color;
+}
+.maxlength {
+  color: $error-color;
+  font-weight: 600;
+}

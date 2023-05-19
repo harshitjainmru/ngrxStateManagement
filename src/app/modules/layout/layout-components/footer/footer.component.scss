@@ -1,0 +1,33 @@
+@import "../../../../scss/var";
+@import "../../../../scss/mixins.scss";
+$border-radius:50px;
+section {
+  background: white;
+  padding: 10px;
+  color: $font-color;
+  font-weight: 600;
+  font-size: 12px;
+  .button-Covid19{
+    position: fixed;
+    bottom: 50px;
+    right: 5px;
+    background-color: $button-text-color;
+    padding: 10px;
+    border-top-left-radius: $border-radius;
+    border-bottom-left-radius: $border-radius;
+    z-index: 8;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    .covid19{
+      @include buttonTransparent();
+      .button-text{
+        color: $error-color;
+        margin: 5px;
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+  }
+  .footer-text{
+    margin: 15px 0px 15px 15px !important;
+  }
+}

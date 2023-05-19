@@ -1,0 +1,141 @@
+@import "src/app/scss/_var.scss";
+@import "src/app/scss/mixins.scss";
+@import "src/app/scss/_error.scss";
+.formfield {
+  @include flexbox();
+  flex-direction: column;
+  .label {
+    font-weight: 500;
+    .required {
+      color: $error-color;
+    }
+  }
+  .labelStyle {
+    font-size: 14px;
+    color: $directory-font-color;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+  .requestLabel {
+    font-size: 14px;
+    color: #4e5155 !important;
+    font-weight: 500;
+    font-family: sans-serif;
+    line-height: 1.4;
+    margin-bottom: 4px;
+  }
+  .increaseFormfield {
+    width: 369px;
+  }
+  .manualFormfield{
+    width: 424.39px;
+  }
+  .department{
+    width: auto;
+  }
+  .allocationFormfield {
+    width: 365px;
+  }
+  .qualificationDropdown {
+    width: 550px;
+  }
+  .dsrFilterFormfield {
+    width: 360px;
+  }
+  .departmentDropdown {
+    width: 400px;
+  }
+  .requestDropdown {
+    width: auto !important;
+  }
+}
+.filter {
+  width: 96.5% !important;
+  margin: 5px;
+  padding: 10px 0px !important;
+  overflow: hidden;
+  border: 1px solid lightgrey;
+}
+::ng-deep {
+  .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: $button-color !important;
+  }
+  .mat-option[aria-disabled="true"] {
+    color: black;
+    text-transform: capitalize;
+    user-select: none;
+    cursor: default;
+    overflow: hidden;
+  }
+  .mat-option.mat-active {
+    background: $directory-header-color;
+    color: $button-text-color !important;
+  }
+
+  .mat-option {
+    &:hover:not(.mat-option-disabled),
+    &:focus:not(.mat-option-disabled) {
+      background:#7ec4f9;
+      color: $button-text-color !important;
+    }
+  }
+  .mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    background: $directory-header-color;
+    color: $button-text-color !important;
+  }
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    background: $button-text-color;
+  }
+  .mat-select-panel{
+    @include scrollbarStyle();
+  }
+}
+@media (max-width: 1798px) {
+  .formfield {
+    .increaseFormfield {
+      width: auto;
+    }
+    .qualificationDropdown {
+      width: auto;
+    }
+    .dsrFilterFormfield {
+      width: auto !important;
+    }
+    .manualFormfield{
+      width: auto !important;
+    }
+  }
+}
+@media (max-width: 1411px) {
+  .formfield {
+    .departmentDropdown {
+      width: auto;
+    }
+  }
+}
+@media (max-width: 1193px) {
+  .allocationFormfield {
+    width: auto !important;
+  }
+}
+@media (max-width: 773px) {
+  .formfield {
+    .requestDropdown {
+      width: auto;
+    }
+  }
+}
+@media (min-width: 150px) and (max-width: 319px) {
+  .formfield {
+    .increaseFormfield {
+      width: 150px;
+    }
+    .qualificationDropdown {
+      width: 150px;
+    }
+    .department{
+      width: 150px;
+    }
+  }
+}

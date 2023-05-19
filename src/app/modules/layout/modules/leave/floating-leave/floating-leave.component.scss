@@ -1,0 +1,21 @@
+@import "../../../../../scss/header";
+@import "../../my-links/policy-doc/policy-doc.component.scss";
+section{
+  .table-card{
+    margin: 0px !important;
+    border-radius: 0px !important;
+    padding: 20px 30px !important;
+    border: none !important;
+    .availed-title{
+      border-bottom: 1px solid $border-color;
+      .availed-text{
+        font-size: 18px;
+      }
+    }
+    ::ng-deep{
+      table {
+      margin-top: 10px !important;
+      }
+    }
+  }
+}

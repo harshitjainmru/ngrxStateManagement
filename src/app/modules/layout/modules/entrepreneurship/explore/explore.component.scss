@@ -1,0 +1,124 @@
+@import "src/app/scss/_var.scss";
+@import "src/app/scss/mixins.scss";
+@import "src/app/scss/_job-opening-button.scss";
+@import "src/app/scss/_hash-heading.scss";
+@import "src/app/scss/_editoroverrideStyle.scss";
+
+@mixin buttonSize() {
+  padding: 0 25px;
+  height: 40px;
+}
+section {
+  margin: 1rem 3rem;
+  .header {
+    @include flexbox();
+    justify-content: space-between;
+    .heading {
+      color: $directory-header-color;
+      font-size: 24px;
+      font-weight: 500;
+      margin-top: 5px;
+    }
+    .buttonGroup {
+      @include flexbox();
+      gap: 20px;
+      .cancelButton {
+        @include buttonTransparent();
+        border-radius: 10px;
+        background: $cancel-button-color;
+        border: 1.5px solid rgba(150, 165, 184, 0.5);
+        @include buttonSize();
+      }
+      .classyButton {
+        @include buttonSize();
+      }
+    }
+  }
+
+  .detail-card {
+    background-color: $button-text-color;
+    padding: 1rem;
+    margin: 1rem 0;
+    .form {
+      .formfield {
+        display: flex;
+        flex-direction: column;
+        .label {
+          font-family: "Lato";
+          font-size: 14px;
+          color: $directory-font-color;
+          font-weight: 500;
+          line-height: 1.4;
+          margin-bottom: 4px;
+        }
+        .input-file {
+          border: 0.5px solid $formField-border-color;
+          padding: 14px;
+          border-radius: 5px;
+        }
+        .personalDetail {
+          width: 715px;
+        }
+        ::ng-deep .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
+          background-color: #f8f8f8 !important;
+          box-shadow: 0px 4px 8px rgb(44 39 56 / 4%) !important;
+          border: 0.5px solid $formField-border-color;
+          border-radius: 5px;
+        }
+      }
+      .inputs {
+        display: flex;
+        gap: 20px;
+      }
+    }
+  }
+}
+
+// ::ng-deep {
+//   .tox {
+//     .tox-editor-container {
+//       .tox-editor-header {
+//         background-color: #f8f8f8 !important;
+//         .tox-menubar {
+//           background-color: #f8f8f8;
+//         }
+//         .tox-toolbar-overlord {
+//           border-top: none !important;
+//           padding-bottom: 0px;
+//           padding-top: 0px;
+//           .tox-toolbar__primary {
+//             background-color: #f8f8f8;
+//           }
+//         }
+//       }
+//       .tox-statusbar {
+//         background-color: #f8f8f8;
+//       }
+//     }
+//   }
+// }
+
+@media (max-width: 1842px) {
+  .inputs {
+    flex-direction: column;
+    .personalDetail {
+      width: auto !important;
+    }
+  }
+}
+@media (max-width: 359px) {
+  section{
+    overflow: hidden;
+    .header {
+      flex-direction: column;
+      .buttonGroup {
+        .cancelButton {
+          padding: 0px 10px !important;
+        }
+        .classyButton {
+          padding: 0px 10px !important;
+        }
+      }
+    }
+  }
+}

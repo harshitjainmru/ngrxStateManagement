@@ -1,0 +1,54 @@
+section .header .header_text {
+  color: #26b4ff;
+  font-weight: 500;
+}
+
+section .referral-list {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto;
+      grid-template-columns: auto auto;
+  gap: 20px;
+}
+
+section .referral-list .list-data {
+  background-color: #F4F9FF;
+  text-align: center;
+  padding: 20px;
+  width: 200px;
+}
+
+section .referral-list .list-data .bonus {
+  font-size: 50px;
+  margin: 20px;
+  color: #26b4ff;
+  font-weight: 500;
+}
+
+section .referral-list .list-data .list-text {
+  font-weight: 500;
+  margin-top: 30px;
+}
+
+section .referral-list .list-data .from-to-year {
+  font-size: 10px;
+}
+
+@media (max-width: 1780px) {
+  section .referral-list {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  section .referral-list .list-data {
+    width: auto !important;
+    padding: 0px !important;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1219px) {
+  section .referral-list {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+}
+/*# sourceMappingURL=referral-bonus.component.css.map */

@@ -1,0 +1,63 @@
+@import "src/app/scss/_var.scss";
+@import "src/app/scss/mixins.scss";
+.leftRs {
+  top: -40px;
+  bottom: 0;
+  right: 50px;
+  @include carouselButton();
+}
+
+.rightRs {
+  top: -40px;
+  bottom: 0;
+  right: 10px;
+  @include carouselButton();
+}
+.bottomLeftRs {
+  bottom: -35px;
+  left: 263px;
+  @include carouselButton();
+}
+.bottomRightRs {
+  bottom: -35px;
+  right: 265px;
+  @include carouselButton();
+}
+:host::ng-deep {
+  .ngucarousel {
+    position: initial !important;
+  }
+}
+.myPoint {
+  list-style-type: none;
+  text-align: center;
+  padding: 12px;
+  margin: 0;
+  white-space: nowrap;
+  overflow: auto;
+  box-sizing: border-box;
+}
+.myPoint li {
+  display: inline-block;
+  border-radius: 50%;
+  // border: 2px solid rgba(0, 0, 0, 0.55);
+  background: $award-text-color;
+  padding: 4px;
+  margin: 0 3px;
+  transition-timing-function: cubic-bezier(0.17, 0.67, 0.83, 0.67);
+  transition: 0.4s;
+}
+.myPoint li.active {
+  background: #6b6b6b;
+  transform: scale(1.2);
+}
+@media (max-width: 798px) {
+  .bottomLeftRs {
+    bottom: -40px;
+    left: 0px;
+  }
+  .bottomRightRs {
+    bottom: -40px;
+    left: 35px;
+  }
+}

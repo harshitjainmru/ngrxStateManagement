@@ -1,0 +1,130 @@
+@import "../../../../../../scss/var";
+@import "../../../../../../scss/mixins.scss";
+section {
+  margin: 20px 35px;
+  .levels {
+    .name {
+      @include fpos(center, space-around);
+      font-size: 20px;
+      margin-top: 40px;
+      gap: 10px;
+      color: $award-text-color;
+      .number {
+        font-weight: 500;
+      }
+      .mentor {
+        margin: 0 0 0px;
+      }
+    }
+    .line{
+      background-color: red;
+      width: 48%;
+      margin: 30px 50px 20px;
+      margin-left: 25%;
+      height: 10px;
+      font-size: 1px;
+    }
+  }
+  .container {
+    @include grid("grid-template-columns", "40% 25%");
+    gap: 20px;
+    .approvalStatus {
+      height: 300px;
+      max-height: auto;
+    }
+    .last-container {
+      background-color: $button-text-color;
+      border-radius: 10px;
+      .content {
+        padding: 20px;
+        .header {
+          border-bottom: 1px solid $border-color;
+          .header-text {
+            color: $header-text-color;
+            font-weight: 500;
+            font-size: 20px;
+          }
+        }
+      }
+      .details {
+        padding: 20px;
+        .leave-detail {
+          @include fpos(center, space-between);
+          .text {
+            margin: 0 0 0px;
+            padding: 10px;
+            font-size: 15px;
+            // width: 150px;
+          }
+          .circleicon {
+            border: 1px solid $directory-header-color;
+            background-color: $button-text-color;
+            cursor: pointer;
+            margin: 8px;
+            #fa-arrow {
+              color: $directory-header-color;
+              padding: 3px;
+              margin: -2px -5px !important;
+            }
+            &:hover {
+              background-color: $directory-header-color;
+              #fa-arrow {
+                color: $button-text-color;
+              }
+            }
+          }
+          &:nth-child(odd) {
+            background-color: rgba(24, 28, 33, 0.025);
+            border-top: 1px solid $border-color;
+            border-bottom: 1px solid $border-color;
+          }
+        }
+      }
+      .verify {
+        padding: 10px 25px;
+        .label {
+          color: $award-text-color;
+          font-weight: 500;
+        }
+        .data {
+          font-weight: 500;
+          font-size: 16px;
+        }
+        .remark {
+          @include fpos(baseline, flex-start);
+          gap: 10px;
+        }
+      }
+      .approval {
+        padding: 20px;
+        .level {
+          display: flex;
+          gap: 30px;
+          .text {
+            font-weight: 500;
+            width: 170px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1100px) {
+  section {
+    .container {
+      grid-template-columns: 100%;
+    }
+  }
+}
+
+@media(max-width:345px){
+  section{
+   .container{
+    .details{
+      .leave-detail{
+        flex-direction: column;
+      }
+    }
+   }
+  }
+}

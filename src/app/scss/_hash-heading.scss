@@ -1,0 +1,26 @@
+@import "src/app/scss/mixins.scss";
+@import "src/app/scss/_var.scss";
+
+.hash-heading {
+  position: relative;
+  @include flexbox();
+  width: 100%;
+  .mydetails {
+    font-size: 24px;
+    color: $award-text-color;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 4px 5px;
+    background-color: $button-text-color;
+    z-index: 1;
+    margin: 0px 10px;
+  }
+  &::after {
+    content: "";
+    width: 100%;
+    bottom: 20px;
+    border-top: 1px dashed $directory-font-color;
+    position: absolute;
+    transform: translateY(-50%);
+  }
+}

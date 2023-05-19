@@ -1,0 +1,23 @@
+@import "../../../../../scss/header";
+@import "../../my-links/policy-doc/policy-doc.component.scss";
+section{
+  .table-card{
+    padding:30px 20px ;
+    ::ng-deep{
+      section{
+        margin: 50px 0px 0px;
+        .mat-paginator-page-size{
+          top: -50px;
+        }
+      }
+    }
+  }
+}
+@media (max-width:304px){
+  // ::ng-deep{
+  //   .mat-paginator-page-size{
+  //     top: 150px !important;
+  //     left: 68px !important;
+  //   }
+  // }
+}

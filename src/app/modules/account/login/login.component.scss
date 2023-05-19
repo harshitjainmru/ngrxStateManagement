@@ -1,0 +1,26 @@
+@import "../account.component.scss";
+@import "../../../scss/mixins.scss";
+@import "../../../scss/var";
+section{
+  .buttongoogle {
+    @include flexJustify(center);
+    margin-top: 7rem;
+    .credentialButton {
+      background: transparent;
+      cursor: pointer;
+      border: none;
+      width: 22rem;
+      padding: 10px;
+      background-color: $button-color;
+      font-weight: 550 !important;
+      @include textColor();
+    }
+  }
+
+}
+
+@media (max-width:420px) {
+  .credentialButton{
+    width: auto !important;
+  }
+}

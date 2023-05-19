@@ -1,0 +1,26 @@
+<section *ngIf="showHeader">
+  <header>
+    <div class="sub">
+      <ng-container *ngFor="let item of text">
+        <div class="sublist" *ngIf="selectedList === 'grid_on'" (click)="opensubmenu(item)"
+          [ngClass]="{'activeSublist':selectedsubmenulist ===item}">
+          <p class="item-text">{{item}}</p>
+        </div>
+      </ng-container>
+    </div>
+    <div class="main-icon">
+      <ng-container *ngFor="let icon of icon">
+        <div class="icon" (click)="openMenuList(icon)" [ngClass]="{'isActive':selectedList === icon}">
+          <mat-icon [ngClass]="{'link-icon':icon==='link'}">{{icon}}</mat-icon>
+        </div>
+      </ng-container>
+    </div>
+  </header>
+  <div *ngIf="selectedList==='grid_on' && selectedsubmenulist === 'All'">
+    <app-grid-view></app-grid-view>
+  </div>
+  <div *ngIf="selectedList==='list'">
+    <app-list-view></app-list-view>
+  </div>
+</section>
+<router-outlet></router-outlet>

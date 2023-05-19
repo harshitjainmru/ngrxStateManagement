@@ -1,0 +1,87 @@
+@import "../../../../../../scss/var";
+@import "../../../../../../scss/mixins.scss";
+$font-size:12px;
+$fontweight:600;
+section {
+  .award-card {
+    border: 1px solid $border-color;
+    padding: 16px;
+    border-radius: 5px;
+    .award-header {
+      @include flexbox();
+      gap: 10px;
+      .dot {
+        height: 15px;
+        width: 15px;
+        background-color: $award-dot-color;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .award-title {
+        font-size: 20px;
+      }
+    }
+    .dear {
+      color: $award-text-color;
+    }
+    figure {
+      position: relative;
+      width: 190px;
+      height: 150px;
+      margin: 0px;
+      border: 1px solid $border-color;
+      background: linear-gradient(180deg, rgba(22, 22, 22, 0) 0%, #151515 100%);
+
+      img {
+        padding: 4px;
+        border-radius: 5px;
+        width: 185px;
+      }
+      .emp-info {
+        position: absolute;
+        bottom: -15px;
+        width:fit-content;
+        padding: 5px 10px;
+        // margin-left: 10px;
+        font-size: $font-size;
+        background: linear-gradient(180deg, rgba(22, 22, 22, 0) 0%, #151515 100%);
+        .emp-name {
+          // color:$award-img-name-color ;
+          color: $button-text-color;
+          font-weight: 700;
+          margin-bottom: 0px !important;
+        }
+        .emp-designation {
+          // color: $directory-font-color;
+          color: $image-text-color;
+          font-weight: $fontweight;
+          margin-bottom: 0px !important;
+        }
+        .emp-date {
+          // color: $directory-font-color;
+          color: $image-text-color;
+
+          font-weight: $fontweight;
+        }
+      }
+    }
+
+    .message {
+      color: $award-text-color;
+      padding: 30px 0px;
+      font-size: $font-size;
+    }
+    footer {
+      .cheers {
+        color: $award-text-color;
+      }
+      .company-name {
+        font-size: $font-size;
+        color: $directory-header-color;
+        font-weight: $fontweight;
+        margin-top: -10px;
+      }
+    }
+  }
+}
+

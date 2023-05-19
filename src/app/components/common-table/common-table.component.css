@@ -1,0 +1,82 @@
+section table {
+  width: 100%;
+  margin-top: 50px;
+}
+
+section table th {
+  border-top: 1px solid gainsboro;
+  font-size: 14px;
+  color: black;
+  padding-left: 20px;
+}
+
+section table tr td {
+  padding-left: 20px;
+}
+
+section table tr th {
+  border-right: 1px solid gainsboro;
+}
+
+section table tr th:last-child {
+  border-right: none !important;
+}
+
+section table .mat-column-demo-position {
+  width: 32px;
+  border-right: 1px solid currentColor;
+  padding-right: 24px;
+  text-align: center;
+}
+
+section table td.mat-cell:first-of-type {
+  border-right: 1px solid gainsboro;
+}
+
+section table .mat-row:nth-child(odd) {
+  background-color: rgba(24, 28, 33, 0.025);
+}
+
+::ng-deep .mat-paginator-range-label {
+  position: absolute;
+  left: 0px;
+  margin: 0 32px 0 24px;
+}
+
+::ng-deep .mat-paginator-range-label::before {
+  content: "showing";
+}
+
+::ng-deep .mat-paginator-range-label::after {
+  content: "entries";
+}
+
+::ng-deep .mat-paginator-page-size {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  margin-right: 8px;
+  position: absolute;
+  top: 50px;
+  left: 0px;
+}
+
+@media (min-width: 320px) and (max-width: 550px) {
+  section {
+    overflow: scroll;
+  }
+  section .mat-paginator-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  section ::ng-deep .mat-paginator-page-size {
+    top: 80px !important;
+    left: 0px;
+  }
+}
+/*# sourceMappingURL=common-table.component.css.map */

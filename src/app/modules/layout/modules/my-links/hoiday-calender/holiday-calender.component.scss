@@ -1,0 +1,44 @@
+@import "src/app/scss/_var.scss";
+@import "src/app/scss/mixins.scss";
+section{
+  .holiday-card{
+    background-color: $button-text-color;
+    margin: 2rem 3.5rem 5rem 3.5rem;
+    .image{
+      @include fpos('center',center);
+      .imageHoliday{
+        padding: 1.5rem;
+      }
+    }
+  }
+}
+@media (min-width: 626px) and (max-width: 1426px) and (orientation: landscape) {
+  section{
+    .holiday-card{
+      .image{
+        .imageHoliday{
+          padding: auto;
+          width: 500px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 481px) and (max-width: 625px) {
+  .imageHoliday{
+    padding: auto;
+    width: 300px;
+  }
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .imageHoliday{
+    padding: auto;
+    width: 200px;
+  }
+}
+@media (min-width: 15px) and (max-width: 319px) {
+  .imageHoliday{
+    padding: auto;
+    width: 100px;
+  }
+}

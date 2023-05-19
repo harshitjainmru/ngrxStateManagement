@@ -1,0 +1,147 @@
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  background: white;
+  padding: 15px;
+}
+
+.container .button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.container .icon {
+  color: gray;
+  font-weight: 550;
+}
+
+.container .left-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 5px;
+}
+
+.container .left-content .image .appinventivLogo {
+  height: 35px;
+}
+
+.container .left-content .image .rightImage {
+  width: 182px;
+}
+
+.container .left-content .menu {
+  margin-top: -6px;
+  font-size: 29px;
+  font-weight: 550;
+}
+
+.container .login {
+  margin: -10px 30px 0px 0px;
+}
+
+.container .login .lastLogin {
+  margin-left: 30px;
+}
+
+.container .login .lastLogin .headerLastLogin {
+  font-size: 10px;
+  color: gray;
+}
+
+.container .login .lastLogin .headerLastLoginTime {
+  font-size: 10px;
+  color: gray;
+}
+
+.container .login .right-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 5px;
+  margin-top: -5px;
+}
+
+.container .login .right-content .userDetails {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .login .right-content .userDetails .userName {
+  margin: 0px 2px;
+  padding: 0px 10px;
+}
+
+.container .login .right-content .userDetails .userName .name {
+  margin: 0px !important;
+  font-size: 13px;
+  font-weight: 550;
+}
+
+.container .login .right-content .userDetails .logo {
+  border: 1px solid gainsboro;
+  height: 30px;
+}
+
+.container .login .right-content .userDetails .logo .defaultImage {
+  width: 25px;
+  height: 25px;
+  padding: 2px;
+}
+
+.container .login .right-content .userDetails .menuIcon {
+  margin-top: 8px;
+}
+
+.container .login .right-content .userDetails .menuIcon .icon-arrow .keyboard_arrow_down {
+  font-weight: 550;
+}
+
+.container .login .right-content .helpButton {
+  margin-top: -5px;
+}
+
+.container .login .right-content .helpButton .help {
+  background-color: red;
+  color: white;
+  margin-right: 30px;
+  font-weight: 550;
+}
+
+.container .login .right-content .notificationIcon .notification {
+  font-size: 30px;
+}
+
+@media only screen and (max-width: 800px) {
+  .container .left-content {
+    display: contents;
+  }
+  .container .login {
+    display: none;
+  }
+}
+/*# sourceMappingURL=header.component.css.map */

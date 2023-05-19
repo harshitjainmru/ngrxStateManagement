@@ -1,0 +1,33 @@
+<section>
+  <div class="award-card">
+    <div class="award-header">
+      <span class="dot"></span>
+      <p class="award-title">
+        {{workAnniversaryValue.HEADER_VALUE}}
+      </p>
+    </div>
+    <span class="dear">{{workAnniversaryValue.DEAR_VALUE}}</span>
+    <app-carousel [listToShow]="dataSource" [carouselConfiguration]="carouselConfig"></app-carousel>
+    <ng-container *ngFor="let item of imageData">
+      <ng-template #listofDivs>
+        <figure>
+          <img [src]="item.IMAGE" alt="emp-image">
+          <div class="emp-info">
+            <p class="emp-name">{{item.EMP_NAME}}</p>
+            <p class="emp-designation">{{item.DESIGNATION}}</p>
+            <p class="emp-date">{{item.DATE}}</p>
+          </div>
+        </figure>
+      </ng-template>
+    </ng-container>
+    <p class="message">{{workAnniversaryValue.MESSAGE_VALUE}}</p>
+
+    <footer>
+      <p class="cheers">{{workAnniversaryValue.CHEER_VALUE}}</p>
+      <p class="company-name">{{workAnniversaryValue.APPIVENTIV_TEXT}}</p>
+    </footer>
+
+  </div>
+</section>
+
+

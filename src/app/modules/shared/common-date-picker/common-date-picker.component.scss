@@ -1,0 +1,35 @@
+@import "../../../scss/inputFieldStyle";
+@import "../../../scss/error";
+@import "../../../scss/var";
+.increaseFormfield {
+  width: 369px;
+}
+.dsrFilterFormfield {
+  width: 360px;
+}
+.leaveDate{
+  width: auto;
+}
+.dsrFormField{
+  width: 250px;
+}
+@media (max-width:1798px){
+  .increaseFormfield {
+    width: auto !important;
+  }
+  .dsrFormField{
+    width: auto !important;
+  }
+  .dsrFilterFormfield {
+    width: auto !important;
+  }
+}
+
+::ng-deep{
+  .mat-datepicker-toggle {
+    color: $border-color;
+    position: absolute;
+    right: -12px;
+    top: -5px;
+  }
+}

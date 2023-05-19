@@ -1,0 +1,76 @@
+<section>
+  <header class="levels">
+    <div class="name">
+      <p class="mentor">1: {{level1StatusData}}</p>
+      <p class="mentor">2: {{trainingDetailData.level2}}</p>
+    </div>
+    <div class="line"></div>
+  </header>
+  <div class="container">
+    <div class="last-container">
+      <div class="content">
+        <div class="header">
+          <h1 class="header-text">{{uiText.leave_detail_label}}</h1>
+        </div>
+      </div>
+      <div class="details">
+        <div class="leave-detail">
+          <h3 class="text">{{uiText.employee_label}}</h3>
+          <h3 class="text">{{uiText.employee_data}}</h3>
+        </div>
+        <div class="leave-detail">
+          <h3 class="text">{{uiText.type_label}}</h3>
+          <h3 class="text">{{trainingDetailData.type}}</h3>
+        </div>
+        <div class="leave-detail">
+          <h3 class="text">{{uiText.duration_label}}</h3>
+          <h3 class="text">{{uiText.duration_data}}</h3>
+        </div>
+        <div class="leave-detail">
+          <h3 class="text">{{uiText.applied_label}}</h3>
+          <h3 class="text">{{trainingDetailData.applied}}</h3>
+        </div>
+        <div class="leave-detail">
+          <h3 class="text">{{uiText.start_date_label}}</h3>
+          <h3 class="text">{{trainingDetailData.requestfrom}}</h3>
+        </div>
+        <div class="leave-detail">
+          <h3 class="text">{{uiText.end_date_label}}</h3>
+          <h3 class="text">{{trainingDetailData.requestto}}</h3>
+        </div>
+        <div class="leave-detail">
+          <h3 class="text">{{uiText.document_label}}</h3>
+          <button class="circleicon" ><i id="fa-arrow" class="fa fa-download"></i></button>
+        </div>
+      </div>
+      <div class="verify">
+        <div class="reason">
+          <h3 class="label">{{uiText.reason_label}}</h3>
+          <p class="data">{{uiText.reason_data}} </p>
+          <p class="data">{{uiText.reason_data1}}</p>
+        </div>
+        <div class="remark">
+          <h3 class="label">{{uiText.remarks_label}}</h3>&nbsp;&nbsp;
+          <p class="data">{{uiText.remarks_data}} </p>
+        </div>
+      </div>
+    </div>
+    <div class="last-container approvalStatus">
+      <div class="content">
+        <div class="header">
+          <h1 class="header-text">{{uiText.approval_label}}</h1>
+        </div>
+      </div>
+      <div class="approval">
+        <div class="level">
+          <h3 class="text">{{level1StatusData}}</h3>
+          <h3 class="status">{{trainingDetailData.status}}</h3>
+        </div>
+        <div class="level">
+          <h3 class="text">{{trainingDetailData.level2}}</h3>
+          <h3 class="status">{{trainingDetailData.status}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

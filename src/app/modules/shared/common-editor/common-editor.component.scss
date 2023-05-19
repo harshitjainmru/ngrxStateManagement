@@ -1,0 +1,11 @@
+@import "../../../scss/editoroverrideStyle";
+@import "../../../scss/error";
+@import "../../../scss/inputFieldStyle";
+.customLabel{
+  font-family: "Lato";
+  font-size: 14px;
+  color: $directory-font-color;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}

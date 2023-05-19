@@ -1,0 +1,25 @@
+<section @slideInRight>
+  <mat-card class="basic-card">
+    <div class="header">
+      <p class="header-text">{{uiMessage.heading}}</p>
+    </div>
+    <div class="content">
+      <form class="form" [formGroup]="departmentForm" (ngSubmit)="submitHandler()">
+        <div class="container">
+          <span>
+            <app-common-input [data]="uiMessage.label1" [formFieldCSS]="'manualFormfield'" [myControlName]="departmentFormControl.department"></app-common-input>
+          </span>
+          <span class="dropdown">
+            <app-dropdown [label]="uiMessage.label2" [Data]="uiMessage.department_change" [formfieldCSS]="'department'" [placeholder]="uiMessage.placeholder" [myControlName]="departmentFormControl.changeTo"></app-dropdown>
+          </span>
+        </div>
+        <span>
+          <app-common-text-area [maxLength]="500" [labelData]="uiMessage.label3" [cdkAutosizeMaxRows]="7" [cdkAutosizeMinRows]="4" [formcontrolss]="departmentFormControl.requestReason"></app-common-text-area>
+        </span>
+        <div class="classyButton">
+          <button class="saveButton" type="submit">{{uiMessage.button}}</button>
+        </div>
+      </form>
+    </div>
+  </mat-card>
+</section>

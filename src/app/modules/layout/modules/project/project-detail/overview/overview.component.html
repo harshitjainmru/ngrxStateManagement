@@ -1,0 +1,24 @@
+
+<section>
+  <div class="last-container">
+    <div class="content">
+      <div class="header">
+        <h1 class="header-text">{{uiText.planned_label}}</h1>
+      </div>
+      <app-common-table [columns]="uiText.delivery_heading" [dataSource]="dataSource" [isPageable]="false" [isSearchText]="false">
+      </app-common-table>
+    </div>
+  </div>
+  <div class="last-container">
+    <div class="content">
+      <div class="header">
+        <h1 class="header-text">{{uiText.detail_label}}</h1>
+      </div>
+      <app-common-table [columns]="uiText.table_heading" [dataSource]="dataSource" [isPageable]="false" [isSearchText]="false">
+      </app-common-table>
+    </div>
+  </div>
+  <div class="">
+    <app-common-component></app-common-component>
+  </div>
+</section>

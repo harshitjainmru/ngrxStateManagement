@@ -1,0 +1,33 @@
+<section>
+  <header>
+    <div class="top-container">
+    <h1 class="dinner">{{uiText.dinner_request_label}}</h1>
+    <button class="classyButton" id="dinnerBtn" (click)="showDiv()">{{uiText.dinner_button}}</button>
+  </div>
+    <div class="note">
+      <i class="fas fa-info-circle"></i>
+      <h3 class="note-label">{{uiText.note_label}}</h3>
+      <h3 class="note-data">{{uiText.note_data}}</h3>
+    </div>
+  </header>
+  <div class="form" >
+    <form [formGroup]="requestDinnerForm" (ngSubmit)="submitHandler()" class="requestDinner">
+      <div class="left-container">
+        <div>
+          <app-common-input [data]="uiText.date_label" [myControlName]="requestDinnerFormControl.date">
+          </app-common-input>
+        </div>
+        <div>
+          <app-dropdown [label]="uiText.project_label" [Data]="uiText.project_data"
+            [myControlName]="requestDinnerFormControl.project"></app-dropdown>
+        </div>
+      </div>
+      <div class="right-container">
+        <app-common-editor [labelData]="uiText.editor_label" [formControlname]="requestDinnerFormControl.editor">
+        </app-common-editor>
+      </div>
+      <button class="classyButton" type="submit">{{uiText.submit_button}}</button>
+    </form>
+  </div>
+</section>
+

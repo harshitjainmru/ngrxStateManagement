@@ -1,0 +1,26 @@
+<section>
+  <app-carousel [listToShow]="dataSource" [carouselConfiguration]="carouselConfig"></app-carousel>
+  <ng-container *ngFor="let item of appreciationData">
+    <ng-template #listofDivs >
+    <div class="award-card">
+      <div class="award-header">
+
+        <span class="dot"></span>
+        <p class="award-title">
+          {{item.HEADER_VALUE}}
+        </p>
+      </div>
+
+      <span class="emp-name">{{item.DEAR_VALUE}} {{item.TEXT}}</span>
+      <div class="message">
+        <p class="text-message">{{item.MESSAGE}}</p>
+      </div>
+      <div class="thnks message">
+        <p class="greetings text-message">{{item.GREET}}</p>
+        <span>...</span>
+      </div>
+      <button class="classyButton" (click)="openDialog(item)">{{item.BUTTON}}</button>
+    </div>
+    </ng-template>
+  </ng-container>
+</section>

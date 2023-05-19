@@ -1,0 +1,61 @@
+@import "../../../../../../scss/var";
+@import "../../../../../../scss/mixins.scss";
+@import "src/app/scss/_job-opening-button.scss";
+$font-size: 12px;
+$fontweight: 500;
+section {
+  .award-card {
+    border: 1px solid $border-color;
+    padding: 16px;
+    height: 350px;
+    border-radius: 5px;
+    .award-header {
+      @include flexbox();
+      gap: 10px;
+      margin-bottom: 15px;
+      .dot {
+        height: 15px;
+        width: 15px;
+        background-color: $award-dot-color;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .award-title {
+        font-size: 20px;
+      }
+    }
+    .emp-name {
+      color: $award-text-color;
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 1.9;
+    }
+    .message{
+      margin: 30px 0px;
+      .text-message{
+        color: $award-text-color;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 1.9;
+        margin: -1px;
+      }
+    }
+    .thnks{
+      margin-top: 30px;
+      padding: 10px 0px;
+    }
+    .classyButton{
+      padding: 12px 20px !important;
+    }
+  }
+}
+@media (max-width:630px){
+  section {
+    .award-card {
+      height: auto;
+      .thnks{
+        display: none;
+      }
+    }
+  }
+}

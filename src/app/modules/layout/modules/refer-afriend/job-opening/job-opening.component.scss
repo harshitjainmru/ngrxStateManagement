@@ -1,0 +1,34 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+@import "../../../../../scss/job-opening-card";
+
+section {
+  margin: 1rem 2rem;
+  .header {
+    .heading {
+      color: $directory-header-color;
+      font-size: 24px;
+      font-weight: 500;
+      margin-top: 5px;
+    }
+  }
+  .card-content {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+  }
+}
+@media (max-width:1798px){
+  section {
+    .card-content {
+      grid-template-columns: auto auto;
+    }
+  }
+}
+@media (max-width:624px){
+  section {
+    .card-content {
+      grid-template-columns: auto;
+    }
+  }
+}

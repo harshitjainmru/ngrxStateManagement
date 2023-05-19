@@ -1,0 +1,25 @@
+<section>
+  <app-breadcrumb [breadcrumb]="'fresher-training-details'"></app-breadcrumb>
+  <div class="title">
+    <h1 class="titleText">{{trainingDetailData.title}}</h1>
+  </div>
+  <div class="card">
+    <div class="status">
+      <img src="../../../../../../../assets/images/ic-legend-green.svg">
+      <button class="statusButton">{{trainingDetailData.completeHeading}}</button>
+    </div>
+    <div class="header">
+      <mat-tab-group animationDuration="0ms">
+        <mat-tab label="Training Details" >
+          <app-training-topic></app-training-topic>
+        </mat-tab>
+        <mat-tab label="Sub-Topics">
+          <app-sub-topics></app-sub-topics>
+        </mat-tab>
+        <mat-tab label="Attendance">
+          <app-attendance></app-attendance>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+</section>

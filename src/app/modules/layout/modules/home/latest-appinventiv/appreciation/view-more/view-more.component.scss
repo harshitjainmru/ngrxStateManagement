@@ -1,0 +1,62 @@
+@import "src/app/scss/_var.scss";
+@import "../../../../../../../scss/dialog-cancel-icon";
+section{
+  max-width: 500px;
+  padding: 16px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  max-height: 600px;
+  .cancel-icon{
+    justify-content: flex-end !important;
+  }
+  .employee{
+    display: flex;
+    align-items: center;
+    background: $job-background-color;
+    border-radius: 5px;
+    figure{
+      .emp-image{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+      }
+    }
+    .heading{
+      display: flex;
+      flex-direction: column;
+      color: $viewmoreDialog-color;
+      .emp-name{
+        font-size: 20px;
+        font-weight: 500;
+      }
+      .project{
+        font-size: 15px;
+        font-weight: 300;
+        word-spacing: normal;
+      }
+    }
+  }
+  .message{
+    padding: 40px 5px 0px  5px;
+  }
+  .greet{
+    .greet-message{
+      padding: 15px 5px 10px 5px;
+    }
+  }
+  .team-name{
+    padding: 15px  5px;
+
+  }
+  .head-greet{
+    padding: 15px 5px 5px 5px;
+  }
+  footer{
+    color: $viewmoreDialog-color;
+    font-size: 15px;
+    font-weight: 500;
+    .head-name{
+      padding:5px;
+    }
+  }
+}

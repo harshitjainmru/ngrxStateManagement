@@ -1,0 +1,6 @@
+<section>
+    <ng-container *ngFor="let navlist of sidenav;let i =index">
+      <app-list-item [isShowing]="isShowing" [navlist]="navlist" [index]="i" (showsubmenu)="submenu($event)" ></app-list-item>
+    </ng-container>
+</section>
+

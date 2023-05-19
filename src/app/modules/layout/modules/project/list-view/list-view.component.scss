@@ -1,0 +1,17 @@
+@import "../../../../../scss/var";
+.container {
+  background-color: $button-text-color;
+  border-radius: 10px;
+  margin: 20px 0px;
+  .content {
+    padding: 20px;
+    .header {
+      border-bottom: 1px solid $border-color;
+      .header-text {
+        color: $header-text-color;
+        font-weight: 500;
+        font-size: 20px;
+      }
+    }
+  }
+}

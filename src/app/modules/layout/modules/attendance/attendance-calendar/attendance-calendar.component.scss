@@ -1,0 +1,35 @@
+@import "../../../../../scss/var";
+section {
+  margin: 20px 35px;
+  .card {
+    padding: 20px;
+    background-color: $button-text-color;
+  }
+  ::ng-deep {
+    .fc-day-other {
+      background-color: #d7d7d7;
+      opacity: 0.3;
+      .fc-daygrid-day-number {
+        display: none !important;
+      }
+    }
+    .fc-scrollgrid-sync-table, .fc-col-header{
+      width: 100% !important;
+    }
+
+    .fc-daygrid-body .fc-daygrid-body-unbalanced {
+      width: auto !important;
+    }
+    .fc-scroller .fc-scroller-liquid-absolute{
+      overflow: auto !important;
+    }
+  }
+}
+@media (max-width:405px) {
+  ::ng-deep{
+    .fc-header-toolbar {
+      flex-direction: column !important;
+    }
+
+  }
+}

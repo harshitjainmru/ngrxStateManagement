@@ -1,0 +1,14 @@
+<div class="formfield 2">
+  <label [ngClass]="labelStyle || 'label'">{{label}} <span *ngIf="showRequiredStar" class="required">*</span></label>
+  <mat-form-field appearance="outline" [ngClass]="formfieldCSS || 'increaseFormfield'">
+    <mat-select [formControl]="myControlName" #[reference] (selectionChange)="onSelection()" [placeholder]="placeholder || label" >
+      <input [formControl]="myControl"  class="filter">
+      <mat-option *ngFor="let item of filteredOptions | async" [value]="item" [disabled]="item=='no results Found'">
+        {{item}}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="myControlName?.hasError('required')" class="alertMessage">
+      <span class="errorMessage"> {{errorMessage.required}}</span>
+    </mat-error>
+  </mat-form-field>
+</div>

@@ -1,0 +1,11 @@
+<section>
+  <div class="header">
+    <h1 class="heading-text">{{uiText.floating_title}}</h1>
+  </div>
+  <div class="table-card">
+    <div class="availed-title">
+      <h4 class="availed-text">{{uiText.availed_floating_label}}</h4>
+    </div>
+    <app-common-table [columns]="uiText.table_heading" [isPageable]="false" [dataSource]="dataSource" [isSearchText]="false"></app-common-table>
+  </div>
+</section>

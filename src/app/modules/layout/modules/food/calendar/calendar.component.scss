@@ -1,0 +1,89 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+@import "../../../../../scss/overrideMatcheckbox";
+table,
+th,
+td {
+  border: 1.5px solid #f1f1f2;
+  border-collapse: collapse;
+}
+.bottom-header {
+  @include fpos(center, space-between);
+  .select {
+    @include fpos(center, space-between);
+    gap: 10px;
+  }
+}
+::ng-deep{
+  .mat-menu-content{
+    padding: 12px !important;
+  }
+  .mat-menu-item {
+    background: red !important;
+    color: white !important;
+    font-size: 15px !important;
+    border-radius: 10px;
+  }
+}
+table {
+  width: 100%;
+  max-width: 100%;
+  td {
+    height: 8rem;
+    text-align: end;
+    padding-right: 8px;
+    .table-data-wrapper {
+      display: flex;
+      justify-content: space-between;
+      width: 11rem;
+      mat-checkbox {
+        color: white;
+        ::ng-deep {
+          .mat-checkbox-inner-container-no-side-margin {
+            background-color: white;
+          }
+        }
+      }
+    }
+    p {
+      margin-bottom: 6rem;
+      font-size: 1rem;
+    }
+  }
+  .coupon-purchased {
+    background-color: #a4ffcc;
+  }
+
+  .coupon-available {
+    background-color: #bdc8fa;
+  }
+  .locked {
+    background-color: #bfbfbf;
+  }
+  .weekend {
+    background-color: #ff989e;
+  }
+}
+
+
+@media only screen and (max-width: 1730px) {
+  table {
+    td {
+      .table-data-wrapper {
+        width: auto !important;
+      }
+    }
+  }
+}
+@media (max-width: 1025px) {
+  .select {
+    flex-direction: column;
+    align-items: flex-start !important;
+    gap: 10px;
+  }
+}
+@media only screen and (max-width: 385px) {
+  table {
+    overflow: scroll;
+  }
+}

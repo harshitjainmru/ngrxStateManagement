@@ -1,0 +1,120 @@
+<section>
+  <div class="top-container">
+    <ng-container *ngFor="let item of uiText.leave_data">
+      <div class="leave-type-data">
+        <div class="leave">
+          <mat-icon class="text-success">event</mat-icon>
+          <div class="leave-data">
+            <h3 class="leave-balance">{{item.leave_title}}</h3>
+            <h3 class="leave-balance">{{item.leave_balance}}</h3>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="main-container">
+    <div class="title">
+      <h1 class="title-text">{{uiText.add_leave}}</h1>
+      <div class="buttonGroup" (click)="showDiv()">
+        <mat-icon class="addIcon">add</mat-icon>
+        <button class="add-new">
+          {{uiText.add_button}}
+        </button>
+      </div>
+    </div>
+    <div class="middle-container">
+    <div class="content">
+      <ng-container [formGroup]="myLeaveForm">
+          <div class="left container">
+            <app-dropdown [label]="uiText.type_label" [Data]="uiText.type_dropdown_data" [myControlName]="myLeaveFormControl.typeData"></app-dropdown>
+            <div class="half-day"
+              *ngIf="myLeaveFormControl['typeData'].value != 'Short Leaves' && myLeaveFormControl['typeData'].value != 'All Remaining Leaves (17.5)'">
+              <mat-checkbox class="half-day-checkbox" formControlName="halfDay">{{uiText.half_day_label}}</mat-checkbox>
+              <div class="radiobutton" *ngIf="myLeaveFormControl['halfDay'].value ==true">
+                <mat-radio-group formControlName="halfTime">
+                  <mat-radio-button class="example-margin" value="1st"
+                    [checked]="myLeaveFormControl['halfDay'].value ==true">1st Half</mat-radio-button>
+                  <mat-radio-button class="example-margin" value="2nd">2nd Half</mat-radio-button>
+                </mat-radio-group>
+              </div>
+            </div>
+            <div class="shorttime" *ngIf="myLeaveFormControl['typeData'].value == 'Short Leaves'">
+              <div class="formfield">
+                <label class="label">{{uiText.start_time_label}}</label>
+                <mat-form-field appearance="outline">
+                  <mat-select formControlName="shortLeaveStartTime" (selectionChange)="checkFirstDropdown($event)">
+                    <mat-option *ngFor="let option of uiText.start_time_data" [value]="option">
+                      {{option.value}}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error class="alertMessage">
+                    <span class="errorMessage">{{myLeaveFormControl.shortLeaveStartTime | validation :
+                      uiText.start_time_label }}</span>
+                  </mat-error>
+                </mat-form-field>
+              </div>
+              <div class="formfield">
+                <label class="label">{{uiText.end_time_label}}</label>
+                <mat-form-field appearance="outline">
+                  <mat-select formControlName="shortLeaveEndTime">
+                    <mat-option *ngFor="let option of showEndTimeShortLeave, let item of uiText.end_time_data"
+                      [value]="option.value">
+                      {{option.value || item.value}}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="allLeaveInstruction"
+              *ngIf="myLeaveFormControl['typeData'].value == 'All Remaining Leaves (17.5)'">
+              <ul *ngFor="let item of uiText.all_leave_instruction">
+                <li>{{item}}</li>
+              </ul>
+            </div>
+            <div class="datefield">
+              <span>
+                <app-common-date-picker [data]="uiText.start_date_label"
+                  [formcontrolname]="myLeaveFormControl.startDate" [minDate]="minDate" [formfieldCSS]="'leaveDate'">
+                </app-common-date-picker>
+              </span>
+              <span>
+                <app-common-date-picker [data]="uiText.end_date_label" [formcontrolname]="myLeaveFormControl.endDate" [minDate]="myLeaveFormControl.startDate.value"
+                  [formfieldCSS]="'leaveDate'"></app-common-date-picker>
+              </span>
+            </div>
+            <div class="formfield">
+              <label class="label">{{uiText.remarks_label}}</label>
+              <mat-form-field appearance="outline">
+                <input formControlName="remarks" matInput>
+                <mat-error class="alertMessage">
+                  <span class="errorMessage">{{myLeaveFormControl.remarks | validation : uiText.remarks_label }}</span>
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <span>
+              <app-common-file-upload [labelData]="uiText.upload_label" [formcontrolname]="myLeaveFormControl.upload">
+              </app-common-file-upload>
+            </span>
+          </div>
+          <div class="right container">
+            <app-common-editor [labelData]="uiText.reason_label" [formControlname]="this.myLeaveFormControl.editor">
+            </app-common-editor>
+          </div>
+          <div class="buttonGroup">
+            <button class="saveButton" mat-raised-button (click)="submit()">{{uiText.save_button}}</button>
+            <button class="cancelButton" mat-raised-button (click)="closeDiv()">{{uiText.cancel_button}}</button>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="last-container">
+    <div class="content">
+      <div class="header">
+        <h1 class="header-text">{{uiText.list_leave}}</h1>
+      </div>
+      <app-common-table [columns]="heading" (undo_leave)="openRollBack($event)" [dataSource]="dataSource" [isPageable]="true" [isSearchText]="true">
+      </app-common-table>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+<section>
+  <div class="header">
+    <h1 class="heading-text">{{headerValue.header_value}}</h1>
+  </div>
+  <div class="table-card">
+    <div class="dropdownsField">
+      <span class="field">
+        <app-dropdown [label]="headerValue.department_label" [labelStyle]="'labelStyle'" [Data]="headerValue.departemnt"></app-dropdown>
+      </span>
+      <span class="field">
+        <app-dropdown [label]="headerValue.status_label" [labelStyle]="'labelStyle'"  [Data]="headerValue.status"></app-dropdown>
+      </span>
+    </div>
+    <app-common-table [columns]="heading" [isPageable]="true" [dataSource]="dataSource"></app-common-table>
+  </div>
+</section>

@@ -1,0 +1,115 @@
+@import "../../../../../scss/var";
+section {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 20px;
+  .container{
+    border-radius: 20px;
+  }
+  mat-panel-title {
+    display: flex;
+    align-items: center;
+    background-color: $purple-color;
+    width: 80px;
+    border-radius: 15px;
+    margin: 10px;
+    .text {
+      margin: -3px 0px 0px 30px;
+      font-size: 25px;
+      font-weight: 500;
+      color: $button-text-color;
+    }
+  }
+  .content {
+    margin: 10px;
+    .title {
+      color: $black-color;
+      margin: 0 0 0px !important;
+    }
+    .subtitle {
+      margin-top: -5px;
+    }
+  }
+}
+::ng-deep {
+  .mat-expansion-panel-header.mat-expanded {
+    height: 100% !important;
+  }
+  .mat-expansion-panel-header {
+    height: 100%;
+  }
+  .mat-expansion-panel-header-title,
+  .mat-expansion-panel-header-description {
+    flex: none !important;
+  }
+  .mat-accordion .mat-expansion-panel:last-of-type,
+  .mat-accordion .mat-expansion-panel:first-of-type {
+    border-radius: 0px !important;
+  }
+}
+
+@media (max-width:1200px){
+  section{
+    grid-template-columns: auto;
+  }
+}
+
+// section {
+//   display: grid;
+//   grid-template-columns: auto auto;
+//   column-gap: 20px;
+//   .expansion{
+//     background-color: $button-text-color;
+//     border-bottom: 1px solid $border-color;
+//     .container {
+//       display: flex;
+//       justify-content: space-between;
+//       align-items: center;
+//       &:first-child,
+//       &:nth-child(2) {
+//         border-top-right-radius: 10px;
+//         border-top-left-radius: 10px;
+//       }
+//       &:nth-last-child(2),
+//       &:last-child {
+//         border-bottom-right-radius: 10px;
+//         border-bottom-left-radius: 10px;
+//       }
+//       .right {
+//         display: flex;
+//         .button {
+//           background-color: $purple-color;
+//           width: 60px;
+//           margin: 10px;
+//           padding: 18px 12px;
+//           border-radius: 10px;
+//           .text {
+//             font-size: 25px;
+//             text-align: center;
+//             font-weight: 500;
+//             color: $button-text-color;
+//             margin: 0 0 0px !important;
+//           }
+//         }
+//         .content {
+//           margin: 10px;
+//           .title {
+//             color: $black-color;
+//             margin: 0 0 0px !important;
+//           }
+//           .subtitle {
+//             margin-top: -5px;
+//             color: $award-img-name-color;
+//           }
+//         }
+//       }
+//       .arrow-icon{
+//         cursor: pointer;
+//       }
+//     }
+//     .body{
+//       margin: 10px;
+//       transition: height 100ms cubic-bezier(0.4, 0, 0.2, 1);
+//     }
+//   }
+// }

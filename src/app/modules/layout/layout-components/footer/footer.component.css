@@ -1,0 +1,38 @@
+section {
+  background: white;
+  padding: 10px;
+  color: gray;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+section .button-Covid19 {
+  position: fixed;
+  bottom: 50px;
+  right: 5px;
+  background-color: white;
+  padding: 10px;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  z-index: 8;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+section .button-Covid19 .covid19 {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+section .button-Covid19 .covid19 .button-text {
+  color: red;
+  margin: 5px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+section .footer-text {
+  margin: 15px 0px 15px 15px !important;
+}
+/*# sourceMappingURL=footer.component.css.map */

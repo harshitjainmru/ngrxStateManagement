@@ -1,0 +1,50 @@
+<section>
+  <mat-card class="card">
+    <mat-card-content class="card-content">
+      <div class="user-img">
+        <img [src]="image" *ngIf="image" class="defaultImage">
+        <img src="../../../../../assets/images/default_male.jpg" *ngIf="!image" class="defaultImage">
+      </div>
+      <div class="content">
+        <ng-container *ngFor="let item of uiMessage">
+          <p class="user-name">{{item.USER_NAME | titlecase}}</p>
+          <p class="user-details"> <span class="label">{{item.LABEL}} </span> {{item.TEXT}}</p>
+        </ng-container>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  <!-- <div class="container">
+    <mat-card class="side-card">
+      <mat-card-content class="sideCard-content">
+        <div (click)="changeTab(detail)" class="info-label" *ngFor="let detail of userInfo; let i = index" [ngClass]="[isActive(detail)? 'active':'' && (detail.routerLink ==='details')? 'active': '']">
+          <i [class]="detail.icon" class="icon-sideCard"></i>
+          <p class="title">{{detail.title}}</p>
+        </div>
+      </mat-card-content>
+
+    </mat-card>
+    <div class="router-outlet">
+      <app-basic-information *ngIf="detailData?.routerLink === 'details'"></app-basic-information>
+      <app-profile-picture *ngIf="detailData?.routerLink === 'profile-img'">  </app-profile-picture>
+    </div>
+  </div> -->
+
+  <!-----------------------------------------with routerLInks ------------------------------------------------------>
+
+  <div class="container">
+    <mat-card class="side-card">
+      <mat-card-content class="sideCard-content">
+        <div (click)="changeTab(detail)" class="info-label" *ngFor="let detail of userInfo; let i = index" [skipLocationChange]="true" [routerLink]="detail.routerLink" routerLinkActive="active">
+          <i [class]="detail.icon" class="icon-sideCard"></i>
+          <p class="title">{{detail.title}}</p>
+        </div>
+      </mat-card-content>
+
+    </mat-card>
+    <div class="router-outlet">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+
+</section>
+

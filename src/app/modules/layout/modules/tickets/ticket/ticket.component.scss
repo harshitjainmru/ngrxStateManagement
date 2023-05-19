@@ -1,0 +1,47 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+@import "../../../../../scss/job-opening-button";
+@import "../../../../../scss/editoroverrideStyle";
+@import "../../../../../scss/error";
+@import "../../../../../scss/minimize&maximizeDiv";
+section {
+  margin: 30px;
+  .formfield {
+    display: flex;
+    flex-direction: column;
+    .label {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.4;
+      margin-bottom: 4px;
+    }
+  }
+  .save-button{
+    background-color: $training-status-background;
+    padding: 10px 12px;
+    margin: 30px 0px;
+    border-radius: 0px !important;
+    font-size: 15px;
+
+  }
+  .last-container{
+    background-color: $button-text-color;
+    border-radius: 10px;
+    .content {
+      padding: 20px;
+      .header {
+        border-bottom: 1px solid $border-color;
+        .header-text {
+          color: $header-text-color;
+          font-weight: 500;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  ::ng-deep{
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+      box-shadow: 0px 4px 8px rgb(44 39 56 / 4%) !important;
+    }
+  }
+}

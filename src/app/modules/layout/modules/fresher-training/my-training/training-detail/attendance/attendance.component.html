@@ -1,0 +1,12 @@
+<section>
+  <!-- <ng-container *ngFor="let uitext of uitext"> -->
+
+    <div class="job">
+      <h4 class="detail-value">{{uitext.attendance_label}}</h4>
+    </div>
+    <div class="table-card">
+    <app-common-table [columns]="uitext.table_heading" [dataSource]="dataSource" [isPageable]="false"  [isSearchText]="false"></app-common-table>
+
+    </div>
+  <!-- </ng-container> -->
+</section>

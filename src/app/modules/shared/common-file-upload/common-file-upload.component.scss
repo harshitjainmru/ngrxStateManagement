@@ -1,0 +1,42 @@
+@import "../../../scss/inputFieldStyle";
+@import "../../../scss/error";
+@import "../../../scss/var";
+.customLabel {
+  // font-family: "Lato";
+  font-size: 14px;
+  color: $directory-font-color;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+.referCandidate{
+  width: 385px;
+}
+.alertMessage {
+  color: $error-color;
+  font-weight: 500;
+}
+.fileField {
+  border-radius: 6px;
+  width: 720px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+@media (max-width:1011px){
+  .referCandidate{
+    width: auto;
+  }
+}
+@media (max-width: 1193px) {
+    .fileField {
+      width: auto !important;
+    }
+    // ::ng-deep.mat-paginator-size-expand {
+    //   top: 930px;
+    // }
+}
+// @media (max-width:675px){
+//   .referCandidate{
+//     width: auto !important;
+//   }
+// }

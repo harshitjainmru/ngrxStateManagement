@@ -1,0 +1,133 @@
+@import "../../../../../../scss/var";
+@import "../../../../../../scss/mixins.scss";
+section {
+  padding: 20px 35px;
+  .breadcrumbs {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    color: $directory-font-color;
+    .home-link {
+      color: $directory-header-color !important;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .job-link {
+    }
+    .present-link {
+    }
+  }
+  .title {
+    .titleText {
+      font-size: 22px;
+      color: #606167;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+  }
+  .card {
+    background-color: $button-text-color;
+    padding: 10px 18px;
+    .status {
+      position: absolute;
+      right: 55px;
+      top: 125px;
+      border: 1px solid $border-color;
+      padding: 10px 25px;
+      border-radius: 8px;
+      .statusButton {
+        @include buttonTransparent();
+        background-color: #ffffff;
+        font-family: "Lato";
+        font-size: 15px;
+        color: #96a5b8;
+        font-weight: 500;
+        line-height: 1.4;
+      }
+    }
+    .header {
+      position: relative;
+    }
+  }
+}
+::ng-deep {
+  .mat-tab-header {
+    background-color: rgba(227, 236, 243, 0.46);
+    border-radius: 10px;
+    width: 37% !important;
+  }
+  .mat-ink-bar {
+    display: none !important;
+  }
+  .mat-tab-label {
+    margin: 8px 12px;
+    height: 40px !important;
+    font-weight: 400;
+    font-size: 15px;
+  }
+  .mat-tab-labels {
+    width: 30% !important;
+  }
+  .mat-tab-label-active {
+    width: 30% !important;
+    display: inline-flex;
+    border-radius: 6px;
+    margin: 8px 12px;
+    background-color: #26b4ff !important;
+    color: $button-text-color;
+  }
+}
+
+@media (max-width: 795px) {
+  section {
+    .card {
+      .status {
+        left: 55px !important;
+        top: 185px !important;
+      }
+    }
+  }
+  ::ng-deep {
+    .mat-tab-header {
+      width: auto !important;
+    }
+  }
+}
+@media (max-width: 662px) {
+  ::ngdeep {
+    .mat-tab-header {
+      background-color: rgba(227, 236, 243, 0.46);
+      border-radius: 10px;
+      width: 20% !important;
+    }
+    .mat-tab-label {
+      min-width: 120px !important;
+      padding: 0px !important;
+    }
+    .mat-tab-labels {
+      min-width: 120px !important;
+      padding: 0px !important;
+    }
+    .mat-tab-label-active {
+      min-width: 120px !important;
+      padding: 0px !important;
+    }
+  }
+}
+@media (max-width: 599px) {
+  ::ng-deep.mat-tab-label {
+    min-width: 100px !important;
+  }
+}
+@media (max-width: 340px) {
+  section {
+    .card {
+      .status {
+        left: 55px !important;
+        top: 215px !important;
+      }
+    }
+  }
+}

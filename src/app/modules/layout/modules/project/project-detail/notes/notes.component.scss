@@ -1,0 +1,72 @@
+@import "../../../../../../scss/var";
+@import "../../../../../../scss/mixins.scss";
+@mixin  sublabelStyle {
+  color: $covid-paragraph-color;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 15px 0px 0px;
+}
+section {
+  .last-container {
+    margin: 20px 0px;
+    background-color: $button-text-color;
+    border-radius: 10px;
+    min-height: 500px;
+    .content {
+      padding: 20px;
+      .header {
+        border-bottom: 1px solid $border-color;
+        .header-text {
+          color: $header-text-color;
+          font-weight: 500;
+          font-size: 20px;
+        }
+      }
+    }
+    .card {
+      margin: 20px 0px;
+      .card-header {
+        @include fpos(center,space-between);
+        .label {
+          font-weight: 500;
+          margin: 0px !important;
+          font-size: 20px;
+          color: $black-color;
+          text-decoration: underline;
+        }
+        .time {
+        @include fpos(center,flex-start);
+          font-size: 15px;
+          .time-label {
+            margin: 0px !important;
+          }
+          .time-data {
+            font-weight: 500;
+            margin: 0px !important;
+          }
+        }
+      }
+      .sublabel {
+        @include sublabelStyle();
+      }
+      .downloadDiv {
+        @include sublabelStyle();
+        .download-img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}
+@media (max-width:500px){
+  section{
+    .last-container{
+      .card{
+        .card-header{
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

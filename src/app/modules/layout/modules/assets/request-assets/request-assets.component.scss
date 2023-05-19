@@ -1,0 +1,141 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+@import "../../../../../scss/job-opening-button";
+@import "../../../../../scss/error";
+@mixin buttonSize() {
+  padding: 0 25px;
+  height: 40px;
+}
+.newRequestForm {
+  padding: 10px;
+  border-radius: 0px !important;
+  .button {
+    display: flex;
+    justify-content: flex-end;
+    .assetsButton {
+      background-color: $header-text-color;
+      color: $button-text-color;
+    }
+  }
+  .newRequest {
+    margin-top: 10px;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.8s ease-in-out;
+    .formfield {
+      display: flex;
+      flex-direction: column;
+      .label {
+        font-weight: 500;
+        .required {
+          color: $error-color;
+        }
+      }
+      .increaseFormfield{
+        width: 360px;
+      }
+    }
+
+    .form {
+      border-top: 1px solid $border-color;
+      display: grid;
+      grid-template-columns: 25% 25% 25% 25%;
+      gap: 6px;
+      padding: 20px 0px;
+      ::ng-deep {
+        .mat-datepicker-toggle {
+          color: $border-color;
+          position: absolute;
+          right: -12px;
+          top: -5px;
+        }
+      }
+    }
+    .buttonGroup {
+      display: flex;
+      justify-content: center;
+      .classyButton {
+        @include buttonSize();
+      }
+    }
+  }
+}
+
+section {
+  margin: 20px 30px;
+  background-color: $button-text-color;
+  border-radius: 10px;
+  .content {
+    padding: 20px;
+    .header {
+      border-bottom: 1px solid $border-color;
+      .header-text {
+        color: $header-text-color;
+        font-weight: 500;
+      }
+    }
+  }
+  ::ng-deep {
+  //   .mat-paginator-range-label {
+  //     left: 45px !important ;
+  //   }
+  //   .mat-paginator-page-size {
+  //     position: absolute;
+  //     top: 180px;
+  //     left: 60px;
+  //   }
+  //   .mat-paginator-size-page-expand {
+  //     position: absolute;
+  //     top: 600px;
+  //   }
+  }
+}
+
+@media (max-width: 1193px) {
+  .newRequestForm {
+    .newRequest {
+      .form {
+        grid-template-columns: auto;
+      }
+    }
+  }
+  // ::ng-deep .mat-paginator-size-page-expand {
+  //   top: 955px !important;
+  // }
+}
+@media (max-width: 382px) {
+  // ::ng-deep {
+  //   .mat-paginator-page-size {
+  //     top: 200px !important;
+  //   }
+  //   .mat-paginator-size-page-expand {
+  //     top: 940px !important ;
+  //   }
+  // }
+}
+@media (max-width: 352px) {
+  // ::ng-deep {
+  //   .mat-paginator-size-page-expand {
+  //     top: 960px !important ;
+  //   }
+  // }
+}
+@media (max-width: 307px) {
+  .newRequestForm {
+    padding: 7px !important;
+    .button {
+      padding: 0px !important;
+    }
+  }
+  // ::ng-deep {
+  //   .mat-paginator-page-size {
+  //     top: 225px !important;
+  //   }
+  //   .mat-paginator-size-page-expand {
+  //     top: 980px !important ;
+  //   }
+  //   .mat-raised-button{
+  //     padding: 0px !important;
+  //   }
+  // }
+}

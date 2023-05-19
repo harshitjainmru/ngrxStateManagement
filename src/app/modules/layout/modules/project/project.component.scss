@@ -1,0 +1,61 @@
+@import "../../../../scss/var";
+@import "../../../../scss/mixins.scss";
+section {
+  margin: 20px 50px;
+  header {
+    @include fpos(center, flex-end);
+    gap: 20px;
+    .main-icon{
+      @include fpos(center, flex-end);
+      gap: 20px;
+      .icon {
+        .mat-icon {
+          padding: 10px 20px;
+          cursor: pointer;
+        }
+      }
+    }
+    .link-icon {
+      transform: rotate(150deg);
+      margin-top: 5px;
+    }
+    .sub{
+      @include fpos(center, flex-end);
+      gap: 20px;
+      .sublist {
+        padding: 15px 20px;
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 5px;
+        cursor: pointer;
+        .item-text{
+          margin: 0 0 0px !important;
+        }
+      }
+    }
+    .activeSublist {
+      background-color: #6658de;
+      border-radius: 5px;
+      color: $button-text-color;
+    }
+    .isActive {
+      background-color: $black-color;
+      border-radius: 6px;
+      .mat-icon {
+        color: $button-text-color;
+        padding: 10px 20px 10px 10px;
+      }
+    }
+  }
+}
+
+@media (max-width:700px){
+  .sub{
+    flex-direction: column;
+  }
+}
+@media (max-width:408px){
+  .main-icon{
+    flex-direction: column;
+  }
+}

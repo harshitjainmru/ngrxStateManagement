@@ -1,0 +1,58 @@
+<section>
+  <app-breadcrumb [breadcrumb]="'internal-training-details'"></app-breadcrumb>
+  <div class="title">
+    <h1 class="titleText">{{uiText.title}}</h1>
+    <div class="buttonGroup">
+      <button class="classyButton enrollment" mat-raised-button>{{uiText.buttonEnrollment}}</button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="job">
+      <h4 class="detail-value">{{uiText.breadcrumb_value3}}</h4>
+      <span class="status">
+        <img src="../../../../../../../assets/images/ic-legend-blue.svg">
+        <button class="statusButton">{{uiText.proposed_button}}</button>
+      </span>
+    </div>
+    <div class="fieldGroup">
+      <div class="fields">
+        <div class="field 1">
+          <p class="label">{{uiText.title_label}}</p>
+          <p class="value">{{uiText.title}}</p>
+        </div>
+        <div class="field 1">
+          <p class="label">{{uiText.trainingduration}}</p>
+          <p class="value">{{uiText.duration_data}}</p>
+        </div>
+        <div class="field 1">
+          <p class="label">{{uiText.date}}</p>
+          <p class="value">{{uiText.data_data}}</p>
+        </div>
+        <div class="field 1">
+          <p class="label">{{uiText.mode}}</p>
+          <p class="value">{{uiText.mode_data}}</p>
+        </div>
+        <div class="field 1">
+          <p class="label">{{uiText.attend}}</p>
+          <p class="value">{{uiText.attendTeam}}</p>
+        </div>
+        <div class="field 1">
+          <p class="label">{{uiText.seats}}</p>
+          <p class="value">{{uiText.seat_data}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="job details">
+      <h4 class="detail-value">{{uiText.description_label}}</h4>
+    </div>
+    <div class="job-intro-value">
+      <p class="value-intro">{{uiText.description_data}}</p>
+    </div>
+    <div class="job">
+      <h4 class="detail-value">{{uiText.support_label}}</h4>
+    </div>
+    <div class="job-intro-value">
+      <p class="value-intro">{{uiText.support_data}}</p>
+    </div>
+  </div>
+</section>

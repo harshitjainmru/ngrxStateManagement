@@ -1,0 +1,14 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+@import "../../../../../scss/job-opening-card";
+
+section {
+  .header {
+    @include flexJustify(space-between);
+    .header-text {
+      font-size: 22px;
+      font-weight: 500;
+    }
+  }
+}
+

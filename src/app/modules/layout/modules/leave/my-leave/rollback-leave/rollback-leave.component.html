@@ -1,0 +1,13 @@
+<section>
+  <header class="cancel-icon">
+    <h1 class="value">Cancel Leave</h1>
+    <mat-icon (click)="crossClick()">close</mat-icon>
+  </header>
+  <div class="content">
+    <app-common-text-area [labelData]="'Please Enter Note'" [showStar]="true" [cdkAutosizeMaxRows]="7" [cdkAutosizeMinRows]="4" [maxLength]="200" [formcontrolss]="rollbackFormControl.reason"></app-common-text-area>
+    <div class="buttonGroup">
+      <button class="cancelButton" (click)="crossClick()">Close</button>
+      <button class="classyButton" (click)="onConfirmClick()">Confirm</button>
+    </div>
+  </div>
+</section>

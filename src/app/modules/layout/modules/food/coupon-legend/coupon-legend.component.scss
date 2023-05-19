@@ -1,0 +1,40 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+
+.legend{
+    @include fpos(center,flex-start);
+    gap:16px;
+    p{
+        margin-bottom: 0px;
+    }
+    span{
+        font-size: 1.1rem;
+        padding-right: 5px;
+        margin-right:10px;
+    }
+    .coupon-purchased{
+        color:#a4ffcc;
+        background-color: #a4ffcc;
+    }
+
+    .coupon-available{
+        background-color: #bdc8fa;
+        color:#bdc8fa;
+    }
+    .locked{
+        color:#bfbfbf;
+        background-color: #bfbfbf;
+    }
+    .holiday{
+        color:#ff989e;
+        background-color: #ff989e;
+    }
+
+}
+@media (max-width:1025px){
+  .legend{
+    flex-direction: column;
+    align-items: baseline;
+
+  }
+}

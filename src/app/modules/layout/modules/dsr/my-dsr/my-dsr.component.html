@@ -1,0 +1,92 @@
+<section>
+  <div class="main-container">
+    <div class="title">
+      <h1 class="title-text">{{uiText.header_value}}</h1>
+      <div class="buttonGroup" (click)="showDiv()">
+        <mat-icon class="addIcon">add</mat-icon>
+        <button class="add-new">
+          {{uiText.add_button}}
+        </button>
+      </div>
+    </div>
+    <div class="content">
+      <ng-container  [formGroup]="dsrForm">
+        <div class="left container">
+          <span>
+            <app-dropdown [label]="uiText.project_label" [Data]="uiText.project_data" [formfieldCSS]="'requestDropdown'"
+              [myControlName]="this.dsrFormControl.projectname"></app-dropdown>
+          </span>
+          <div class="inputFields">
+            <span>
+              <app-common-date-picker [data]="uiText.date_label" [formfieldCSS]="'dsrFormField'" [formcontrolname]="dsrFormControl.date" [maxDate]="maxDate"
+                [maxDate]="maxDate"></app-common-date-picker>
+            </span>
+            <div>
+              <app-common-time-picker [data]="uiText.hour_label" [formFieldCSS]="'dsrFormField'" [formControlname]="this.dsrFormControl.hours">
+              </app-common-time-picker>
+            </div>
+            <mat-checkbox class="half-day-checkbox" formControlName="nowork" (change)="select($event)">
+              {{uiText.no_work_label}}</mat-checkbox>
+          </div>
+        </div>
+        <div class="right container">
+          <app-common-editor [labelData]="uiText.description_label" [formControlname]="this.dsrFormControl.dsr">
+          </app-common-editor>
+        </div>
+        <div class="buttonGroup">
+          <button class="classyButton save-button" mat-raised-button
+            (click)="submitHandler()">{{uiText.add_button}}</button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <div class="middle-conatiner">
+    <form [formGroup]="filterForm">
+      <div class="inputs">
+        <span>
+          <app-common-date-picker [data]="uiText.from_date_label" [formfieldCSS]="'dsrFilterFormfield'" [id]="'from_date'" [maxDate]="maxDate" [formcontrolname]="filterFormControl.fromDate">
+          </app-common-date-picker>
+        </span>
+        <span>
+          <app-common-date-picker [data]="uiText.end_date_label" [formfieldCSS]="'dsrFilterFormfield'" [id]="'end_date'" [minDate]="filterFormControl.fromDate" [formcontrolname]="filterFormControl.endDate"
+            [maxDate]="maxDate"></app-common-date-picker>
+        </span>
+        <span class="dropdown">
+          <app-dropdown [label]="uiText.status_label" [Data]="uiText.status_data" [formfieldCSS]="'dsrFilterFormfield'"
+            [myControlName]="filterFormControl.submissionStatus" [placeholder]="'All'"></app-dropdown>
+        </span>
+        <span class="dropdown">
+          <app-dropdown [label]="uiText.project_label" [Data]="uiText.filter_project_data" [formfieldCSS]="'dsrFilterFormfield'"
+            [myControlName]="filterFormControl.project" [placeholder]="'All'"></app-dropdown>
+        </span>
+        <span class="dropdown">
+          <app-dropdown [label]="uiText.approval_status_label" [Data]="uiText.approval_status_data" [formfieldCSS]="'dsrFilterFormfield'"
+            [myControlName]="filterFormControl.approvalStatus" [placeholder]="'All'"></app-dropdown>
+        </span>
+        <!-- <span class="dropdown">
+          <app-dropdown [label]="uiText.hours_label" [Data]="uiText.hours_data" [reference]="'filterSelect'" [formfieldCSS]="'dsrFilterFormfield'"
+            [myControlName]="filterFormControl.hours" [placeholder]="'Hours'" (eventEmitter)="applyFilter($event)"></app-dropdown>
+        </span> -->
+        <span class="dropdown">
+          <app-dropdown [label]="uiText.hours_label" [Data]="uiText.hours_data" (eventEmitter)="dataCheck($event)" [formfieldCSS]="'dsrFilterFormfield'"
+            [myControlName]="filterFormControl.hours" [placeholder]="'Hours'" ></app-dropdown>
+        </span>
+
+        <div class="buttonGroup">
+          <button class="classyButton" type="submit" (click)="filterSubmit()">{{uiText.search_button}}</button>
+          <button class="cancel_button" (click)="resetForm()">{{uiText.reset_button}}</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="last-container">
+    <div class="content">
+      <div class="header">
+        <h1 class="header-text">{{uiText.list_title}}</h1>
+      </div>
+      <app-common-table [columns]="uiText.table_heading" [dataSource]="dataSource" [isPageable]="true"
+        [isSearchText]="true">
+      </app-common-table>
+    </div>
+  </div>
+</section>

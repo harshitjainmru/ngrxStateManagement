@@ -1,0 +1,74 @@
+section {
+  height: 100vh;
+}
+
+section .mat-sidenav-container {
+  height: calc(100vh - 80px);
+}
+
+section .mat-sidenav-container mat-sidenav {
+  max-width: 250px;
+}
+
+:host::ng-deep .mat-drawer-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: "center";
+      -ms-flex-align: "center";
+          align-items: "center";
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #F4F9FF;
+}
+
+:host::ng-deep .mat-drawer-content::-webkit-scrollbar {
+  width: 5px;
+}
+
+:host::ng-deep .mat-drawer-content::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #888;
+}
+
+:host::ng-deep .mat-drawer-inner-container {
+  overflow: hidden;
+}
+
+:host::ng-deep .mat-drawer-inner-container:hover {
+  overflow-y: overlay !important;
+}
+
+:host::ng-deep .mat-drawer-inner-container:hover::-webkit-scrollbar {
+  width: 5px;
+}
+
+:host::ng-deep .mat-drawer-inner-container:hover::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #888;
+}
+
+:host::ng-deep .mat-drawer-backdrop.mat-drawer-shown {
+  background-color: gainsboro;
+}
+
+@media only screen and (max-width: 1000px) {
+  :host::ng-deep .mat-drawer {
+    position: fixed !important;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    outline: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    overflow-y: auto;
+    -webkit-transform: translate3d(-100%, 0, 0);
+            transform: translate3d(-100%, 0, 0);
+  }
+}
+/*# sourceMappingURL=layout.component.css.map */

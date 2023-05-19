@@ -1,0 +1,47 @@
+<section>
+  <div class="header">
+    <p class="header-text">{{uiMessage.HEADER}}</p>
+    <button class="header-button classyButton"  (click)="routeToJobOpening()">{{uiMessage.HEADER_BUTTON}}</button>
+  </div>
+  <div class="job-detail-card">
+  <app-carousel [listToShow]="dataSource" [carouselConfiguration]="carouselConfig"></app-carousel>
+    <ng-container *ngFor="let item of cardLogo">
+    <ng-template #listofDivs>
+        <div class="image">
+          <figure>
+            <img [src]="item.image" class="showImage">
+          </figure>
+          <div class="address">
+            <div class="location">
+              <i class="fa-solid fa-location-dot" id="location-icon"></i>
+              <p class="location-name">{{item.LOCATION}}</p>
+            </div>
+            <div class="date">
+              <p>{{item.DATE}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="area">
+          <h1>{{item.HEADING}}</h1>
+          <p>{{item.TEXT}}</p>
+        </div>
+        <div class="requirement">
+          <p>{{item.OPENING_NUMBER_TEXT}}</p>
+          <p class="experience">{{item.EXPERIENCE}}</p>
+        </div>
+        <div class="requirement1">
+          <p>{{item.OPENING_NUMBER}}</p>
+          <p class="experiencenumber">{{item.EXPERIENCE_NUMBER}}</p>
+        </div>
+        <div class="buttonGroup">
+          <button class="button-view" routerLink="/admin/refer-candidate/job_details/{{item.id}}">
+            {{item.BUTTON_VIEW}}
+          </button>
+          <button class="button-refer classyButton" (click)="openDialog(item)">
+            {{item.BUTTON_REFER}}
+          </button>
+        </div>
+      </ng-template>
+    </ng-container>
+  </div>
+</section>

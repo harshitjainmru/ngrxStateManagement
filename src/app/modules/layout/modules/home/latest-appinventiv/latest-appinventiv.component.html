@@ -1,0 +1,24 @@
+<section>
+  <div class="heading">
+    <h3 class="header">{{headerValue.HEADER_VALUE}} </h3>
+  </div>
+  <app-carousel [listToShow]="dataSource" [carouselConfiguration]="carouselConfig" [showList]="showList"></app-carousel>
+  <ng-container *ngFor="let member of listOfComponents">
+    <ng-template #listofDivs>
+      <div class="container">
+        <div class="appreciation" *ngIf="member.id == 'appreciation'">
+          <app-appreciation></app-appreciation>
+        </div>
+        <div class="awards"  *ngIf="member.id == 'awards'">
+          <app-awards></app-awards>
+        </div>
+        <div class="birthday" *ngIf="member.id == 'birthday'">
+          <app-birthday></app-birthday>
+        </div>
+        <div class="work" *ngIf="member.id == 'work'">
+          <app-work-anniversary></app-work-anniversary>
+        </div>
+      </div>
+    </ng-template>
+  </ng-container>
+</section>

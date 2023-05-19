@@ -1,0 +1,37 @@
+<section>
+  <div class="header">
+    <h3 class="heading">{{uiText.headerValue}}</h3>
+    <div class="cancel-icon" (click)="crossClick()">
+      <i class="fa-solid fa-xmark" ></i>
+    </div>
+  </div>
+  <div class="form">
+    <div class="alertInstruction">
+      <h3 class="mydetails">{{uiText.alert_instruction}}</h3>
+    </div>
+    <form [formGroup]="cancelEnrollmentForm" (ngSubmit)="submit()">
+      <div class="inputs">
+        <div class="formfield">
+          <label class="label">{{uiText.label_value}}</label>
+          <mat-form-field appearance="outline">
+            <textarea type="text" placeholder="Message" class="inputMessage" matInput cdkTextareaAutosize
+            cdkAutosizeMinRows="4" cdkAutosizeMaxRows="7" (keydown)="noSpace($event)" [maxLength]="maxLength"  #textarea  [placeholder]="uiText.placeholder_value"
+            formControlName="briefReason"></textarea>
+            <!-- <mat-error *ngFor="let error of errorMessage?.briefReason">
+              <mat-error *ngIf="cancelEnrollmentForm?.get('briefReason')?.hasError(error?.type)" class="alertMessage">
+                <span class="errorMessage">{{error.message}}</span>
+              </mat-error>
+            </mat-error> -->
+          </mat-form-field>
+          <p class="maxlength">
+          {{textarea.value.length}}/{{maxLength}}</p>
+        </div>
+      </div>
+        <div class="buttonGroup">
+          <button class="cancelButton" (click)="crossClick()">{{uiText.buttonCancel}}</button>
+          <button class="classyButton" type="submit">{{uiText.buttonSubmit}}</button>
+        </div>
+    </form>
+  </div>
+</section>
+

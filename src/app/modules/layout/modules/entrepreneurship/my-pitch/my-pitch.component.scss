@@ -1,0 +1,21 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/header";
+@import "../../my-links/policy-doc/policy-doc.component.scss";
+section{
+    .heading-text {
+      font-size: 25px;
+    }
+    ::ng-deep{
+      .table-card{
+        margin: 20px 0px !important;
+      }
+      .search-filter{
+        margin-top: 0px !important;
+      }
+      table{
+        margin-top: 20px !important;
+
+      }
+    }
+}
+

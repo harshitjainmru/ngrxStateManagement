@@ -1,0 +1,74 @@
+<section>
+  <div class="header">
+    <h3 class="heading">{{uiText.header_value}}</h3>
+    <div class="cancel-icon" (click)="crossClick()">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+  </div>
+
+  <form class="form" [formGroup]="requestedForm" (ngSubmit)="submit()">
+    <span>
+      <app-dropdown [errorType]="this.requestedFormControl.training_name" [formfieldCSS]="'requestDropdown'" [labelStyle]="'requestLabel'" [label]="uiText.training_name_label" [Data]="uiText.training_name_data" [myControlName]="this.requestedFormControl.training_name"></app-dropdown>
+    </span>
+    <span>
+      <app-dropdown [errorType]="this.requestedFormControl.team_name" [formfieldCSS]="'requestDropdown'"  [labelStyle]="'requestLabel'" [label]="uiText.team_name_label" [Data]="uiText.team_name_data" [myControlName]="this.requestedFormControl.team_name"></app-dropdown>
+    </span>
+    <div class="feedback">
+      <div class="feedback-question">
+        <h4 class="question">{{uiText.skill_enhancement}}</h4>
+      </div>
+      <div class="feedback-content">
+        <mat-form-field appearance="outline">
+        <textarea type="text" placeholder="Message" (keydown)="noSpace($event)" matInput class="inputMessage"  cdkTextareaAutosize
+          cdkAutosizeMinRows="4" cdkAutosizeMaxRows="7" [placeholder]="uiText.placeholder" formControlName="skill_enhancement"></textarea>
+          <mat-error *ngFor="let error of errorMessage?.skill_enhancement">
+            <mat-error *ngIf="requestedForm?.get('skill_enhancement')?.hasError(error?.type)" class="alertMessage">
+              <span class="errorMessage">{{error.message}}</span>
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="feedback">
+      <div class="feedback-question">
+        <h4 class="question">{{uiText.skill_needed_label}}</h4>
+      </div>
+      <div class="feedback-content">
+        <mat-form-field appearance="outline">
+        <textarea type="text" (keydown)="noSpace($event)" placeholder="Message" matInput class="inputMessage" cdkTextareaAutosize
+          cdkAutosizeMinRows="4" cdkAutosizeMaxRows="7" [placeholder]="uiText.placeholder" formControlName="skill_needed"></textarea>
+          <mat-error *ngFor="let error of errorMessage?.skill_needed">
+            <mat-error *ngIf="requestedForm?.get('skill_needed')?.hasError(error?.type)" class="alertMessage">
+              <span class="errorMessage">{{error.message}}</span>
+            </mat-error>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="goalfulfilled">
+      <h4 class="question">{{uiText.interest_given_training}}</h4>
+      <mat-radio-group aria-label="Select an option"  formControlName="interested">
+        <mat-radio-button [value]="'yes'" >{{uiText.yesLabel}}</mat-radio-button><br>
+        <mat-radio-button [value]="'no'" >{{uiText.noLabel}}</mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="feedback">
+      <div class="feedback-question">
+        <h4 class="question">{{uiText.timeline}}</h4>
+      </div>
+      <div class="feedback-content">
+        <div class="radio-group">
+          <mat-radio-group aria-label="Select an option" formControlName="timeline">
+            <mat-radio-button [value]="uiText.immediateLabel">{{uiText.immediateLabel}}</mat-radio-button><br>
+            <mat-radio-button [value]="uiText.months">{{uiText.months}}</mat-radio-button><br>
+            <mat-radio-button [value]="uiText.more_months">{{uiText.more_months}}</mat-radio-button>
+          </mat-radio-group>
+        </div>
+      </div>
+    </div>
+    <div class="buttonGroup">
+      <button class="cancelButton" (click)="crossClick()">{{uiText.buttonCancel}}</button>
+      <button class="classyButton" type="submit">{{uiText.buttonSubmit}}</button>
+    </div>
+  </form>
+</section>

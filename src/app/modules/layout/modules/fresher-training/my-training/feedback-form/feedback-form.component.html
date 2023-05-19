@@ -1,0 +1,145 @@
+<section>
+  <div class="header">
+    <h3 class="heading">{{uiText.headerValue}}</h3>
+    <div class="cancel-icon" (click)="crossClick()">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+  </div>
+  <div class="topContent">
+    <div class="content">
+      <h4 class="title">
+        {{uiText.titleLabel}}
+      </h4>
+      <h3 class="titleData">{{data.title}}</h3>
+    </div>
+    <div class="content">
+      <h4 class="title">
+        {{uiText.departmentLabel}}
+      </h4>
+      <h3 class="titleData">{{data.departmentData}}</h3>
+    </div>
+    <div class="dateData">
+      <div class="date-content">
+        <h4 class="title">
+          {{uiText.startDate}}
+        </h4>
+        <h3 class="titleData">{{data.label1Data}}</h3>
+      </div>
+      <div class="date-content">
+        <h4 class="title">
+          {{uiText.endDate}}
+        </h4>
+        <h3 class="titleData">{{data.label2Data}}</h3>
+      </div>
+    </div>
+  </div>
+  <form class="form" [formGroup]="feedbackForm">
+    <div class="goalfulfilled">
+      <h4 class="question">{{uiText.question1}}</h4>
+      <mat-radio-group aria-label="Select an option"  formControlName="goalTraining" (change)="onFeedbackDetail()">
+        <mat-radio-button [value]="'yes'" >{{uiText.yesLabel}}</mat-radio-button><br>
+        <mat-radio-button [value]="'no'" >{{uiText.noLabel}}</mat-radio-button>
+      </mat-radio-group>
+    </div>
+     <div class="feedback" *ngIf="this.feedbackForm.controls['goalTraining'].value=='no'">
+      <div class="feedback-question">
+        <h4 class="question">{{uiText.missingQuestion}}</h4>
+      </div>
+      <div class="feedback-content">
+        <mat-form-field appearance="outline">
+        <textarea type="text" placeholder="Message" class="inputMessage" (keydown)="noSpace($event)" matInput cdkTextareaAutosize
+          cdkAutosizeMinRows="4" cdkAutosizeMaxRows="7" [placeholder]="uiText.placeholderOverallFeedback" formControlName="missingDescription"></textarea>
+          <mat-error class="alertMessage">
+            <span class="errorMessage">{{feedbackFormControl.missingDescription | validation : uiText.missingQuestion }}</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+
+    <div class="feedback">
+      <div class="feedback-question">
+        <h4 class="question">{{uiText.question2}}</h4>
+      </div>
+      <div class="feedback-content">
+        <div class="text">
+          <p class="text-danger">{{uiText.notvery}}</p>
+        </div>
+        <div class="radio-group">
+          <mat-radio-group aria-label="Select an option" formControlName="relevantFeedback">
+            <mat-radio-button value="1">1</mat-radio-button>
+            <mat-radio-button value="2">2</mat-radio-button>
+            <mat-radio-button value="3">3</mat-radio-button>
+            <mat-radio-button value="4">4</mat-radio-button>
+            <mat-radio-button value="5">5</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="success">
+          <p class="success-text">{{uiText.veryMuch}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="feedback">
+      <div class="feedback-question">
+        <h4 class="question">{{uiText.question3}}</h4>
+      </div>
+      <div class="feedback-content">
+        <div class="text">
+          <p class="text-danger">{{uiText.notGood}}</p>
+        </div>
+        <div class="radio-group">
+          <mat-radio-group aria-label="Select an option" formControlName="overallFeedback">
+            <mat-radio-button value="1">1</mat-radio-button>
+            <mat-radio-button value="2">2</mat-radio-button>
+            <mat-radio-button value="3">3</mat-radio-button>
+            <mat-radio-button value="4">4</mat-radio-button>
+            <mat-radio-button value="5">5</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="success">
+          <p class="success-text">{{uiText.excellent}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="feedback">
+      <div class="feedback-question">
+        <h4 class="question presented">{{uiText.question4}}</h4>
+        <h4 class=" question">{{uiText.readMaterial}}</h4>
+      </div>
+      <div class="feedback-content">
+        <div class="text">
+          <p class="text-danger">{{uiText.poor}}</p>
+        </div>
+        <div class="radio-group">
+          <mat-radio-group aria-label="Select an option" formControlName="satisfiedWithContent">
+            <mat-radio-button value="1">1</mat-radio-button>
+            <mat-radio-button value="2">2</mat-radio-button>
+            <mat-radio-button value="3">3</mat-radio-button>
+            <mat-radio-button value="4">4</mat-radio-button>
+            <mat-radio-button value="5">5</mat-radio-button>
+          </mat-radio-group>
+        </div>
+        <div class="success">
+          <p class="success-text">{{uiText.excellent}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="feedback">
+      <div class="feedback-question">
+        <h4 class="question">{{uiText.question5}}</h4>
+      </div>
+      <div class="feedback-content">
+        <mat-form-field appearance="outline" class="">
+          <textarea type="text" (keydown)="noSpace($event)" placeholder="Message" class="inputMessage" matInput cdkTextareaAutosize
+          cdkAutosizeMinRows="4" cdkAutosizeMaxRows="7" [placeholder]="uiText.placeholderOverallFeedback" formControlName="overallTrainingDescription"></textarea>
+          <mat-error class="alertMessage">
+            <span class="errorMessage">{{feedbackFormControl.overallTrainingDescription | validation : uiText.question5 }}</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="buttonGroup">
+      <button class="cancelButton" (click)="crossClick()">{{uiText.cancel_button}}</button>
+      <button class="classyButton" (click)="submit()">{{uiText.submit_button}}</button>
+    </div>
+  </form>
+</section>

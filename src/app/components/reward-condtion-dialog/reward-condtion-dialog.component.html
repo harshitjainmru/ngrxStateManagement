@@ -1,0 +1,13 @@
+<section>
+  <div class="header">
+    <h3 class="heading">{{uiText.headerValue}}</h3>
+    <div class="cancel-icon" (click)="crossClick()">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+  </div>
+  <div class="instructions">
+    <ng-container *ngFor="let item of uiText.points">
+      <li class="list-item">{{item}}</li>
+    </ng-container>
+  </div>
+</section>

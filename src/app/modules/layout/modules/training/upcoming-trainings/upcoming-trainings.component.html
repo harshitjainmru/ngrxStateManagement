@@ -1,0 +1,48 @@
+<section>
+  <div class="header">
+    <h1 class="heading-text">{{headerValue.headerValue}}</h1>
+  </div>
+  <div class="training-card">
+    <ng-container *ngFor="let data of headerValue.cardData">
+      <div class="card">
+        <div class="image">
+          <figure>
+            <img src="../../../../../../assets/images/ic-training.svg">
+          </figure>
+        </div>
+        <div class="content">
+          <div class="topContent">
+            <h4 class="title">{{data.title}}</h4>
+            <p class="completeStatus">{{data.completeHeading}}</p>
+          </div>
+          <div class="middleContent">
+            <div class="labelData">
+              <h4 class="label">{{headerValue.whocanattend}}</h4>
+              <h4 class="labelsData">{{data.whoattenddata}}</h4>
+            </div>
+            <div class="labels">
+
+              <div class="labelData">
+                <h4 class="label">{{headerValue.label1}}</h4>
+                <h4 class="labelsData">{{data.label1Data}}</h4>
+              </div>
+              <div class="labelData">
+                <h4 class="label">{{headerValue.label2}}</h4>
+                <h4 class="labelsData">{{data.label2Data}}</h4>
+              </div>
+              <div class="labelData">
+                <h4 class="label">{{headerValue.label3}}</h4>
+                <h4 class="labelsData">{{data.label3Data}}</h4>
+              </div>
+            </div>
+          </div>
+          <div class="buttonGroup">
+            <button class="view" mat-raised-button (click)="openJobDetailsInNewWindow(data)">{{headerValue.buttonView}}</button>
+            <button class="classyButton enrollment" mat-raised-button (click)="openDialog()">{{headerValue.buttonEnrollment}}</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>
+

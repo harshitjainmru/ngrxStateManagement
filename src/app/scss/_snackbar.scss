@@ -1,0 +1,13 @@
+@import "../scss/var";
+.toast-success-prm
+  {
+  background-color: $success-color;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.toast-error-prm{
+  background-color:#de6161;
+  font-size: 20px;
+  font-weight: 400;
+}

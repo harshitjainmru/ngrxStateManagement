@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AACE,OADK,CACL,QAAQ,CAAC;EACP,OAAO,EAAE,kBAAkB;EAC3B,aAAa,EAAE,GAAG,CAAC,KAAK,CCCd,SAAS;CDIpB;;AARH,AAII,OAJG,CACL,QAAQ,CAGN,OAAO,CAAC;EACN,SAAS,EAAE,IAAI;EACf,WAAW,EAAE,GAAG;CACjB;;AAPL,AASE,OATK,CASL,UAAU,CAAC;EACT,OAAO,EAAE,IAAI;CACd",
+    "sources": [
+        "latest-appinventiv.component.scss",
+        "../../../../../scss/_var.scss"
+    ],
+    "names": [],
+    "file": "latest-appinventiv.component.css"
+}

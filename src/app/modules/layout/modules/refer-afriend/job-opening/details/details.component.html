@@ -1,0 +1,93 @@
+<section>
+  <div class="breadcrumbs">
+    <a class="home-link" [routerLink]="['ABS_LAYOUT_HOME' | absoluteRouting]">{{uiLabelText.breadcrumb_value1}} / </a>
+    <a class="job-link">{{uiLabelText.breadcrumb_value2}} / </a>
+    <a class="present-link">{{uiLabelText.breadcrumb_value3}}</a>
+  </div>
+  <div class="card">
+    <div class="job details">
+      <h1 class="detail">{{uiLabelText.job_deatils_value}}</h1>
+      <div class="menu">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_horiz</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <ng-container *ngFor="let menuItem of uiLabelText.menu">
+            <button mat-menu-item>
+              <span>{{menuItem}}</span>
+            </button>
+          </ng-container>
+        </mat-menu>
+      </div>
+    </div>
+
+    <div class="fieldGroup">
+      <div class="field 1">
+        <p class="label">{{uiLabelText.job_tilte}} :</p>
+        <p class="value">{{indexwiseData.title_name}}</p>
+      </div>
+      <div class="field 1">
+        <p class="label">{{uiLabelText.job_type}} :</p>
+        <p class="value">{{indexwiseData.type_name}}</p>
+      </div>
+      <div class="field 1">
+        <p class="label">{{uiLabelText.department}} :</p>
+        <p class="value">{{indexwiseData.department_name}}</p>
+      </div>
+      <div class="field 1">
+        <p class="label">{{uiLabelText.location}} :</p>
+        <p class="value">{{indexwiseData.location_name}}</p>
+      </div>
+    </div>
+    <div class="field 1">
+      <p class="label">{{uiLabelText.noofopenings}} :</p>
+      <p class="value">{{indexwiseData.opening}}</p>
+    </div>
+    <div class="field 1">
+      <p class="label">{{uiLabelText.expRequired}} :</p>
+      <span class="expValue">
+        <p class="value">{{indexwiseData.experience}}</p>
+        <div class="refer">
+          {{indexwiseData.heading_referal}} <strong><span class="bonus-amount"> {{indexwiseData.bonus_amount}} </span></strong> {{indexwiseData.more_info}}
+        <strong><span class="link" (click)="openDialog()">{{indexwiseData.termsAndComditions}}</span></strong>
+        </div>
+      </span>
+    </div>
+    <div class="job details">
+      <h4 class="detail-value">{{uiLabelText.technicalskills}}</h4>
+    </div>
+    <div class="skills">
+      <ng-container *ngFor="let skills of indexwiseData.skills">
+        <p class="skills-item">{{skills}}</p>
+      </ng-container>
+    </div>
+    <div class="job details">
+      <h4 class="detail-value">{{uiLabelText.jobIntroduction}}</h4>
+    </div>
+    <div class="job-intro-value">
+      <p class="value-intro">{{indexwiseData.job_intro_value}}</p>
+    </div>
+    <div class="job details">
+      <h4 class="detail-value">{{uiLabelText.jobDescription}}</h4>
+    </div>
+    <div class="description-value">
+      <p class="description-label">{{uiLabelText.requirements}} : </p>
+      <ng-container *ngFor="let item of indexwiseData.job_requirements">
+        <li class="list">{{item}}</li>
+      </ng-container>
+      <p class="description-label should-have">{{uiLabelText.shouldhave}} : </p>
+      <ng-container *ngFor="let item of indexwiseData.shouldHaveValue">
+        <li class="list">{{item}}</li>
+      </ng-container>
+    </div>
+    <div class="job details">
+      <h4 class="detail-value">{{uiLabelText.jobQualification}}</h4>
+    </div>
+    <div class="description-value">
+      <p class="description-label">{{uiLabelText.educationExp}} : </p>
+      <ng-container *ngFor="let item of indexwiseData.qualificationValue">
+        <li class="list list-type">{{item}}</li>
+      </ng-container>
+    </div>
+  </div>
+</section>

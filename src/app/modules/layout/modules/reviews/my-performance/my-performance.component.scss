@@ -1,0 +1,341 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+$borderRadius: 10px;
+@mixin boxSize {
+  border: 1px solid $border-color;
+  border-radius: 15px;
+  height: 150px;
+  width: 300px;
+}
+section {
+  margin: 35px;
+  .heading {
+    .header {
+      font-size: 20px;
+      color: $purple-color;
+      border-bottom: 1px solid #f3f7fc;
+      font-weight: 600;
+    }
+  }
+  .rating-card {
+    @include grid(" grid-template-columns", "50% 50%");
+    .left-content {
+      .emp-detail {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-left: 35px;
+        .defaultImage {
+          width: 70px;
+          height: 70px;
+          border: 1px solid $border-color;
+        }
+        .content {
+          .emp-name {
+            margin: 0px !important;
+            font-size: 15px;
+            font-weight: 500;
+          }
+          .emp-designation {
+            color: $directory-font-color;
+            font-size: 13px;
+          }
+          .years {
+            background-color: $experience-background-color-review;
+            width: 40%;
+            padding: 5px;
+            font-weight: 600;
+            text-align: center;
+          }
+        }
+      }
+      .award {
+        @include grid(" grid-template-columns", "50% 30%");
+        gap: 20px;
+        margin-left: 35px;
+        .text {
+          font-size: 15px;
+          margin: 0 0 12px !important;
+          font-weight: 500;
+        }
+        .award-any {
+          background-color: $award-background-color-review;
+          padding: 20px;
+          border-radius: $borderRadius;
+          height: 50px;
+        }
+        .honour-any {
+          background-color: $honour-background-color-review;
+          padding: 20px;
+          border-radius: $borderRadius;
+          height: 50px;
+        }
+      }
+    }
+    .criteria {
+      background-color: $rating-criteria-background-color;
+      padding: 20px;
+      margin-right: 50px;
+      border-radius: $borderRadius;
+      .upper-content {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+        .overall-rating {
+          .number {
+            background: transparent;
+            padding: 0;
+            font-size: 50px;
+            line-height: 1.2;
+          }
+        }
+        .date {
+          .date-text {
+            background-color: $button-text-color;
+            border-radius: 30px;
+            border: 1px solid $border-color-rating-date;
+            width: 260px;
+            font-size: 13px;
+            font-weight: 600 !important;
+            text-align: center;
+          }
+        }
+      }
+      .dividers {
+        @include grid(" grid-template-columns", "45% 45% 45% 45%");
+        gap: 20px;
+        width: 50%;
+        .tech {
+          background-color: $rating-divider-background-color;
+          padding: 15px;
+          border-radius: $borderRadius;
+          .value {
+            font-size: 12px;
+            color: $font-color;
+            font-weight: 300;
+            text-align: center;
+          }
+          .rating-number {
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  .calendar {
+    margin-top: 20px;
+    padding: 0px !important;
+    .card-header {
+      border-bottom: 1px solid $award-text-color !important;
+      padding: 16px;
+      .button {
+        background-color: rgba(227, 236, 243, 0.46);
+        width: auto;
+        display: inline-flex;
+        border-radius: 6px;
+
+        button {
+          @include buttonTransparent();
+          background-color: $directory-header-color;
+          padding: 15px 40px;
+          color: $button-text-color;
+          margin: 5px;
+          border-radius: 6px;
+        }
+      }
+    }
+    .monthly-calendar {
+      padding: 10px 30px 5px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h1 {
+        font-size: 26px;
+        color: #494949;
+        font-weight: 550 !important;
+        margin: 0 0 8px;
+      }
+    }
+    .calendar-month {
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      padding: 12px 40px 90px 40px;
+      gap: 30px;
+      .month {
+        @include boxSize();
+        background-color: #fff;
+        .month-name {
+          padding: 10px 10px 0px 10px;
+          font-size: 14px;
+          font-weight: 500;
+          margin: 0;
+        }
+      }
+      .calendar-filled {
+        background-color: #f9f9f9;
+        border-radius: 20px;
+        width: 300px;
+
+        .whitebackground {
+          background-color: white;
+          padding: 10px 10px 110px !important;
+          border-radius: 15px;
+        }
+        .month-width {
+          @include boxSize();
+          .month-name {
+            padding: 10px 10px 0px 10px;
+            font-size: 14px;
+            font-weight: 500;
+            margin: 0;
+          }
+          .rating-background {
+            .rating-in-number {
+              background: #e7fcc8;
+              border-radius: 3px;
+              margin: 0;
+              display: inline-flex;
+              float: right;
+              padding: 0px 15px;
+              margin-top: -29px;
+              margin-right: 20px;
+              font-size: 14px;
+              font-weight: 600;
+            }
+          }
+          .textShow {
+            display: flex;
+            gap: 10px;
+            font-size: 18px;
+          }
+          .award {
+            color: #f7c417;
+            padding: 30px 10px 0px 10px;
+          }
+          .honourDiv {
+            display: flex;
+            justify-content: space-between;
+            padding: 0px 10px 0px 10px;
+            .honour {
+              color: #0086ff;
+            }
+            .arrowIcon {
+              font-size: 40px;
+              font-weight: 400;
+              margin: -8px 30px 0px 0px;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.month-width:hover {
+  box-shadow: rgba(123, 122, 122, 0.17) 0px -23px 45px 0px inset;
+  .honourDiv {
+    .arrowIcon {
+      margin-right: 10px !important;
+      transition: 2s;
+    }
+  }
+}
+
+@media (max-width: 1672px) {
+  section {
+    .calendar {
+      .calendar-month {
+        grid-template-columns: auto auto auto;
+      }
+    }
+  }
+}
+@media (max-width: 1338px) {
+  section {
+    .rating-card {
+      grid-template-columns: auto;
+      .criteria {
+        margin: 10px 0px 10px 38px;
+      }
+    }
+    .calendar {
+      .calendar-month {
+        grid-template-columns: auto auto;
+        .month-width {
+          width: auto !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1000px) {
+  section {
+    .calendar {
+      .calendar-month {
+        grid-template-columns: auto;
+        .month {
+          width: auto !important;
+        }
+        .calendar-filled {
+          width: auto !important;
+          .month-width {
+            width: auto !important;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 564px) {
+  section {
+    .rating-card {
+      .left-content {
+        .award {
+          grid-template-columns: 100%;
+        }
+      }
+      .criteria {
+        .upper-content {
+          .date {
+            .date-text {
+              width: auto;
+              font-size: 12px;
+            }
+          }
+        }
+        .dividers {
+          grid-template-columns: 80% 80%;
+        }
+      }
+    }
+    .calendar {
+      .monthly-calendar {
+        flex-direction: column;
+      }
+    }
+  }
+}
+@media (max-width: 376px) {
+  section {
+    .rating-card {
+      .left-content {
+        .emp-detail {
+          flex-direction: column;
+          margin: 0px 70px 0px 0px;
+          .content {
+            margin-left: 40px;
+          }
+        }
+      }
+      .criteria {
+        .upper-content {
+          flex-direction: column;
+          gap: 0px !important;
+        }
+        .dividers {
+          grid-template-columns: 170% !important;
+        }
+      }
+    }
+  }
+}

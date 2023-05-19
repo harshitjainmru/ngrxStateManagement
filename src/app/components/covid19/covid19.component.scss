@@ -1,0 +1,150 @@
+@import "../../scss/mixins.scss";
+@import "../../scss/var";
+@import "../../scss/error";
+@mixin textDecor {
+  color: $covid-paragraph-color;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  word-break: break-all;
+  word-wrap: break-all;
+}
+section {
+  @include fpos(center, space-between);
+  .leftContainer {
+    flex: 50%;
+    .items {
+      padding: 30px;
+      .heading {
+        text-align: center;
+        font-size: 35px;
+        font-weight: 600;
+        margin-bottom: 30px;
+      }
+      .advice {
+        @include textDecor();
+      }
+    }
+  }
+  .rightContainer {
+    flex: 50%;
+    background: $covid-background-color;
+    border-top-right-radius: 11px;
+    border-bottom-right-radius: 11px;
+    .content {
+      padding: 37px 100px;
+      width: 70%;
+      .title {
+        color: $purple-color;
+        font-size: 32px;
+        font-weight: 500;
+      }
+      .issueHeading {
+        @include textDecor();
+      }
+      .inputFields {
+        .formfield {
+          display: flex;
+          flex-direction: column;
+          label {
+            font-size: 14px;
+            color: $directory-font-color;
+            font-weight: 400;
+            line-height: 1.4;
+          }
+        }
+        .buttonGroup {
+          display: flex;
+          gap: 20px;
+          .buttons {
+            background: $purple-color;
+            color: $button-text-color;
+            border-radius: 4px;
+            padding: 13px 10px;
+            border: none;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1485px) {
+  section {
+    flex-direction: column;
+
+    .leftContainer {
+      height: 411px !important;
+      display: flex;
+      align-items: center;
+      flex: none !important;
+      .items {
+        padding: 0px !important;
+      }
+    }
+    .rightContainer {
+      .content {
+        width: auto !important;
+        overflow-y: scroll;
+      }
+    }
+  }
+}
+@media (max-height: 900px) {
+  ::ng-deep {
+    .mat-dialog-container {
+      max-height: 500px;
+      overflow-x: hidden;
+      @include scrollbarStyle();
+      border-radius: 10px !important;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  section {
+    .leftContainer {
+      .items {
+        .advice {
+          word-wrap: break-word !important;
+          word-break: break-all !important;
+        }
+      }
+    }
+  }
+  ::ng-deep {
+    .mat-dialog-container {
+      padding: 0px !important;
+    }
+  }
+}
+@media (max-width: 562px) {
+  .leftContainer {
+    display: none !important;
+  }
+  .rightContainer {
+    .content {
+      padding: 10px !important;
+    }
+  }
+}
+@media (max-width: 334px) {
+  .rightContainer {
+    .content {
+      padding: 5px 5px !important;
+      .inputFields {
+        .buttonGroup {
+          flex-direction: column;
+          .buttons {
+            width: auto !important;
+          }
+        }
+      }
+    }
+  }
+  ::ng-deep {
+    .mat-dialog-container {
+      padding: 0px !important;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+@import "../../../../../../scss/var";
+@import "../../../../../../scss/mixins.scss";
+@import "../../../../../../scss/job-opening-button";
+section {
+  padding: 20px 35px;
+  .breadcrumbs {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: 500;
+    line-height: 22px;
+    color: $directory-font-color;
+    .home-link {
+      color: $directory-header-color !important;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .job-link {
+    }
+    .present-link {
+    }
+  }
+  .title {
+    @include fpos(baseline, space-between);
+    margin: 0px 0px 12px;
+    .titleText {
+      font-size: 22px;
+      color: #606167;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+    .buttonGroup{
+      .enrollment{
+        background-color: $error-color !important;
+        padding: 9.36px 24px !important;
+        font-size: 15px;
+      }
+    }
+  }
+  .card {
+    background-color: $button-text-color;
+    padding: 10px 18px;
+    .job {
+      border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+      padding: 14px 0px;
+      margin: 10px 0px 24px;
+      @include fpos(baseline, space-between);
+      .detail-value {
+        margin-bottom: 10px !important ;
+        font-size: 18px;
+        line-height: 1.32;
+        margin-bottom: 0;
+      }
+      .status {
+        border: 1px solid $border-color;
+        padding: 6px 25px;
+        border-radius: 8px;
+        .statusButton {
+          @include buttonTransparent();
+          background-color: #ffffff;
+          font-family: "Lato";
+          font-size: 15px;
+          color: #96a5b8;
+          font-weight: 500;
+          line-height: 1.4;
+        }
+      }
+    }
+    .job-intro-value {
+      background-color: $jobdetail-background-color;
+      border-radius: 5px;
+      padding: 25px;
+      .value-intro {
+        margin-bottom: 0px !important;
+      }
+    }
+    .fieldGroup {
+      .field {
+        @include flexbox();
+        gap: 5px;
+        .label {
+          min-width: 160px;
+          font-size: 14px;
+          color: $award-text-color;
+          font-weight: 400;
+          line-height: 1.5;
+        }
+        .value {
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 1.5;
+        }
+      }
+      .fields {
+        @include grid('grid-template-columns','auto auto')
+      }
+    }
+  }
+}
+
+@media (max-width:670px){
+  section{
+    .card{
+      .fieldGroup {
+        .fields {
+          grid-template-columns: auto;
+        }
+      }
+    }
+  }
+}
+@media (max-width:368px){
+  section{
+    .title{
+      flex-direction: column;
+    }
+    .card{
+      .job{
+        flex-direction: column;
+      }
+      .fieldGroup {
+        .field {
+        .label {
+          min-width: auto !important;
+        }
+        }
+      }
+    }
+  }
+}
+@media (max-width:298px){
+  section{
+    .card{
+      .fieldGroup {
+        .field {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

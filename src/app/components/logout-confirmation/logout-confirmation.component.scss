@@ -1,0 +1,36 @@
+@import "../../scss/dialog-cancel-icon";
+@import "../../scss/job-opening-button";
+@import "../../scss/var";
+@import "../../scss/mixins.scss";
+@mixin logoutButtonSize {
+  font-size: 20px;
+  padding: 8px 25px;
+}
+section{
+  .cancel-icon{
+    margin: -10px !important;
+  }
+  .content{
+    padding-top:30px ;
+    .question{
+      font-size: 25px;
+      font-weight: 500;
+    }
+    .buttonGroup{
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      margin-top: 20px;
+      .cancelButton{
+        @include buttonTransparent();
+        border: 1px solid $border-color;
+        border-radius: 10px;
+        @include logoutButtonSize();
+      }
+      .classyButton{
+        @include logoutButtonSize();
+
+      }
+    }
+  }
+}

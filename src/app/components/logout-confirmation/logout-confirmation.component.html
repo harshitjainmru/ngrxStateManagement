@@ -1,0 +1,13 @@
+<section>
+  <header class="cancel-icon">
+    <h1 class="value">{{uiText.value}}</h1>
+    <mat-icon (click)="crossClick()">close</mat-icon>
+  </header>
+  <div class="content">
+    <h1 class="question">{{uiText.QUESTION_VALUE}}</h1>
+    <div class="buttonGroup">
+      <button class="cancelButton" (click)="crossClick()">{{uiText.BUTTON1}}</button>
+      <button class="classyButton" (click)="onConfirmClick()">{{uiText.BUTTON2}}</button>
+    </div>
+  </div>
+</section>

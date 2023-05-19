@@ -1,0 +1,115 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+@import "../../../../../scss/dialog-cancel-icon";
+section {
+  overflow: hidden;
+  .fa-xmark{
+    padding: 29px !important;
+  }
+  .header {
+    @include fpos(center, center);
+    flex-direction: column;
+    border-bottom: 1px solid $border-color;
+    margin-bottom: 10px;
+    padding:0px 24px;
+    .project {
+      display: flex;
+      .heading {
+        font-size: 14px;
+        font-weight: 400;
+        margin-bottom: 0px !important;
+      }
+      .name {
+        font-size: 15px;
+        font-weight: 500;
+        margin-bottom: 0px !important;
+      }
+    }
+    .reviewed {
+      display: flex;
+      margin-top: -10px;
+      .review-heading {
+        font-size: 10px;
+        font-weight: 400;
+        margin-bottom: 0px !important;
+      }
+      .review-manager {
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 0px !important;
+      }
+    }
+  }
+  .container {
+    @include grid(' grid-template-columns','20% 60%');
+    gap: 10px;
+    margin: 25px 0px;
+    padding: 24px;
+    .honour {
+      @include fpos(center, center);
+      flex-direction: column;
+      background-color: $honour-background-color-review;
+      border-radius: 10px;
+      padding: 20px;
+      margin-right: 10px;
+    }
+    .ratings {
+      gap: 10px;
+      @include fpos(center, "");
+      background: $dialog-criteria-background-color;
+      color: #000;
+      border-radius: 10px 0px 0px 10px;
+      padding-right: 20px;
+      width: fit-content;
+      .overall {
+        .overall-rating {
+          background: $dialog-subrating-background;
+          font-size: 46px;
+          font-weight: 700;
+          padding: 47px;
+          border-radius: 10px;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          margin-bottom: 0px;
+        }
+      }
+      .dividers {
+        display: flex;
+        .tech {
+          width: 135px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+::ng-deep {
+  .mat-dialog-container {
+    width: 950px;
+    border-radius: 20px;
+    padding: 0px !important;
+  }
+  .cdk-overlay-dark-backdrop {
+    background: rgba(0, 0, 0, 0.8);
+  }
+}
+
+@media (max-width: 1130px) {
+  section {
+    .container {
+      overflow-x: scroll;
+    }
+  }
+}
+@media (max-width:600px){
+  section{
+    .container {
+      grid-template-columns: auto;
+      .honour {
+      justify-content: flex-start !important;
+      align-items: flex-start !important;
+      }
+    }
+  }
+}

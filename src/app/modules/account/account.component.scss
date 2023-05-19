@@ -1,0 +1,71 @@
+@import "../../scss/mixins.scss";
+
+.container {
+  background-image: url("../../../assets/onboarding_Image/banner.png");
+  background-repeat: no-repeat;
+  // background-color: rgba(18, 19, 20, 0.9) !important;
+  background-position: center center;
+  background-size: cover;
+  min-height: 100vh;
+
+  .content {
+    @include fpos(center, center);
+    min-height: 100vh;
+    .card {
+      padding: 0px !important;
+      overflow: hidden;
+      z-index: 1;
+      .mat-card-header {
+        padding: 35px 20px;
+      }
+      .footer {
+        @include flexbox();
+        .mat-card-footer {
+          border-top: 1px solid $border-color;
+          width: 23.65rem;
+          margin: -5px 0px -20px 0px !important;
+        }
+        .footerCopyright {
+          text-align: center;
+          color: $font-color;
+          margin: 20px 0px;
+          padding-bottom: 20px;
+          font-size: 15px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+}
+@media (max-width:420px){
+  .container{
+    .content{
+      margin: 0px 20px;
+      .card {
+        .mat-card-header {
+          margin-left: -15px;
+          img {
+            width: 250px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 350px) {
+  .container {
+    .content {
+      margin: 0px 10px;
+      justify-content: center !important;
+      align-items: center;
+      .card {
+        .mat-card-header {
+          margin-left: -45px;
+          img {
+            width: 250px;
+          }
+        }
+      }
+    }
+  }
+}

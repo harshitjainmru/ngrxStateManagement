@@ -1,0 +1,145 @@
+section {
+  padding: 20px 40px;
+  line-height: normal;
+}
+
+section .card .card-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 50px;
+}
+
+section .card .card-content .user-img {
+  border: 1px solid gainsboro;
+}
+
+section .card .card-content .user-img .defaultImage {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+}
+
+section .card .card-content .content .user-name {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+section .card .card-content .content .user-details {
+  margin-bottom: -10px !important;
+}
+
+section .card .card-content .content .user-details .label {
+  font-weight: 550;
+}
+
+section .card .card-content .content .user-details .label::after {
+  content: " :";
+}
+
+section .card .card-content .content .user-details:nth-child(2) {
+  display: none;
+}
+
+section .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 20% auto;
+      grid-template-columns: 20% auto;
+  gap: 30px;
+  margin: 25px 0px;
+}
+
+section .container .side-card {
+  padding: 0px !important;
+  border-radius: 10px;
+  max-height: 360px;
+  cursor: pointer;
+}
+
+section .container .side-card .sideCard-content {
+  color: gray;
+}
+
+section .container .side-card .sideCard-content .info-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  gap: 15px;
+  padding: 15px;
+  border-bottom: 1px solid gainsboro;
+}
+
+section .container .side-card .sideCard-content .info-label:last-child {
+  border-bottom: none;
+}
+
+section .container .side-card .sideCard-content .info-label:hover {
+  font-weight: 500;
+}
+
+section .container .side-card .active {
+  background-color: #26b4ff;
+  color: white;
+}
+
+section .container .side-card .active .title {
+  margin-top: 4px;
+}
+
+section .container .side-card .active:first-child {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+section .container .side-card .active:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+section .container .side-card .active .icon-sideCard {
+  border: 1px solid;
+  padding: 3px 5px;
+  border-radius: 20px;
+}
+
+section .container .router-outlet {
+  overflow: hidden;
+}
+
+::ng-deep .mat-card:not([class*="mat-elevation-z"]) {
+  -webkit-box-shadow: none !important;
+          box-shadow: none !important;
+}
+
+@media (min-width: 725px) and (max-width: 1280px) {
+  section .container .side-card {
+    max-height: 400px;
+  }
+}
+
+@media (min-width: 150px) and (max-width: 725px) {
+  section .card .card-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  section .container {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+}
+/*# sourceMappingURL=my-profile.component.css.map */

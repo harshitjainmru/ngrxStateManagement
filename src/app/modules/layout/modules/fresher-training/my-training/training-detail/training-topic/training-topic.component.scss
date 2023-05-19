@@ -1,0 +1,70 @@
+@import "../../../../../../../scss/var";
+@import "../../../../my-links/policy-doc/policy-doc.component.scss";
+section {
+  padding: 10px !important;
+  .job {
+    border-bottom: 1px solid rgba(150, 165, 184, 0.5);
+    margin: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    .detail-value {
+      margin-bottom: 10px !important ;
+      font-size: 18px;
+      line-height: 1.32;
+      margin-bottom: 0;
+    }
+  }
+  .job-intro-value {
+    background-color: $jobdetail-background-color;
+    border-radius: 5px;
+    padding: 25px;
+    .value-intro {
+      margin-bottom: 0px !important;
+    }
+  }
+  .fieldGroup {
+    .field {
+      display: flex;
+      gap: 5px;
+      .label {
+        min-width: 160px;
+        font-size: 14px;
+        color: $award-text-color;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+      .value {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+      }
+    }
+    .fields {
+      display: grid;
+      grid-template-columns: auto auto;
+    }
+  }
+  .table-card {
+    margin: 0px !important;
+    padding: 0px !important;
+    background-color: $button-text-color;
+    border: none !important;
+    border-radius: none !important;
+  }
+}
+
+@media (max-width: 1040px) {
+  section {
+    .fieldGroup {
+      .fields {
+        grid-template-columns: auto;
+      }
+    }
+  }
+}
+@media (max-width: 795px) {
+  section {
+    margin-top: 45px;
+  }
+}
+

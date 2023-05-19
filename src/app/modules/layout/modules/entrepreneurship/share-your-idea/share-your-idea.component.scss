@@ -1,0 +1,94 @@
+@import "src/app/scss/_job-opening-button.scss";
+section {
+  padding: 8rem 11rem;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    .left-content {
+      max-width: 500px;
+      .header {
+        font-size: 1.563rem;
+      }
+      .idea-message {
+        font-size: 14px;
+      }
+      .investor {
+        .angel-investor {
+          font-size: 1.563rem;
+          margin-bottom: 0px !important;
+        }
+        .name {
+          font-size: 1.563rem;
+          font-weight: 550;
+        }
+      }
+      .list {
+        padding: 15px 0px;
+        .list-item {
+          font-size: 14px;
+          padding: 5px 0px;
+        }
+      }
+      .founded-detail {
+        .message {
+          font-size: 14px;
+          margin: 15px;
+        }
+      }
+      .classyButton {
+        margin: 20px;
+        padding: 12px 15px;
+        font-size: 15px;
+      }
+    }
+    .right-content {
+      position: relative;
+      top: -124px;
+      .image2 {
+        position: absolute;
+        top: 8%;
+        right: 110px;
+      }
+      .imagecard {
+        margin: 0 auto;
+        width: 600px;
+        box-shadow: 48px 16px 48px rgb(24 37 56 / 12%);
+        border-radius: 4px;
+        transform: perspective(1000px) rotateY(16deg) rotateX(2deg) rotateZ(-7deg) scaleY(0.95) translatex(2%);
+      }
+    }
+  }
+}
+
+@media (max-width: 1386px) {
+  section{
+    padding: 4rem !important;
+    .right-content {
+      top: 0px !important;
+      .image2 {
+        top: 4% !important;
+        right: 15px !important;
+      }
+      .backgroundImage {
+        width: 400px;
+      }
+      .imagecard {
+        width: 350px !important;
+      }
+    }
+  }
+}
+@media (max-width: 1054px) {
+  section{
+    padding: 4rem 5rem 4rem 5rem !important;
+    .left-content{
+      max-width: none !important;
+    }
+  }
+}
+@media (max-width:701px){
+  .right-content {
+     display: none !important;
+    }
+}

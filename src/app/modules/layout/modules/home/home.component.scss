@@ -1,0 +1,118 @@
+@import "../../../../scss/mixins.scss";
+$size: 90px;
+$radius: 50%;
+$font-size: 24px;
+.container {
+  margin: 15px 30px;
+  .greetings {
+    @include fpos(center, "");
+    margin-left: -40px;
+
+    .figure {
+      border: 1px solid $border-color;
+      border-radius: $radius;
+      .defaultImage {
+        width: $size;
+        border-radius: $radius;
+        height: $size;
+        margin-bottom: -4px;
+      }
+    }
+    .emp-name {
+      margin: 10px 0px 0px -15px;
+      .emp-greeting {
+        font-size: $font-size;
+        font-weight: 200;
+        margin-bottom: 0px !important;
+      }
+      .emp-name {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: $font-size;
+        color: #231e1e;
+        font-weight: 700;
+        line-height: 1.4;
+        margin: 5px 0px 0px !important;
+      }
+    }
+  }
+  .middle-container {
+    @include gridbox();
+    gap: 20px;
+    grid-template-columns: 72.5% 26%;
+    margin: 20px 0px;
+    .mat-card {
+      padding: 0px !important;
+    }
+    .program {
+      display: flex;
+      border: 1px solid $border-color;
+      .joining {
+        margin: 20px !important;
+        width: calc(500px - 20px);
+        max-width: 100%;
+      }
+      .border {
+        border: 1px dashed $border-color;
+      }
+      .referral {
+        margin: 20px !important;
+        width: 100%;
+      }
+    }
+    .new-member {
+      padding: 20px !important;
+      border: 1px solid $border-color;
+      max-height: 541px
+    }
+  }
+  .latest-news {
+    margin: 20px 0px;
+    .program {
+      padding: 0px !important;
+    }
+  }
+  .gallery {
+    .program-gallery {
+      padding: 0px !important;
+    }
+  }
+}
+@media (max-width:1550px){
+  .container{
+    .middle-container{
+      grid-template-columns: 100%;
+      .program {
+        .joining {
+          width: 450px;
+        }
+      }
+    }
+  }
+}
+@media(max-width:1050px){
+  .container{
+    .middle-container{
+      .program {
+        .joining {
+          width: 350px;
+        }
+      }
+    }
+  }
+}
+@media (max-width:680px){
+  .container{
+    .middle-container{
+      .program{
+        flex-direction: column;
+        .joining {
+          width: auto;
+        }
+        .referral {
+          width: auto;
+        }
+      }
+    }
+  }
+}
+

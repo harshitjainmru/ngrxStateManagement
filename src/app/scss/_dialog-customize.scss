@@ -1,0 +1,46 @@
+@import "../scss/mixins.scss";
+.refer-candidate-dialog-container{
+  .mat-dialog-container{
+    border-radius: 20px;
+    padding: 0px !important;
+    @include scrollbarStyle();
+  }
+
+}
+.feedback-form-dialog-container{
+  .mat-dialog-container {
+    border-radius: 20px;
+    padding: 0px !important;
+    @include scrollbarStyle();
+    border-radius: 10px !important;
+  }
+  .mat-form-field {
+    width: 100% !important;
+  }
+}
+
+.instruction{
+  .mat-dialog-container {
+    border-radius: 10px;
+    @include scrollbarStyle();
+    border-radius: 10px !important;
+  }
+}
+.gallery-dialog{
+  .mat-dialog-container{
+    border-radius: 20px;
+    padding: 0px !important;
+  }
+  .cdk-overlay-dark-backdrop{
+    background: rgba(0, 0, 0, 0.80);
+  }
+}
+.view{
+  .mat-dialog-container{
+    border-radius: 20px;
+  }
+  .cdk-overlay-dark-backdrop{
+    background: rgba(0, 0, 0, 0.80);
+  }
+}
+

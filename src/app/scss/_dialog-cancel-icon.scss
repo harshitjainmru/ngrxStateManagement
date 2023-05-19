@@ -1,0 +1,28 @@
+@import "src/app/scss/_var.scss";
+@import "../scss/mixins.scss";
+.cancel-icon {
+  border-radius: 50%;
+  @include flexJustify(space-between);
+  cursor: pointer;
+  .value{
+    color:$directory-header-color;
+    font-weight: 500;
+    font-size: 22px;
+  }
+
+  .fa-xmark {
+    font-size: 25px;
+    margin-right: -18px;
+    margin-top: -25px;
+    background-color: $button-text-color;
+    padding: 10px;
+    border-radius: 50%;
+    color: $font-color;
+  }
+}
+::ng-deep{
+  .cdk-overlay-dark-backdrop{
+    background: rgba(0, 0, 0, 0.80);
+  }
+}
+

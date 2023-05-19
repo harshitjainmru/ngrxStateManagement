@@ -1,0 +1,67 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/job-opening-button";
+@import "../../../../../scss/mixins.scss";
+@import "../../../../../scss/overrideMatcheckbox";
+
+
+section {
+  .basic-card {
+    padding: 0px !important;
+
+    .header {
+      .header-text {
+        color: $header-text-color;
+        font-size: 20px;
+        padding: 11px 25px 11px 15px;
+        font-weight: 600;
+        border-bottom: 1px solid $border-color;
+
+      }
+    }
+    .formgroup{
+      padding: 20px;
+      .form{
+        .container-1{
+          .browse{
+            font-weight: 500;
+          }
+        }
+        position: relative;
+        .profilePreviewImg {
+          width: 100px;
+          height: 70px;
+          border: 1px solid #e3e3e3;
+          padding: 2px;
+          margin-top: 20px;
+          border-radius: 5px;
+        }
+        .remove{
+          position: absolute;
+          top: 86px;
+          font-size: 15px;
+          left: 99px;
+          cursor: pointer;
+
+        }
+        .remove-pic{
+          @include fpos(baseline,'');
+          gap: 10px;
+          margin:10px 0px 10px 0px;
+          .remove-value{
+            font-weight: 500
+          }
+        }
+        .classyButton{
+          display: block;
+          width: fit-content;
+          margin: 15px 0px;
+          padding: 8px 15px;
+          .saveButton {
+            @include buttonTransparent();
+            color: $button-text-color;
+          }
+        }
+      }
+    }
+  }
+}

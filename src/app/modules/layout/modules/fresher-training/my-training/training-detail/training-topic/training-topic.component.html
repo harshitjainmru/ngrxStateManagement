@@ -1,0 +1,41 @@
+<section>
+  <div class="job">
+    <h4 class="detail-value">{{uiText.training_label}}</h4>
+  </div>
+  <div class="fieldGroup">
+    <div class="field 1">
+      <p class="label">{{uiText.title_label}}</p>
+      <p class="value">{{uiText.title_data}}</p>
+    </div>
+    <div class="fields">
+      <div class="field 1">
+        <p class="label">{{uiText.start_date_label}}</p>
+        <p class="value">{{uiText.start_date_data}}</p>
+      </div>
+      <div class="field 1">
+        <p class="label">{{uiText.end_date_label}}</p>
+        <p class="value">{{uiText.end_date_data}}</p>
+      </div>
+      <div class="field 1">
+        <p class="label">{{uiText.mode_label}}</p>
+        <p class="value">{{uiText.mode_data}}</p>
+      </div>
+      <div class="field 1">
+        <p class="label">{{uiText.batch_label}}</p>
+        <p class="value">{{uiText.batch_data}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="job details">
+    <h4 class="detail-value">{{uiText.description_label}}</h4>
+  </div>
+  <div class="job-intro-value">
+    <p class="value-intro">{{uiText.description_data}}</p>
+  </div>
+  <div class="job">
+    <h4 class="detail-value">{{uiText.topic_label}}</h4>
+  </div>
+  <div class="table-card">
+  <app-common-table [columns]="uiText.table_heading" [dataSource]="dataSource" [isPageable]="false"  [isSearchText]="false"></app-common-table>
+</div>
+</section>

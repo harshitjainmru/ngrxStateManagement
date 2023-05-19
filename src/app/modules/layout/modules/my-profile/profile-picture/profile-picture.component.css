@@ -1,0 +1,98 @@
+.classyButton {
+  background-color: #0095ff;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+          box-shadow: rgba(255, 255, 255, 0.4) 0 1px 0 0 inset;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  margin: 0;
+  outline: none;
+  padding: 2px 0.8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+
+.classyButton:hover, .classyButton:focus {
+  opacity: 0.8;
+}
+
+.classyButton:active {
+  background-color: #0064bd;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+section .basic-card {
+  padding: 0px !important;
+}
+
+section .basic-card .header .header-text {
+  color: #3246d3;
+  font-size: 20px;
+  padding: 11px 25px 11px 15px;
+  font-weight: 600;
+  border-bottom: 1px solid gainsboro;
+}
+
+section .basic-card .formgroup {
+  padding: 20px;
+}
+
+section .basic-card .formgroup .form .container-1 .browse {
+  font-weight: 500;
+}
+
+section .basic-card .formgroup .form .profilePreviewImg {
+  width: 100px;
+  height: 70px;
+  border: 1px solid #e3e3e3;
+  padding: 2px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+section .basic-card .formgroup .form .remove-pic {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: "";
+      -ms-flex-pack: "";
+          justify-content: "";
+  gap: 10px;
+  margin: 10px 0px 10px 0px;
+}
+
+section .basic-card .formgroup .form .remove-pic .remove-value {
+  font-weight: 500;
+}
+
+section .basic-card .formgroup .form .classyButton {
+  padding: 8px 15px;
+}
+
+section .basic-card .formgroup .form .classyButton .saveButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+/*# sourceMappingURL=profile-picture.component.css.map */

@@ -1,0 +1,65 @@
+.container {
+  background-image: url("../../../assets/onboarding_Image/banner.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.container .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 100vh;
+}
+
+.container .content .card {
+  padding: 0px !important;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.container .content .card .mat-card-header {
+  padding: 35px 20px;
+}
+
+.container .content .card .footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .content .card .footer .mat-card-footer {
+  border-top: 1px solid gainsboro;
+  width: 23.65rem;
+  margin: -5px 0px -20px 0px !important;
+}
+
+.container .content .card .footer .footerCopyright {
+  text-align: center;
+  color: gray;
+  margin: 20px 0px;
+  padding-bottom: 20px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 350px) {
+  .container .content {
+    max-width: 280px;
+    margin: 0px 5px;
+  }
+  .container .content .card .mat-card-header {
+    margin-left: -45px;
+  }
+  .container .content .card .mat-card-header img {
+    width: 250px;
+  }
+}
+/*# sourceMappingURL=account.component.css.map */

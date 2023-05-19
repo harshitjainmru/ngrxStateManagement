@@ -1,0 +1,35 @@
+<section class="container">
+  <div class="greetings">
+    <figure class="figure">
+      <img src="../../../../../assets/images/default_male.jpg" class="defaultImage">
+    </figure>
+    <div class="emp-name">
+      <p class="emp-greeting">{{uiMessage.GREETING}}</p>
+      <p class="emp-name">{{uiMessage.USER_NAME | titlecase}}</p>
+    </div>
+  </div>
+  <div class="middle-container">
+    <mat-card class="program">
+      <div class="joining">
+        <app-latest-job-opening></app-latest-job-opening>
+      </div>
+      <div class="border"></div>
+      <div class="referral">
+        <app-referral-bonus></app-referral-bonus>
+      </div>
+    </mat-card>
+    <mat-card class="new-member">
+      <app-new-member></app-new-member>
+    </mat-card>
+  </div>
+  <div class="latest-news">
+    <mat-card class="program-news">
+    <app-latest-appinventiv></app-latest-appinventiv>
+    </mat-card>
+  </div>
+  <div class="gallery">
+    <mat-card class="program-gallery">
+      <app-gallery></app-gallery>
+    </mat-card>
+  </div>
+</section>

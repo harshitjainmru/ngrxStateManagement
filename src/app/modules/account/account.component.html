@@ -1,0 +1,17 @@
+<section class="container">
+  <div class="content">
+    <mat-card class="card" @slideInOut>
+      <mat-card-header>
+        <img src="../../../assets/onboarding_Image/applogo.png">
+      </mat-card-header>
+      <mat-card-content>
+        <router-outlet></router-outlet>
+      </mat-card-content>
+      <div class="footer">
+        <mat-card-footer>
+          <p class="footerCopyright">{{copyRight}}</p>
+        </mat-card-footer>
+      </div>
+    </mat-card>
+  </div>
+</section>

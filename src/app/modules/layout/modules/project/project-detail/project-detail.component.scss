@@ -1,0 +1,81 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+
+section {
+  margin: 40px 30px;
+  header {
+    @include fpos(flex-start, space-between);
+    .header-text {
+      color: $header-text-color;
+      font-size: 30px;
+      font-weight: 500;
+    }
+    .tag-card {
+      background-color: $button-text-color;
+      border-radius: 10px;
+      padding: 10px;
+      margin: 0px 0px 30px 0px;
+      .tag-header {
+        @include fpos(flex-start, space-between);
+        gap: 150px;
+        border-bottom: 1px solid $border-color;
+        h4 {
+          font-weight: 500;
+          font-size: 20px;
+        }
+        .add-icon {
+          border-radius: 50%;
+          background-color: $purple-color;
+          color: $button-text-color;
+          font-weight: 400;
+          cursor: pointer;
+        }
+      }
+      .tag-content {
+        display: flex;
+        gap: 20px;
+        margin: 30px 0px;
+        .content {
+          border-radius: 5px;
+          background-color: rgba(178, 54, 241, 0.2);
+          width: fit-content;
+          padding: 8px;
+        }
+      }
+    }
+  }
+  .tabs {
+    ::ng-deep .mat-tab-header {
+      background-color: white;
+      border-radius: 10px;
+    }
+    ::ng-deep .mat-tab-label-content {
+      font-size: 22px !important;
+      color: $black-color !important;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  section {
+    header {
+      flex-direction: column;
+      .tag-card {
+        width: 95%;
+      }
+    }
+  }
+}
+
+@media (max-width: 330px) {
+  section {
+    header {
+      .tag-card {
+        .tag-header {
+          flex-direction: column;
+          gap: 20px !important;
+        }
+      }
+    }
+  }
+}

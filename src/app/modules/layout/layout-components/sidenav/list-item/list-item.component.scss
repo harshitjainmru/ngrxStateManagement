@@ -1,0 +1,154 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+section {
+  cursor: pointer;
+  .sidenav-icon {
+    font-size: 20px;
+  }
+  .parent {
+    .list-content {
+      @include flexbox();
+      &:hover {
+        color: $sidenav-hover-color;
+      }
+      .sidenav-label {
+        margin: 0px 15px;
+        font-size: 15px;
+        font-weight: 500;
+        width: 150px;
+        @include flexbox();
+        .new-menu{
+          margin-left: 5px;
+          color: $error-color;
+          animation: rotate 5s infinite;
+          &::before{
+          content: "\f0a3";
+
+          }
+        }
+    }
+    }
+    .menu-button {
+      position: absolute;
+      right: 18px;
+      margin: 0px -15px 0px 0px;
+      font-size: 25px;
+      transform: rotate(-90deg);
+      transition: 300ms ease-in-out;
+      &:focus-visible{
+        padding: none !important;
+      }
+    }
+    .menu-button.rotated {
+      transform: rotate(0deg);
+    }
+
+    .submenu {
+      overflow-y: hidden;
+      transition: transform 900ms ease;
+      transform: scaleY(0);
+      transform-origin: top;
+      padding-left: 30px;
+    }
+    &.expanded {
+      transform: scaleY(1);
+    }
+  }
+}
+.anchorLink{
+  text-decoration: none;
+  color: black;
+  &:active{
+    color: $sidenav-hover-color;
+
+  }
+}
+.sublist-content {
+  margin: 0px 10px;
+  @include flexbox();
+
+  text-decoration: none;
+
+  .sublabel{
+    width: auto !important;
+    margin: 0px 0px 0px 5px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  &:hover {
+    color: $sidenav-hover-color;
+  }
+}
+.focus{
+  // color: red
+  color: $sidenav-hover-color;
+}
+.active {
+  color: $sidenav-hover-color !important;
+  &::before {
+    position: absolute;
+    content: "";
+    background: $sidenav-hover-color !important;
+    width: 3px;
+    height: 50px;
+    margin: 4px;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+}
+.disable{
+  color: $font-color;
+  &::before{
+    position: absolute;
+    content: "";
+    background: none !important;
+    width: 3px;
+    height: 50px;
+    margin: 4px;
+    left: 0;
+    top: 3px;
+    bottom: 0;
+  }
+  border-right: none;
+  .sidenav-label{
+    position: relative;
+    &::after{
+      content: "Coming Soon";
+      position: absolute;
+      top: 15px;
+      font-size: 12px;
+    }
+  }
+}
+// @keyframes rotate {
+//   50% {
+//       transform: rotate(10deg);
+
+//   }
+// }
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+:host::ng-deep {
+  .mat-drawer .mat-sidenav {
+    position: fixed !important;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+    outline: 0;
+    box-sizing: border-box;
+    overflow-y: auto;
+    transform: translate3d(-100%, 0, 0);
+    opacity: 0.25;
+  }
+  .mat-list-item-content {
+    padding: 1rem 1.3rem !important;
+  }
+
+}

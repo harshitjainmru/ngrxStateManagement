@@ -1,0 +1,82 @@
+@import "../../../../../scss/job-opening-button";
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+
+section {
+  margin: 20px 30px;
+  background-color: $button-text-color;
+  header {
+    padding: 20px;
+    border: 1px solid #dce2e9;
+    .top-container {
+      display: flex;
+      justify-content: space-between;
+      .dinner {
+        font-size: 30px;
+        margin: 0 0 6px !important;
+      }
+      .classyButton {
+        font-size: 14px;
+        border-radius: 5px;
+        &:disabled{
+          cursor:not-allowed;
+        }
+      }
+    }
+    .note {
+      @include fpos(center, flex-start);
+      gap: 5px;
+      h3 {
+        margin: 0 0 0px !important;
+        font-size: 14px;
+      }
+      .note-label {
+        font-weight: 500;
+      }
+    }
+  }
+  .form {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease-in-out;
+    .requestDinner {
+      padding: 20px;
+      @include grid("grid-template-columns", "50% 48%");
+      gap: 20px;
+      .left-container {
+        @include grid("grid-template-columns", "48.5% 48.5%");
+        gap: 15px;
+      }
+      .classyButton {
+        width: fit-content;
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: $training-status-background;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  section {
+    height: auto;
+    .form {
+      .requestDinner {
+        grid-template-columns: 100%;
+        .left-container {
+          grid-template-columns: 100%;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 450px) {
+  section {
+  header{
+    .top-container{
+      flex-direction: column;
+    }
+  }
+  }
+}

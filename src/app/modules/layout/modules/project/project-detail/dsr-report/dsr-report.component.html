@@ -1,0 +1,80 @@
+<section>
+  <div class="last-container">
+    <div class="content">
+      <div class="header">
+        <h1 class="header-text">{{uiText.filter_label}}</h1>
+      </div>
+      <form [formGroup]="dsrReportForm">
+      <div class="inputs">
+          <div class="formfield">
+            <label class="label">{{uiText.date_from_label}}</label>
+            <mat-form-field appearance="outline" class="increaseFormfield">
+              <input matInput [matDatepicker]="picker2" [max]="maxDate" formControlName="dateFrom" readonly>
+              <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="formfield">
+            <label class="label">{{uiText.date_to_label}}</label>
+            <mat-form-field appearance="outline" class="increaseFormfield">
+              <input matInput [matDatepicker]="picker3" [max]="maxDate" formControlName="dateTo" readonly>
+              <mat-datepicker-toggle matIconSuffix [for]="picker3"></mat-datepicker-toggle>
+              <mat-datepicker #picker3></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <span class="dropdown">
+            <app-dropdown [label]="uiText.department_label" [Data]="uiText.departemnt" [myControlName]="dsrReportFormControl.department"></app-dropdown>
+          </span>
+          <span class="dropdown">
+            <app-dropdown [label]="uiText.resource_label" [Data]="uiText.resource_data" [myControlName]="dsrReportFormControl.resource"></app-dropdown>
+          </span>
+          <span class="dropdown">
+            <app-dropdown [label]="uiText.submission_label" [Data]="uiText.status_data" [myControlName]="dsrReportFormControl.submission"></app-dropdown>
+          </span>
+          <span class="dropdown">
+            <app-dropdown [label]="uiText.pm_label" [Data]="uiText.submission_data" [myControlName]="dsrReportFormControl.pmApproval"></app-dropdown>
+          </span>
+          <span class="dropdown">
+            <app-dropdown [label]="uiText.am_label" [Data]="uiText.submission_data" [myControlName]="dsrReportFormControl.amApproval"></app-dropdown>
+          </span>
+          <span class="dropdown">
+            <app-dropdown [label]="uiText.rm_label" [Data]="uiText.submission_data" [myControlName]="dsrReportFormControl.rmApproval"></app-dropdown>
+          </span>
+          <span class="dropdown">
+            <app-dropdown [label]="uiText.final_label" [Data]="uiText.submission_data" [myControlName]="dsrReportFormControl.finalApproval"></app-dropdown>
+          </span>
+          <span class="dropdown">
+            <app-dropdown [label]="uiText.Hours" [Data]="uiText.hours_data" [myControlName]="dsrReportFormControl.hours"></app-dropdown>
+          </span>
+          <div class="buttonGroup">
+            <button class="classyButton" mat-raised-button>{{uiText.apply_button}}</button>
+            <button class="classyButton" mat-raised-button>{{uiText.reset_button}}</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="last-container">
+    <div class="content">
+      <div class="header">
+        <h1 class="header-text">{{uiText.dsr_list_label}}</h1>
+      </div>
+      <app-common-table [columns]="uiText.table_heading" [dataSource]="dataSource" [isPageable]="true"
+        [isSearchText]="true">
+      </app-common-table>
+    </div>
+  </div>
+  <div class="last-container">
+    <div class="content">
+      <div class="header">
+        <h1 class="header-text">{{uiText.dsr_analytics_label}}</h1>
+      </div>
+      <ng-container *ngFor="let item of uiText.analytics_data">
+        <div class="analysis">
+          <h3 class="analysis-title">{{item.value}}</h3>
+          <button class="classyButton" mat-raised-button>200</button>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

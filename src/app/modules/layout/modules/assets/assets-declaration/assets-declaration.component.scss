@@ -1,0 +1,30 @@
+@import "../request-assets/request-assets.component.scss";
+@import "../../../../../scss/var";
+@import "../../../../../scss/error";
+section {
+  .newRequest {
+    .form {
+      gap: 5px !important;
+    }
+  }
+}
+
+@media (max-width: 1193px) {
+  .newRequestForm {
+    .newRequest {
+      .form {
+        grid-template-columns: auto auto;
+      }
+    }
+  }
+}
+@media (max-width: 499px) {
+  .newRequestForm {
+    overflow: hidden;
+    .newRequest {
+      .form {
+        grid-template-columns: auto;
+      }
+    }
+  }
+}

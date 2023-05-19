@@ -1,0 +1,48 @@
+@import "../../../scss/var";
+@import "../../../scss/mixins.scss";
+
+section {
+  background-color: $button-text-color;
+  border: 1px solid #ccd2da;
+  border-radius: 10px;
+  padding: 10px 20px;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .due {
+      font-weight: 500;
+    }
+    .coupon {
+      color: $directory-header-color;
+    }
+  }
+  .middle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2px;
+    color: $directory-header-color;
+    font-weight: 500;
+    .amountDue {
+      margin: 0 0 0px;
+      font-size: 40px;
+    }
+    .amount {
+      font-size: 35px;
+    }
+  }
+  .last {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .viewDetails {
+      border: 1px solid #ccd2da;
+      color: $directory-header-color;
+      padding: 12px 20px;
+      background-color: transparent;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  }
+}

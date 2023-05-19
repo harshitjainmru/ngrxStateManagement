@@ -1,0 +1,17 @@
+@import "../../../../../scss/var";
+section {
+  .basic-card {
+    padding: 0px !important;
+    background-color: #fff;
+    .header {
+      .header-text {
+        color: $header-text-color;
+        font-size: 24px;
+        word-spacing: 1px;
+        padding: 11px 25px 11px 15px;
+        font-weight: 500;
+        border-bottom: 1px solid $border-color;
+      }
+    }
+  }
+}

@@ -1,0 +1,187 @@
+@import "../../../../../scss/job-opening-button";
+@import "../../../../../scss/mixins.scss";
+@import "../../../../../scss/var";
+@import "src/app/scss/_error.scss";
+section {
+  .basic-card {
+    padding: 0px !important;
+    background-color: $button-text-color;
+    border-radius: 10px;
+    .header {
+      .header-text {
+        color: $header-text-color;
+        font-size: 24px;
+        word-spacing: 1px;
+        padding: 11px 25px 11px 15px;
+        font-weight: 500;
+        border-bottom: 1px solid $border-color;
+      }
+    }
+    .content {
+      .form {
+        padding: 20px;
+        .label {
+          font-weight: 500;
+        }
+        .formfield {
+          @include flexbox();
+          flex-direction: column;
+        }
+        .contactField {
+          margin-top: -5px;
+        }
+        ::ng-deep {
+          .mat-form-field-appearance-outline .mat-form-field-flex {
+            box-shadow: 0px 4px 8px rgb(44 39 56 / 4%) !important;
+          }
+          .mat-form-field-appearance-outline .mat-form-field-infix {
+            padding: 12px 0px 15px 0px;
+          }
+          // .mat-datepicker-toggle {
+          //   color: $border-color;
+          //   position: absolute;
+          //   right: -12px;
+          //   top: -5px;
+          // }
+          .mat-select-arrow {
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-top: 6px solid;
+            margin: 0 4px;
+          }
+        }
+
+        .inputs {
+          display: grid;
+          grid-template-columns: auto auto auto;
+          gap: 20px;
+        }
+        .mid-container {
+          @include flexbox();
+
+          .total-exp {
+            .inputs {
+              display: grid;
+              grid-template-columns: auto auto auto auto;
+              gap: 14px;
+              .yearFormfield {
+                width: 272px;
+              }
+            }
+          }
+        }
+        .address {
+          @include flexbox();
+          flex-direction: column;
+          margin-top: 10px;
+          .addressFormfield {
+            width: auto;
+          }
+        }
+        .classyButton {
+          padding: 0px !important;
+          .saveButton {
+            @include buttonTransparent();
+            padding: 8px 15px;
+            color: $button-text-color;
+          }
+        }
+      }
+    }
+  }
+}
+::ng-deep {
+  .mat-select-panel {
+    min-width: calc(100% + 15px) !important;
+    margin: 2.5rem 0rem 0rem 0.425rem !important;
+  }
+}
+@media (max-width: 1798px) {
+  section {
+    .basic-card {
+      .content {
+        .form {
+          .increaseFormfield {
+            width: auto !important;
+          }
+          .mid-container {
+            flex-direction: column;
+            .total-exp {
+              .inputs {
+                grid-template-columns: auto auto;
+              }
+              .yearFormfield {
+                width: auto !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1228px) {
+  section {
+    .basic-card {
+      .content {
+        .form {
+          .inputs {
+            grid-template-columns: auto;
+          }
+          .increaseFormfield {
+            width: auto;
+          }
+          .mid-container {
+            flex-direction: column;
+            .total-exp {
+              .inputs {
+                grid-template-columns: auto;
+              }
+              .yearFormfield {
+                width: auto !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 150px) and (max-width: 319px) {
+  section {
+    .basic-card {
+      .content {
+        .form {
+          .mat-form-field {
+            width: 150px;
+          }
+          .increaseFormfield {
+            width: 150px !important;
+          }
+          .inputs {
+            grid-template-columns: auto;
+          }
+          .mid-container {
+            flex-direction: column;
+            .total-exp {
+              .inputs {
+                grid-template-columns: auto;
+                .yearFormfield {
+                  width: 150px !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  ::ng-deep {
+    .mat-select-panel {
+      width: 200px !important;
+      margin: 0rem !important;
+    }
+  }
+}

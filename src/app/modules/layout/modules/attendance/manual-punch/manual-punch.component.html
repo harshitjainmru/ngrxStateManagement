@@ -1,0 +1,38 @@
+<section>
+  <div class="left container">
+    <div class="title">
+      <h1 class="title-text">{{uiText.employee_title}}</h1>
+    </div>
+    <div class="content">
+      <form [formGroup]="manualPunchForm">
+      <span>
+        <app-common-input [data]="uiText.puch_request_label" [myControlName]="this.manualPunchFormControl.date" [readonly]="true"></app-common-input>
+      </span>
+      <span class="dropdown">
+        <app-dropdown [label]="uiText.company_label" [Data]="uiText.company_data" [myControlName]="this.manualPunchFormControl.company" [formfieldCSS]="'manualFormfield'"></app-dropdown>
+      </span>
+      <div class="formfield">
+        <label class="label">{{uiText.employee_label}}</label>
+        <mat-form-field appearance="outline">
+          <input formControlName="employee" matInput>
+        </mat-form-field>
+      </div>
+    </form>
+    </div>
+  </div>
+  <div class="right container">
+    <div class="title">
+      <h1 class="title-text">{{uiText.manual_title}}</h1>
+      <div class="buttonGroup">
+        <mat-icon class="addIcon">add</mat-icon>
+        <button class="add-new">
+          {{uiText.add_new_button}}
+        </button>
+      </div>
+    </div>
+    <div class="table-card">
+      <app-common-table [columns]="uiText.table_heading" [dataSource]="dataSource" [isPageable]="false"
+        [isSearchText]="false"></app-common-table>
+    </div>
+  </div>
+</section>

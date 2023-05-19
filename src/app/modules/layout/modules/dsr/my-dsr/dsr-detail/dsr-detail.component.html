@@ -1,0 +1,11 @@
+<section>
+  <div class="last-container">
+    <div class="content">
+      <div class="header">
+        <h1 class="header-text">{{uiText.header_value}}</h1>
+      </div>
+      <app-common-table [columns]="uiText.table_heading" [dataSource]="dataSource" [isPageable]="false" [isSearchText]="false">
+      </app-common-table>
+    </div>
+  </div>
+</section>

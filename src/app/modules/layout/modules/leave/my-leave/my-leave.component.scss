@@ -1,0 +1,147 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+@import "../../../../../scss/editoroverrideStyle";
+@import "../../../../../scss/matradiooverride";
+@import "../../../../../scss/overrideMatcheckbox";
+@import "../../../../../scss/error";
+@import "../../../../../scss/minimize&maximizeDiv";
+section {
+  margin: 30px;
+  .top-container {
+    @include grid("grid-template-columns", "auto auto auto");
+    gap: 30px;
+    .leave-type-data {
+      background-color: $button-text-color;
+      padding: 20px;
+      .leave {
+        @include fpos(center, flex-start);
+        gap: 20px;
+        .text-success {
+          color: $training-status-background;
+          font-size: 40px;
+        }
+        .leave-data {
+          .leave-balance {
+            margin-bottom: -12px !important;
+            font-size: 12px;
+            color: #a3a4a6 !important;
+          }
+        }
+      }
+    }
+  }
+  .middle-container {
+    .formfield {
+      display: flex;
+      flex-direction: column;
+      .typeformfield {
+        width: 360px;
+      }
+      .label {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.4;
+        margin-bottom: 4px;
+      }
+    }
+    .half-day {
+      @include fpos(center, flex-start);
+      gap: 20px;
+    }
+    .shorttime {
+      display: flex;
+      gap: 20px;
+    }
+    .datefield {
+      @include grid("grid-template-columns", "auto auto");
+      gap: 20px !important;
+    }
+    .allLeaveInstruction {
+      color: $error-color;
+      ul {
+        list-style-type: none;
+      }
+    }
+    .buttonGroup {
+      margin: 50px 0px;
+      display: flex;
+      gap: 20px;
+      .saveButton {
+        background-color: $success-color;
+        color: $button-text-color;
+        width: 70px;
+      }
+      .cancelButton {
+        background-color: $error-color;
+        color: $button-text-color;
+        width: 70px;
+      }
+    }
+  }
+
+  .last-container {
+    background-color: $button-text-color;
+    border-radius: 10px;
+    .content {
+      padding: 20px;
+      .header {
+        border-bottom: 1px solid $border-color;
+        .header-text {
+          color: $header-text-color;
+          font-weight: 500;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  ::ng-deep {
+    .mat-datepicker-toggle {
+      color: $border-color;
+      position: absolute;
+      right: -12px;
+      top: -5px;
+    }
+    .mat-form-field-appearance-outline .mat-form-field-outline {
+      box-shadow: 0px 4px 8px rgb(44 39 56 / 4%) !important;
+    }
+
+  }
+}
+@media (max-width: 1237px) {
+  section {
+    .top-container {
+      grid-template-columns: auto auto;
+    }
+    .middle-container {
+      .shorttime {
+        flex-direction: column;
+      }
+      .datefield {
+        grid-template-columns: auto !important;
+      }
+    }
+  }
+}
+@media (max-width: 1100px) {
+  section {
+    .middle-container {
+      .formfield {
+        .typeformfield {
+          width: 260px !important;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 606px) {
+  section {
+    .top-container {
+      grid-template-columns: auto;
+    }
+  }
+}
+@media (max-width: 475px) {
+  .mat-form-field {
+    width: 260px !important;
+  }
+}

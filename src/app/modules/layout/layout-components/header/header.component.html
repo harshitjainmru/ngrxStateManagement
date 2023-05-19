@@ -1,0 +1,58 @@
+<section class="container">
+  <div class="left-content">
+    <span class="image">
+      <img *ngIf="!isExpanded && !smallWindow" src="../../../assets/ic-logo.svg" class="appinventivLogo">
+      <img *ngIf="isExpanded || smallWindow" src="../../../assets/onboarding_Image/applogo.png" class="rightImage">
+    </span>
+    <button class="button menu" (click)="expand()">
+      <mat-icon class="icon"> menu </mat-icon>
+      <!-- <mat-icon> close </mat-icon> -->
+    </button>
+  </div>
+  <div class="login">
+    <div class="lastLogin">
+      <strong class="headerLastLogin">{{uiText.HEADER_LAST_LOGIN | titlecase}}</strong>
+      <span class="headerLastLoginTime">{{uiText.HEADER_LAST_LOGIN_TIME | titlecase}}</span>
+    </div>
+    <div class="right-content">
+      <div class="userDetails">
+        <span class="userName">
+          <p class="name">{{uiText.USER_NAME | titlecase}}</p>
+        </span>
+        <span class="logo">
+          <img [src]="image" *ngIf="image" class="defaultImage">
+        <img src="../../../../../assets/images/default_male.jpg" *ngIf="!image" class="defaultImage">
+        </span>
+        <span class="menuIcon ">
+          <button class="icon-arrow button" mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon class="keyboard_arrow_down icon">keyboard_arrow_down</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item [routerLink]="['ABS_LAYOUT_MYPROFILE'|absoluteRouting]">
+              <mat-icon class="icon person">person</mat-icon>
+              <span>{{uiText.HEADER_MENU_LABEL1 | titlecase}}</span>
+            </button>
+            <button mat-menu-item [routerLink]="['ABS_CHANGE_PASSWORD'|absoluteRouting]">
+              <mat-icon> <i class="fa-solid fa-key icon"></i></mat-icon>
+              <span>{{uiText.HEADER_MENU_LABEL2 | titlecase}}</span>
+            </button>
+            <hr class="horizontal">
+            <button mat-menu-item class="sign" (click)="openLogoutDialog() ">
+              <mat-icon class="icon" style="color: red;">logout</mat-icon>
+              <span>{{uiText.HEADER_MENU_LABEL3 | titlecase}}</span>
+            </button>
+          </mat-menu>
+        </span>
+      </div>
+      <div class="helpButton" (click)="openDialog()" @slideInOut>
+        <button class="help button">
+          {{uiText.HEADER_BUTTON | titlecase}}
+        </button>
+      </div>
+      <!-- <div class="notificationIcon" (click)="toggleNotification()">
+        <mat-icon class="notification icon">notifications</mat-icon>
+      </div> -->
+      <ng-content select=".notificationIcon"></ng-content>
+    </div>
+  </div>
+</section>

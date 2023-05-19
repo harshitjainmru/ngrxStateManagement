@@ -1,0 +1,81 @@
+<section>
+  <div class="header">
+    <h3 class="heading">{{uiText.header_value}}</h3>
+    <div class="cancel-icon" (click)="crossClick()">
+      <i class="fa-solid fa-xmark" ></i>
+    </div>
+  </div>
+<form [formGroup]="editForm">
+  <div class="inputs">
+    <span>
+      <app-common-input [data]="uiText.formlabel.SCHOOL" [myControlName]="editFormControl.school"></app-common-input>
+    </span>
+    <span>
+      <app-dropdown [label]="uiText.formlabel.EDUCATION" [errorType]="editFormControl.educationLevel"
+        [myControlName]="editFormControl.educationLevel" [Data]="uiText.education_dropdown"></app-dropdown>
+    </span>
+    <div class="datefields">
+    <div class="formfield topField 3">
+      <label class="label">{{uiText.formlabel.TIME}}</label>
+      <mat-form-field appearance="outline">
+        <input matInput [matDatepicker]="picker1" formControlName="fromTime" (click)="picker1.open()" readonly>
+        <mat-error *ngFor="let error of errorMessage?.fromTime">
+          <mat-error *ngIf="editForm?.get('fromTime')?.hasError(error?.type)" class="alertMessage">
+            <span class="errorMessage">{{error.message}}</span>
+          </mat-error>
+        </mat-error>
+        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+        <mat-datepicker #picker1></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="formfield topField 4">
+      <mat-form-field appearance="outline" style="margin-top: 15px;">
+        <input matInput [matDatepicker]="picker2" (click)="picker2.open()" formControlName="toTime"
+          [placeholder]="uiText.formlabel.PLACEHOLDER_TO" readonly>
+        <mat-error *ngFor="let error of errorMessage?.toTime">
+          <mat-error *ngIf="editForm?.get('toTime')?.hasError(error?.type)" class="alertMessage">
+            <span class="errorMessage">{{error.message}}</span>
+          </mat-error>
+        </mat-error>
+        <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+        <mat-datepicker #picker2></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+    <span class="topField">
+      <app-dropdown [label]="uiText.formlabel.LANGUAGE" [errorType]="editFormControl.language" [myControlName]="editFormControl.language"
+        [Data]="uiText.language"></app-dropdown>
+    </span>
+    <div class="formfield topField 6">
+      <label class="label">{{uiText.formlabel.PROFESSIONAL_COURSE}}</label>
+      <mat-form-field appearance="outline">
+        <input matInput formControlName="professionalCourses" [placeholder]="uiText.formlabel.PROFESSIONAL_COURSE">
+        <mat-error *ngFor="let error of errorMessage?.professionalCourses">
+          <mat-error *ngIf="editForm?.get('professionalCourses')?.hasError(error?.type)"
+            class="alertMessage">
+            <span class="errorMessage">{{error.message}}</span>
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="formfield">
+      <label class="label">{{uiText.formlabel.DESCRIPTION}}</label>
+      <mat-form-field appearance="outline">
+        <textarea type="text" placeholder="Message" (keydown)="noSpace($event)" class="inputMessage" matInput cdkTextareaAutosize
+          cdkAutosizeMinRows="4" cdkAutosizeMaxRows="7" [placeholder]="uiText.formlabel.DESCRIPTION"
+          formControlName="description"></textarea>
+        <mat-error *ngFor="let error of errorMessage?.description">
+          <mat-error *ngIf="editForm?.get('description')?.hasError(error?.type)" class="alertMessage">
+            <span class="errorMessage">{{error.message}}</span>
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="buttonGroup">
+    <button class="cancelButton" (click)="crossClick()">{{uiText.close_button}}</button>
+    <button class="classyButton" (click)="save()">{{uiText.submit_button}}</button>
+  </div>
+</form>
+</section>
+

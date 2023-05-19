@@ -1,0 +1,109 @@
+@import "../basic-information/basic-information.component.scss";
+@import "src/app/scss/_error.scss";
+section {
+  .card2 {
+    margin-top: 20px;
+  }
+  .basic-card {
+    .content {
+      .form {
+        .inputs {
+          display: grid;
+          grid-template-columns: auto auto;
+          gap: 40px;
+          .topField {
+            margin-top: -25px !important;
+          }
+          // .formfield {
+          //   .increaseFormfield {
+          //     width: 550px;
+          //   }
+          // }
+        }
+        .addressFormfield {
+          width: auto;
+        }
+      }
+    }
+    .table{
+      padding: 0px 16px;
+    }
+
+  }
+}
+::ng-deep {
+  .mat-select-panel {
+    min-width: calc(100% + 15px) !important;
+    margin: 2.5rem 0rem 0rem 0.425rem !important;
+  }
+  // .mat-paginator-page-size {
+  //   position: absolute;
+  //   top: 70px ;
+  //   left: 15px ;
+  // }
+  // section{
+  //   padding: 0px 10px;
+
+  // }
+}
+@media (max-width: 1798px) {
+  section {
+    .basic-card {
+      .content {
+        .form {
+          .inputs {
+            grid-template-columns: auto auto;
+          }
+          // .increaseFormfield{
+          //   width: auto !important;
+          // }
+        }
+      }
+    }
+  }
+}
+// @media (min-width: 345px) and (max-width: 550px) {
+//   section {
+//     ::ng-deep .mat-paginator-page-size {
+//       top: 105px !important;
+//       left: 0px;
+//     }
+//   }
+// }
+@media (min-width: 320px) and (max-width: 745px) {
+  section {
+    .basic-card {
+      .content {
+        .form {
+          .inputs {
+            grid-template-columns: auto !important;
+          }
+        }
+      }
+    }
+  }
+  ::ng-deep {
+    .mat-select-panel {
+      width: 100px !important;
+      margin: 0rem !important;
+    }
+  }
+}
+@media (min-width: 150px) and (max-width: 319px) {
+  section {
+    .basic-card {
+      .content {
+        .form {
+          .inputs {
+            grid-template-columns: auto !important;
+            .formfield {
+              .increaseFormfield {
+                width: 150px !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

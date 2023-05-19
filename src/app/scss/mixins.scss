@@ -1,0 +1,93 @@
+@import "../scss/var";
+
+@mixin fpos($a-item, $j-align) {
+  @include flexbox;
+  align-items: $a-item;
+  justify-content: $j-align;
+}
+@mixin flexJustify( $j-align) {
+  @include flexbox;
+  justify-content: $j-align;
+}
+@mixin gridbox {
+  display: grid;
+}
+@mixin grid($grid-type, $args,) {
+  @include gridbox();
+  #{$grid-type}: #{$args};
+}
+
+@mixin flexbox {
+display: flex;
+}
+@mixin cursor {
+  cursor: pointer;
+}
+
+@mixin textColor {
+  color: $button-text-color;
+  font-size: .8125rem;
+  font-family: inherit;
+}
+@mixin buttonTransparent {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+}
+
+@mixin buttonDiv {
+  border: 1px solid $button-color;
+  border-radius: 2px;
+  @include flexJustify(center);
+  @include cursor();
+}
+@mixin buttonHover {
+  background-color: $button-color;
+  color: $button-text-color;
+  transition: box-shadow rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+@mixin buttonStyle {
+ @include buttonTransparent();
+  color: $button-color;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  @include cursor();
+}
+
+@mixin jobOpeningButton(){
+  padding: 13px 0px;
+  width: 225px;
+  font-size: 16px;
+}
+
+@mixin scrollbarStyle {
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: $sidenav-scroll-color;
+  }
+}
+
+@mixin carouselButton{
+  position: absolute;
+  // color:var( --caurosel-button-color);
+  color: $button-color;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: $carousel-button-bacground;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+}
+
+@mixin matPaginatorLabel {
+  font-size: 15px;
+  color: $award-img-name-color;
+  font-weight: 400;
+}
+

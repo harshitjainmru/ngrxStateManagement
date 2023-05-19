@@ -1,0 +1,123 @@
+@import "../../../../scss/mixins.scss";
+@import "../../../../scss/var";
+$image-size: 180px;
+$border-radius: 10px;
+section {
+  padding: 20px 40px;
+  // word-break: break-word;
+  line-height: normal;
+  .card {
+    .card-content {
+      @include fpos(center, flex-start);
+      gap: 50px;
+      .user-img {
+        border: 1px solid $border-color;
+        .defaultImage {
+          width: $image-size;
+          height: $image-size;
+          border-radius: 50%;
+        }
+      }
+      .content {
+        .user-name {
+          font-size: 30px;
+          font-weight: 400;
+        }
+        .user-details {
+          margin-bottom: -10px !important;
+
+          .label {
+            font-weight: 550;
+            &::after {
+              content: " :";
+            }
+          }
+          &:nth-child(2) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .container {
+    @include gridbox();
+    grid-template-columns: 20% auto;
+    gap: 30px;
+    margin: 25px 0px;
+    .side-card {
+      padding: 0px !important;
+      border-radius: $border-radius;
+      height: fit-content;
+      // max-height: 360px;
+
+      cursor: pointer;
+      .sideCard-content {
+        color: $font-color;
+        .info-label {
+          @include fpos(flex-start, flex-start);
+          gap: 15px;
+          padding: 11px;
+          border-bottom: 1px solid $border-color;
+          &:last-child {
+            border-bottom: none;
+          }
+          &:hover {
+            font-weight: 500;
+          }
+        }
+      }
+      .active {
+        background-color: $button-color;
+        color: $button-text-color;
+        .title {
+          margin-top: 4px;
+        }
+        &:first-child {
+          border-top-left-radius: $border-radius;
+          border-top-right-radius: $border-radius;
+        }
+        &:last-child {
+          border-bottom-left-radius: $border-radius;
+          border-bottom-right-radius: $border-radius;
+        }
+
+        .icon-sideCard {
+          border: 1px solid;
+          padding: 3px 5px;
+          border-radius: 20px;
+        }
+      }
+    }
+    .router-outlet {
+      overflow: hidden;
+    }
+  }
+}
+::ng-deep {
+  .mat-card:not([class*="mat-elevation-z"]) {
+    box-shadow: none !important;
+  }
+}
+
+@media (min-width: 725px) and (max-width: 1280px) {
+  section{
+    .container{
+      .side-card{
+        max-height: 400px;
+      }
+    }
+  }
+}
+@media (min-width: 150px) and (max-width: 725px) {
+  section{
+    .card {
+      .card-content {
+        flex-direction: column;
+      }
+    }
+    .container{
+    grid-template-columns:  auto;
+    }
+  }
+}
+

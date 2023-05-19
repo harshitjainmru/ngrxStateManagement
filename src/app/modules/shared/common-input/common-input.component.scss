@@ -1,0 +1,55 @@
+@import "../../../scss/error";
+@import "../../../scss/var";
+@import "../../../scss/inputFieldStyle";
+.increaseFormfield {
+  width: 369px;
+}
+.yearFormfield {
+  width: 272px;
+}
+.allocationFormfield {
+  width: 365px;
+}
+.manualFormfield{
+  width: auto;
+}
+.customLabel {
+  // font-family: "Lato";
+  font-size: 14px;
+  color: $directory-font-color;
+  font-weight: 500;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+.referCandidate{
+  width: 385px;
+}
+.fa-question-circle{
+  cursor: pointer;
+}
+::ng-deep .mat-form-field-appearance-outline.mat-form-field-disabled .mat-form-field-outline {
+  background-color: #f8f8f8 !important;
+  box-shadow: 0px 4px 8px rgb(44 39 56 / 4%) !important;
+  border: 0.5px solid $formField-border-color;
+  border-radius: 5px;
+}
+
+@media (max-width:1798px){
+  .increaseFormfield{
+    width: auto !important;
+  }
+  .yearFormfield {
+    width: auto !important;
+  }
+}
+
+@media (max-width:1011px){
+  .referCandidate{
+    width: auto;
+  }
+}
+// @media (max-width:675px){
+//   .referCandidate{
+//     width: auto !important;
+//   }
+// }

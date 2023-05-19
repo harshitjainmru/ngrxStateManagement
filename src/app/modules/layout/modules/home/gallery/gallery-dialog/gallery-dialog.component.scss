@@ -1,0 +1,47 @@
+@import "src/app/scss/_var.scss";
+@import "../../../../../../scss/dialog-cancel-icon";
+section {
+  padding: 1rem;
+  width: 600px;
+  height: 600px;
+  overflow: hidden;
+  .cancel-icon{
+    justify-content: flex-end !important;
+  }
+  .image {
+    display: flex;
+    width: 600px;
+    height: 550px;
+  }
+}
+
+@media (max-width:798px){
+  section {
+    width: 400px;
+    height: 400px;
+    .image {
+      width: 400px;
+      height: 350px;
+    }
+  }
+}
+@media (max-width:541px){
+  section {
+    width: 300px;
+    height: 300px;
+    .image {
+      width: 300px;
+      height: 250px;
+    }
+  }
+}
+@media (max-width:416px){
+  section {
+    width: 200px;
+    height: 250px;
+    .image {
+      width: 200px;
+      height: 180px;
+    }
+  }
+}

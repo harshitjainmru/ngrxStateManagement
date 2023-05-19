@@ -1,0 +1,73 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+@import "../../../../../scss/job-opening-button";
+section {
+  margin: 20px 30px;
+  header {
+    display: grid;
+    grid-template-columns: 58.7% 40%;
+    gap: 20px;
+    .purchase {
+      background-color: $button-text-color;
+      border: 1px solid #ccd2da;
+      border-radius: 10px;
+      padding: 20px 20px 0px;
+      .buttonGroup {
+        display: flex;
+        justify-content: center;
+        .classyButton {
+          border-radius: 5px;
+          padding: 12px 80px;
+          font-weight: 600;
+          margin: 0px 0px 40px 0px;
+        }
+      }
+    }
+  }
+  .bottom {
+    background-color: $button-text-color;
+    border: 1px solid #ccd2da;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0px;
+    .table-heading{
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media (max-width: 1198px) {
+  section {
+    header {
+      grid-template-columns: 100%;
+      .purchase {
+        .buttonGroup {
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+}
+
+
+@media (max-width: 380px) {
+  section {
+    header {
+      .purchase {
+        .buttonGroup {
+          .classyButton {
+            padding: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 385px) {
+  section {
+   .bottom{
+    overflow: scroll;
+   }
+  }
+}

@@ -1,0 +1,26 @@
+<section>
+  <div class="back">
+    <a (click)="cancelCoupons()" class="back-link"><i class="fas fa-arrow-left"></i></a>
+  </div>
+  <div class="lunch-coupon">
+    <h1 class="text">{{uiText.lunch_coupon_label}}</h1>
+    <app-note [note_label]="uiText.note_label" [note_data]="uiText.note_data"></app-note>
+  </div>
+  <div class="amount-due">
+  <app-amount-due [showButton]="false" [value]="amount" [couponAvailable]="availableCoupon"></app-amount-due>
+</div>
+  <form [formGroup]="couponForm" >
+  <div class="coupon-count">
+    <app-common-input [data]="uiText.count_label" [myControlName]="couponFormControl.coupon_count" id="count" ></app-common-input>
+    <app-common-input [data]="uiText.amount_label" [myControlName]="couponFormControl.total_amount"></app-common-input>
+    <div class="buttonGroup">
+      <button class="classyButton" (click)="buyCoupons()">{{uiText.submit_button}}</button>
+      <button class="cancel" (click)="cancelCoupons()">{{uiText.cancel_button}}</button>
+    </div>
+  </div>
+  <div class="bottom">
+    <app-calendar [myCalendar]="myCalendar" [options]="options" (calendarData)="updateCalendarData($event)">
+    </app-calendar>
+  </div>
+</form>
+</section>

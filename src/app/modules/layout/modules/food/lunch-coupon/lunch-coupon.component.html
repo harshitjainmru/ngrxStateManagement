@@ -1,0 +1,21 @@
+<section>
+  <header>
+    <app-amount-due [value]="this.amount" [couponAvailable]="couponLength" (view)="viewDetails()"></app-amount-due>
+    <div class="purchase">
+      <div class="buttonGroup">
+        <button class="classyButton"
+          [routerLink]="['ABS_LAYOUT_PURCHASE_COUPON' | absoluteRouting]">{{uiText.button_value}}</button>
+      </div>
+      <app-note [note_label]="uiText.note_label" [note_data]="uiText.note_data"></app-note>
+    </div>
+  </header>
+  <div class="bottom ">
+    <div class="table-heading">
+      <h2>{{Month}} {{year}}</h2>
+      <app-coupon-legend>
+      </app-coupon-legend>
+    </div>
+    <app-calendar [myCalendar]="myCalendar" [options]="options" (calendarData)="updateCalendarData($event)">
+    </app-calendar>
+  </div>
+</section>

@@ -1,0 +1,88 @@
+<section @slideInRight>
+  <div class="basic-card">
+    <div class="header">
+      <p class="header-text">{{uiMessage.HEADER}}</p>
+    </div>
+    <div class="content">
+      <form class="form" [formGroup]="basicForm" (ngSubmit)="submitHandler()">
+        <div class="inputs">
+          <span>
+            <app-common-input [data]="labelMessage.FIRST_NAME" [myControlName]="basicFormControl.firstName">
+            </app-common-input>
+          </span>
+
+          <span>
+            <app-common-input [data]="labelMessage.LAST_NAME" [myControlName]="basicFormControl.lastName">
+            </app-common-input>
+          </span>
+
+          <span>
+            <app-common-date-picker [data]="labelMessage.DATE_OF_BIRTH" [minDate]="minDate" [maxDate]="maxDate"
+              [formcontrolname]="basicFormControl.dob"></app-common-date-picker>
+          </span>
+          <span>
+            <app-dropdown [label]="labelMessage.GENDER" [formfieldCSS]="'increaseFormfield'"
+              [myControlName]="basicFormControl.gender" [Data]="genderValue">
+            </app-dropdown>
+          </span>
+          <span>
+            <app-dropdown [label]="labelMessage.MARITAL_STATUS" [formfieldCSS]="'increaseFormfield'"
+              [myControlName]="basicFormControl.maritalStatus" [Data]="maritalStatusValue"></app-dropdown>
+          </span>
+          <span class="contactField">
+            <app-common-input [data]="labelMessage.CONTACT" [myControlName]="basicFormControl.contact">
+            </app-common-input>
+          </span>
+        </div>
+        <div class="mid-container">
+          <div class="total-exp">
+            <p class="label heading-exp">
+              {{uiMessage.TOTAL_WORK_EXP}}
+            </p>
+            <div class="inputs">
+              <span>
+                <app-common-input [data]="labelMessage.YEAR" [formFieldCSS]="'yearFormfield'" [type]="'number'"
+                [max]="'40'" [myControlName]="basicFormControl.total_year"></app-common-input>
+              </span>
+              <span>
+                <app-common-input [data]="labelMessage.MONTH" [formFieldCSS]="'yearFormfield'" [type]="'number'"
+                  [max]="'11'" [myControlName]="basicFormControl.total_month"></app-common-input>
+              </span>
+            </div>
+          </div>
+          <div class="total-exp">
+            <p class="label heading-exp">
+              {{uiMessage.RELEVANT_EXP}}
+            </p>
+            <div class="inputs">
+              <span>
+                <app-common-input [data]="labelMessage.YEAR" [formFieldCSS]="'yearFormfield'" [type]="'number'"
+                  [max]="'40'" [myControlName]="basicFormControl.relevant_year"></app-common-input>
+              </span>
+              <span>
+                <app-common-input [data]="labelMessage.MONTH" [formFieldCSS]="'yearFormfield'" [type]="'number'"
+                   [max]="'11'" [myControlName]="basicFormControl.relevant_month"></app-common-input>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="address">
+          <label class="label">{{labelMessage.ADDRESS}}</label>
+          <mat-form-field appearance="outline" class="addressFormfield">
+            <textarea type="text" placeholder="Message" class="inputMessage" matInput cdkTextareaAutosize
+              cdkAutosizeMinRows="4" cdkAutosizeMaxRows="7" [placeholder]="labelMessage.ADDRESS"
+              formControlName="address" (keydown)="noSpace($event)"></textarea>
+            <mat-error *ngFor="let error of errorMessage?.address">
+              <mat-error *ngIf="basicForm?.get('address')?.hasError(error?.type)" class="alertMessage">
+                <span class="errorMessage">{{error.message}}</span>
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="classyButton">
+          <button class="saveButton" type="submit">{{uiMessage.BUTTON}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

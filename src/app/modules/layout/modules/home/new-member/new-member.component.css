@@ -1,0 +1,114 @@
+section .card .header .text {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+section .card .img-card {
+  background-image: url("../../../../../../assets/images/new-family-card.png");
+  height: 442px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 20px;
+}
+
+section .card .img-card .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+section .card .img-card .content figure .defaultImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+@media (max-width: 1781px) {
+  section .img-card {
+    width: 200px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-height: 800px;
+  }
+}
+
+@media (max-width: 1219px) {
+  section .img-card {
+    width: 210px !important;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-height: 800px;
+  }
+}
+
+@media (min-width: 1220px) and (max-width: 1585px) {
+  section .img-card {
+    width: 170px;
+  }
+  section .card .header {
+    width: 120px;
+  }
+}
+
+@media (max-width: 1219px) {
+  section .img-card {
+    width: 170px;
+  }
+  section .card .header {
+    width: auto;
+  }
+}
+
+@media (min-width: 686px) and (max-width: 991px) {
+  section .img-card {
+    width: 300px;
+  }
+}
+
+@media (max-width: 685px) {
+  section .img-card {
+    width: none !important;
+  }
+}
+
+@media (max-width: 414px) {
+  section .card .header {
+    width: 120px;
+  }
+}
+
+@media (max-width: 361px) {
+  section .img-card {
+    width: 180px !important;
+  }
+}
+/*# sourceMappingURL=new-member.component.css.map */

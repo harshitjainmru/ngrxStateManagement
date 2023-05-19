@@ -1,0 +1,33 @@
+<div class="formfield">
+  <label [ngClass]="labelStyle||'label'">{{labelData}}</label>
+  <editor
+  apiKey='80xdidriu91i1yv4eyxt33nju4ipc06dp3ppujdambo50moj'
+[init]="{
+height: 300,
+plugins: [
+'advlist','autolink',
+'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+'fullscreen','insertdatetime','media','table','help','wordcount'
+],
+toolbar:
+ 'undo redo | casechange blocks | bold italic backcolor | \
+ alignleft aligncenter alignright alignjustify | \
+ bullist numlist checklist outdent indent | removeformat | a11ycheck code table help'
+}" [formControl]="formControlname" ></editor>
+
+  <mat-error *ngIf="formControlname.touched && formControlname.hasError('required')" class="alertMessage">
+    <span class="errorMessage" style="margin-left: 1px;">Editor field is required</span>
+  </mat-error>
+</div>
+
+
+<!-- plugins: [
+'a11ychecker','advlist','advcode','advtable','autolink','checklist','export',
+'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+'powerpaste','fullscreen','formatpainter','insertdatetime','media','table','help','wordcount'
+], -->
+<!-- plugins: [
+'advlist','autolink',
+'lists','link','image','charmap','preview','anchor','searchreplace','visualblocks',
+'fullscreen','insertdatetime','media','table','help','wordcount'
+], -->

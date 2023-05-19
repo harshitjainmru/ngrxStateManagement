@@ -1,0 +1,60 @@
+<section>
+  <div>
+    <form [formGroup]="ideaForm" (ngSubmit)="submitHandler()">
+      <div class="header">
+        <h3 class="heading">{{uiText.HEADER}}</h3>
+        <div class="buttonGroup">
+          <button class="cancelButton" [routerLink]="['ABS_LAYOUT_MY_PITCH' | absoluteRouting]">{{uiText.CANCEL_BUTTON}}</button>
+          <button class="classyButton" type="submit">{{uiText.SUBMIT_BUTTON}}</button>
+        </div>
+      </div>
+      <div class="detail-card">
+        <div class="hash-heading">
+          <h3 class="mydetails">{{uiText.MY_DETAIL}}</h3>
+        </div>
+        <div class="form">
+          <div class="formfield 2">
+            <label class="label">{{uiText.NAME_LABEL}}</label>
+            <mat-form-field appearance="outline">
+              <input formControlName="name" matInput>
+            </mat-form-field>
+          </div>
+          <div class="inputs">
+            <div class="formfield 2">
+              <label class="label">{{uiText.ID_LABEL}}</label>
+              <mat-form-field appearance="outline" class="idFormField personalDetail">
+                <input formControlName="emp_id" matInput>
+              </mat-form-field>
+            </div>
+            <div class="formfield 2">
+              <label class="label">{{uiText.DOB_LABEL}}</label>
+              <mat-form-field appearance="outline" class="dobFormField personalDetail">
+                <input formControlName="dob" matInput>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="hash-heading">
+            <h3 class="mydetails">{{uiText.PITCH_DETAIL}}</h3>
+          </div>
+          <span>
+            <app-common-input [data]="uiText.PITCH_LABEL" [myControlName]="ideaFormControl.pitch_title" [labelStyle]="'customLabel'"></app-common-input>
+          </span>
+          <span>
+            <app-dropdown [label]="uiText.INDUSTRY_LABEL" [labelStyle]="'labelStyle'"
+              [myControlName]="ideaFormControl.industry" [formfieldCSS]="'requestDropdown'" [Data]="industryDropdownValue"></app-dropdown>
+          </span>
+          <span>
+            <app-dropdown [label]="uiText.TYPE_LABEL" [labelStyle]="'labelStyle'"
+              [myControlName]="ideaFormControl.pitch_type" [formfieldCSS]="'requestDropdown'" [Data]="typeDropdownValue"></app-dropdown>
+          </span>
+          <span>
+            <app-common-editor [formControlname]="ideaFormControl.editor" [labelData]="uiText.IDEA_LABEL" [labelStyle]="'customLabel'"></app-common-editor>
+          </span>
+          <span>
+            <app-common-file-upload [labelData]="uiText.PRESENTATION_LABEL" [formcontrolname]="ideaFormControl.presentation" [labelStyle]="'customLabel'" [accept]="'.ppt,.pdf'"></app-common-file-upload>
+          </span>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>

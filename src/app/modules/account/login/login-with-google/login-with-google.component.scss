@@ -1,0 +1,56 @@
+@import "../../account.component.scss";
+@import "../../../../scss/mixins.scss";
+@import "../../../../scss/var";
+.googleLogin {
+  @include fpos(center, center);
+  margin-top: 20px;
+  cursor: pointer;
+  .googleButton {
+    @include fpos(center,center );
+    gap: 10px;
+    border: none;
+    background-color: blue;
+    color: $button-text-color;
+    border-radius: 10px;
+    .logo {
+      background: $button-text-color;
+      width: 50px;
+      border: 1px solid blue;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      .googleLogo {
+        width: 25px;
+        height: 25px;
+        margin: 10px;
+      }
+    }
+    .text {
+      @include flexbox();
+      .SignInWithGoogle {
+        margin: 15px 25px;
+        width: 9.5rem;
+        font-size: 16px !important;
+        text-align: center;
+        @include textColor();
+        font-weight: 550;
+      }
+    }
+  }
+}
+.intructionsText {
+  text-align: center;
+  color: $font-color;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 15px;
+}
+@media (max-width:300px){
+  .googleButton{
+    gap: 0px !important;
+    .logo{
+      width: auto !important;
+
+    }
+  }
+}
+

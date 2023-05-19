@@ -1,0 +1,12 @@
+<div class="formfield 12">
+  <label [ngClass]="labelStyle || 'label'">{{labelData}} <span class="star" *ngIf="showStar">*</span></label>
+  <mat-form-field appearance="outline">
+    <textarea [maxLength]="maxLength" #textarea [formControl]="$any(formcontrolss)" (keydown)="noSpace($event)" [placeholder]="labelData "
+      cdkTextareaAutosize [cdkAutosizeMinRows]="cdkAutosizeMinRows" [cdkAutosizeMaxRows]="cdkAutosizeMaxRows" matInput></textarea>
+    <mat-error class="alertMessage">
+      <span class="errorMessage">{{formcontrolss | validation : labelData }}</span>
+    </mat-error>
+  </mat-form-field>
+  <p class="maxlength">
+    {{textarea.value.length}}/{{maxLength}}</p>
+</div>

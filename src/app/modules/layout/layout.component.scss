@@ -1,0 +1,95 @@
+@import "../../scss/mixins.scss";
+@import "../../scss/var";
+section {
+  height: 100vh;
+  overflow-x: hidden;
+  header {
+    .notificationIcon {
+      .notification {
+        font-size: 30px;
+      }
+      .icon {
+        color: $font-color;
+        font-weight: 550;
+      }
+    }
+  }
+  .mat-sidenav-container {
+    height: calc(100vh - 80px);
+    mat-sidenav {
+      max-width: 250px;
+    }
+  }
+}
+.isActive {
+  height: 100%;
+  margin-top: 75px;
+  width: 320px;
+  height: calc(100vh - 100px);
+  box-shadow: 0px 0px 9px rgb(0 0 0 / 50%);
+  background-color: #f7f7f7;
+  padding: 5px;
+  .fa-xmark {
+    color: $award-img-name-color;
+    font-size: 30px;
+  }
+  .card {
+    border: 1px solid $award-img-name-color;
+    border-radius: 8px;
+    .card-header {
+      padding: 5px;
+      border-bottom: 1px solid $award-img-name-color;
+    }
+    .card-content {
+      background-color: $button-text-color;
+      border-radius: 8px;
+      .card-text {
+        margin-bottom: 0px !important;
+        padding: 14px;
+      }
+    }
+  }
+}
+.noActive{
+  display: none;
+}
+
+:host::ng-deep {
+  .mat-drawer-content {
+    @include scrollbarStyle();
+    @include fpos("center", space-between);
+    flex-direction: column;
+    background-color: $layout-content-background;
+  }
+  .mat-drawer-inner-container {
+    overflow: hidden;
+    &:hover {
+      overflow-y: scroll;
+      // overflow-y: overlay !important;
+      // &::-webkit-scrollbar {
+      //   width: 5px;
+      // }
+      // &::-webkit-scrollbar-thumb {
+      //   border-radius: 10px;
+      //   background: $sidenav-scroll-color;
+      // }
+      @include scrollbarStyle();
+    }
+  }
+
+  // .mat-drawer-backdrop.mat-drawer-shown {
+  //   background-color: $border-color;
+  // }
+  @media only screen and (max-width: 1000px) {
+    .mat-drawer {
+      position: fixed !important;
+      top: 0;
+      bottom: 0;
+      z-index: 3;
+      outline: 0;
+      box-sizing: border-box;
+      overflow-y: auto;
+      transform: translate3d(-100%, 0, 0);
+    }
+  }
+}

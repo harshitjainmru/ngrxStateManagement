@@ -1,0 +1,92 @@
+<section>
+  <div class="search-filter" *ngIf="isSearchText">
+    <label class="label">Search: </label>
+    <input (keyup)="applyFilter($event)" type="text">
+  </div>
+  <div class="table">
+    <table mat-table *ngIf="dataSource" matSortStart="desc" [dataSource]="dataSource" matSort>
+      <div class="data" *ngFor="let row of columns" [matColumnDef]="row.heading">
+        <ng-container *ngIf="row.sort; else noSortable">
+          <th class="isSort" mat-header-cell *matHeaderCellDef [mat-sort-header]="row.key">{{row.heading}}</th>
+        </ng-container>
+        <ng-template #noSortable>
+          <th mat-header-cell *matHeaderCellDef>{{row.heading}}</th>
+        </ng-template>
+        <td mat-cell *matCellDef="let element; let i=index">
+          <ng-container class="value" [ngSwitch]="row.type">
+            <ng-container *ngSwitchCase="'text'">
+              <span>{{element[row.key]}}</span>
+            </ng-container>
+            <ng-container *ngSwitchCase="'customText'">
+              <span [style.color]="row.textColor">{{element[row.key]}}</span>
+            </ng-container>
+            <ng-container *ngSwitchCase="'attendance'">
+              <span [ngClass]="(element.attendance=='Present')?'text-success':'text-danger'">
+                {{element[row.key]}}
+              </span>
+            </ng-container>
+            <ng-container *ngSwitchCase="'text_with_icon'">
+              <ng-container *ngIf="element[row.type]=='1';else fileLogo">
+                <img [src]="['/assets/images/design.svg']" class="imageLogo">
+              </ng-container>
+              <ng-template #fileLogo>
+                <img [src]="['/assets/images/description_black_24dp.svg']" class="imageLogo">
+              </ng-template>
+              <span style="display:inline-flex ;">
+                <p class="text-element">{{element[row.key]}}</p>
+              </span>
+            </ng-container>
+
+            <ng-container *ngSwitchCase="'downloadLink'">
+              <div class="download-link">
+                <a [href]="element.link" class="dataLink" download>
+                  {{element[row.key]}}
+                  <img [src]="'/assets/images/ic-download.svg'">
+                </a>
+              </div>
+            </ng-container>
+            <ng-container *ngSwitchCase="'link'">
+              <a class="activeLink" (click)="check(i)">
+                {{element[row.key]}}
+              </a>
+            </ng-container>
+            <ng-container *ngSwitchCase="'level'">
+              <span class="levelData"> {{element[row.key]}}</span>
+            </ng-container>
+            <ng-container *ngSwitchCase="'html'">
+              <span [innerHTML]="sanitizer.bypassSecurityTrustHtml( element[row?.key] )"></span>
+            </ng-container>
+            <ng-container *ngSwitchCase="'action'">
+              <div class="actionIcon">
+                <ng-container *ngFor="let icon of row.action; let i=index;">
+                  <button mat-raised-button class="edit action-button" (click)="editButton(element)"
+                    *ngIf="icon == 1">Edit</button>&nbsp;
+                  <button mat-raised-button class="delete action-button" (click)="deleteButton(element)"
+                    *ngIf="icon == 2">Delete</button>
+                  <button *ngIf="icon==3" class="circleicon" (click)="checkaction(element)"><i id="fa-arrow"
+                      class="fa fa-arrow-circle-right"></i></button>
+                  <button *ngIf="icon==4" class="circleicon" id="pending"
+                    (click)="checkDsrDetail(element)">Pending</button>
+                  <button *ngIf="icon==5" class="circleicon" (click)="checkDsrDetail(element)"><i id="fa-arrow"
+                      class="fas fa-pencil-alt"></i></button>
+                  <button *ngIf="icon==6 && compareDate(element.requestfrom)" class="rollback"
+                    (click)="undo_leave.emit(element)"><i class="fa-sharp fa-solid fa-arrow-rotate-left"></i></button>
+                </ng-container>
+              </div>
+            </ng-container>
+          </ng-container>
+        </td>
+      </div>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      <tr class="mat-row" *matNoDataRow>
+        <td class="noData" colspan="20">{{uiMessage.NO_DATA}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <mat-paginator appPaginatorStyleDirectives [length]="this.dataSource.data.length" *ngIf="isPageable"
+    [showTotalPages]="3" [pageSizeOptions]="[5, 10, 25, 100]" [hidePageSize]="false">
+  </mat-paginator>
+
+</section>

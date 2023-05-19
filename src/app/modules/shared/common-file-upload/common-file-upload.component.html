@@ -1,0 +1,12 @@
+<div class="formfield">
+  <label [ngClass]="labelStyle || 'label'" >{{labelData}} <span class="alertMessage" *ngIf="assetDeclaration">{{alertData}}</span></label>
+  <mat-form-field appearance="outline" [ngClass]="formFieldCSS">
+    <input matInput readonly hidden [formControl]="formcontrolname">
+    <input [formControl]="formcontrolname"  type="file" [accept]="accept" >
+    <mat-error *ngFor="let error of errorMessage?.upload">
+      <mat-error *ngIf="formcontrolname?.hasError(error?.type)" class="alertMessage">
+        <span class="errorMessage">{{error.message}}</span>
+      </mat-error>
+    </mat-error>
+  </mat-form-field>
+</div>

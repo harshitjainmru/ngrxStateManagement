@@ -1,0 +1,14 @@
+section .heading {
+  padding: 16px 16px 0px 16px;
+  border-bottom: 1px solid gainsboro;
+}
+
+section .heading .header {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+section .container {
+  padding: 16px;
+}
+/*# sourceMappingURL=latest-appinventiv.component.css.map */

@@ -1,0 +1,28 @@
+<section>
+  <div class="cancel-icon" (click)="crossClick()">
+    <i class="fa-solid fa-xmark"></i>
+  </div>
+  <div class="employee">
+    <figure>
+      <img [src]="[data.IMAGES]" class="emp-image">
+    </figure>
+    <div class="heading">
+      <span class="emp-name">{{data.APPRECIATION_NAME}}</span>
+      <span class="project">{{data.HEADER_VALUE}}</span>
+    </div>
+  </div>
+  <span>
+    <p class="message">{{data.MESSAGE}}</p>
+  </span>
+  <span class="greet">
+    <p class="greet-message">
+      {{data.GREET}}
+    </p>
+
+  </span>
+  <p class="team-name">{{data.TEAM_MEMBER}}</p>
+  <p class="head-greet">{{data.HEAD_GREET}}</p>
+  <footer>
+    <p class="head-name">{{data.HEAD_NAME}}</p>
+  </footer>
+</section>

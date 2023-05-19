@@ -1,0 +1,31 @@
+@import "../../scss/dialog-header";
+@import "../../scss/dialog-cancel-icon";
+section{
+  max-width: 500px;
+  .heading{
+    padding:0 20px;
+
+  }
+  .cancel-icon{
+    height: 15px;
+    .fa-xmark{
+      padding-top: 8px;
+      margin-right: 10px !important;
+    }
+  }
+  .instructions{
+    padding: 10px 20px;
+    .list-item{
+      padding: 10px;
+    }
+  }
+}
+::ng-deep{
+  .mat-dialog-container{
+    border-radius: 20px;
+    padding: 0px !important;
+  }
+  .cdk-overlay-dark-backdrop{
+    background: rgba(0, 0, 0, 0.80);
+  }
+}

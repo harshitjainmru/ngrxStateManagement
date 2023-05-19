@@ -1,0 +1,29 @@
+<section>
+  <div class="last-container">
+    <div class="content">
+      <div class="header">
+        <h1 class="header-text">{{uiText.note_label}}</h1>
+      </div>
+    <ng-container *ngFor="let item of uiText.card_data">
+      <mat-card class="card">
+        <div class="card-header">
+          <h3 class="label">{{item.label}}</h3>
+          <div class="time">
+            <p class="time-label">{{item.time}}</p>
+            <p class="time-data">{{item.time_data}}</p>
+          </div>
+        </div>
+        <p class="sublabel">{{item.sublabel}}</p>
+        <div class="downloadDiv">
+        <p class="download">{{item.download}} : </p>
+        <img class="download-img" src="../../../../../../../assets/images/download.svg">
+      </div>
+      </mat-card>
+    </ng-container>
+  </div>
+</div>
+
+  <div class="content">
+    <app-common-component></app-common-component>
+  </div>
+</section>

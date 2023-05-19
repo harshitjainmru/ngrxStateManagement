@@ -1,0 +1,72 @@
+<section>
+  <div class="leftContainer">
+    <app-carousel [listToShow]="dataSource" [buttonShow]="!buttonShow" [showList]="!showList"
+      [carouselConfiguration]="carouselConfig"></app-carousel>
+
+    <ng-container *ngFor="let item of uitext.covid_precaution_advice">
+      <ng-template #listofDivs>
+        <div class="items">
+          <h1 class="heading">{{item.title}}</h1>
+          <p class="advice">{{item.description}}</p>
+        </div>
+      </ng-template>
+    </ng-container>
+  </div>
+  <div class="rightContainer">
+    <div class="content">
+      <h1 class="title">{{uitext.title}}</h1>
+      <p class="issueHeading">{{uitext.lockdown_issue}}</p>
+      <form class="inputFields" [formGroup]="covidForm" (ngSubmit)="onSubmit()">
+        <div class="formfield 1">
+          <label>{{uitext.label1}}</label>
+          <mat-form-field appearance="outline">
+            <input matInput appTrimDirective formControlName="title">
+            <mat-error *ngFor="let error of errorMessage?.title">
+              <mat-error *ngIf="covidForm?.get('title')?.hasError(error?.type)" class="alertMessage">
+                <span class="errorMessage">{{error.message}}</span>
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="formfield 2">
+          <label>{{uitext.label2}}</label>
+          <mat-form-field appearance="outline">
+            <input matInput appTrimDirective formControlName="contact">
+            <mat-error *ngFor="let error of errorMessage?.contact">
+              <mat-error *ngIf="covidForm?.get('contact')?.hasError(error?.type)" class="alertMessage">
+                <span class="errorMessage">{{error.message}}</span>
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="formfield 3">
+          <label>{{uitext.label3}}</label>
+          <mat-form-field appearance="outline">
+            <input matInput appTrimDirective  formControlName="address">
+            <mat-error *ngFor="let error of errorMessage?.address">
+              <mat-error *ngIf="covidForm?.get('address')?.hasError(error?.type)" class="alertMessage">
+                <span class="errorMessage">{{error.message}}</span>
+              </mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="formfield 4">
+          <label>{{uitext.label4}}</label>
+          <mat-form-field appearance="outline">
+            <textarea type="text" class="inputMessage" matInput cdkTextareaAutosize cdkAutosizeMinRows="4"
+              cdkAutosizeMaxRows="7" formControlName="description" (keydown)="noSpace($event)"></textarea>
+              <mat-error *ngFor="let error of errorMessage?.description">
+                <mat-error *ngIf="covidForm?.get('description')?.hasError(error?.type)" class="alertMessage">
+                  <span class="errorMessage">{{error.message}}</span>
+                </mat-error>
+              </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="buttonGroup">
+          <button class="buttons" (click)="crossClick()">{{uitext.cancel_button}}</button>
+          <button class="buttons" type="submit">{{uitext.submit_button}}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

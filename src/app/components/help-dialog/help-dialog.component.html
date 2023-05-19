@@ -1,0 +1,14 @@
+<section>
+  <header class="cancel-icon">
+    <mat-icon class="close" (click)="crossClick()">close</mat-icon>
+  </header>
+  <div class="warning">
+    <mat-icon class="error_outline">error_outline</mat-icon>
+  </div>
+  <div class="details">
+    <h1 class="heading-value">{{uiText.HEADING_VALUE}}</h1>
+    <p class="instructions">{{uiText.QUERY_VALUE}}</p>
+    <p class="email-value">{{uiText.EMAIL_VALUE}}</p>
+    <button class="classyButton" (click)="crossClick()">{{uiText.BUTTON_VALUE}}</button>
+  </div>
+</section>

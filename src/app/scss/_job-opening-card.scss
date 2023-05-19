@@ -1,0 +1,121 @@
+@import "../scss/var";
+@import "../scss/mixins.scss";
+@import "../scss/job-opening-button";
+.job-detail-card {
+  margin-top: 19px;
+  padding: 16px;
+  border-radius: 5px;
+  border: 1px solid $border-color;
+  background: $button-text-color;
+  .image {
+    background: $job-background-color;
+    border-radius: 10px;
+    padding: 10px 20px;
+    figure {
+      @include flexJustify(center);
+
+      .showImage {
+      }
+    }
+    .address {
+      @include flexJustify(space-between);
+
+      .location {
+        @include flexbox();
+        gap: 10px;
+        align-items: baseline;
+        background-color: $button-text-color;
+        border-radius: 50px;
+        padding: 5px;
+        #location-icon {
+          color: $error-color;
+        }
+        .location-name {
+          font-size: 12px;
+          margin-bottom: 0px !important;
+        }
+      }
+      .date {
+        margin-right: 30px;
+      }
+    }
+  }
+  .area {
+    h1 {
+      font-weight: 500;
+    }
+    p {
+      font-size: 12px;
+      color: $font-color;
+    }
+  }
+  .requirement {
+    @include flexJustify(space-between);
+    border-top: 1px solid $border-color;
+    padding-top: 10px;
+    font-size: 12px;
+    color: $font-color;
+  }
+  .requirement1 {
+    @include flexJustify(space-between);
+    border-bottom: 1px solid $border-color;
+    font-weight: 500;
+  }
+  .buttonGroup {
+    @include flexbox();
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+    .button-view {
+      @include jobOpeningButton();
+      @include buttonTransparent();
+      color: #0095ff;
+      border-radius: 10px;
+
+      border: 1px solid $border-color;
+    }
+    .button-refer {
+      @include jobOpeningButton();
+    }
+  }
+}
+@media (max-width:1385px){
+  .experiencenumber{
+    margin-right: 100px;
+  }
+  .experience{
+    margin-right: 100px;
+  }
+  .buttonGroup{
+    flex-direction: column;
+    align-items: flex-start !important;
+    padding: 0px;
+    .button-view {
+      width: 90% !important;
+
+    }
+    .button-refer {
+      @include jobOpeningButton();
+      width: 90% !important;
+
+    }
+  }
+}
+@media (min-width: 200px) and (max-width: 519px) {
+  .buttonGroup{
+    flex-direction: column;
+    padding: 0px;
+    .button-view {
+     padding: 0px 10px;
+    }
+    .button-refer {
+     padding: 0px 10px;
+
+    }
+  }
+}
+@media (max-width:392px){
+  .address {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,47 @@
+@import "../../../../../../scss/var";
+@import "../../../../../../scss/mixins.scss";
+@import "../../../../../../scss/job-opening-button";
+
+section{
+  margin: 20px 30px;
+  background-color: $button-text-color;
+  .containerGroup{
+    display: grid;
+    grid-template-columns: 50% 48%;
+    gap: 25px;
+    padding: 25px;
+    .left-container{
+      .inline-division{
+        display: grid;
+        grid-template-columns: 48.5% 48.5%;
+        gap: 20px;
+      }
+    }
+    .buttonGroup{
+      .classyButton{
+        border-radius: 5px !important;
+        padding: 12px 20px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@media (max-width:800px){
+  section{
+    .containerGroup{
+      grid-template-columns: auto;
+    }
+  }
+}
+@media (max-width:540px){
+  section{
+    .containerGroup{
+      .left-container{
+        .inline-division{
+          grid-template-columns: auto;
+        }
+      }
+    }
+  }
+}

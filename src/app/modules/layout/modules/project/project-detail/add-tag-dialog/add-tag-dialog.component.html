@@ -1,0 +1,24 @@
+<section>
+  <header>
+    <p class="header-text">{{uiText.add_tag_label}}</p>
+  </header>
+  <div class="body">
+    <form [formGroup]="addForm">
+      <div class="formField">
+        <!-- <label >{{uiText.add_tag_label}}</label> -->
+        <mat-form-field appearance="outline" class="addtagField">
+          <input  [placeholder]="uiText.add_tag_label" formControlName="add_tag" matInput>
+             <mat-error *ngFor="let error of errorMessage?.addtag">
+                <mat-error *ngIf="addForm?.get('add_tag')?.hasError(error?.type)" class="alertMessage">
+                  <span class="errorMessage">{{error.message}}</span>
+                </mat-error>
+              </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="buttonGroup">
+        <button mat-raised-button [mat-dialog-close]="false">{{uiText.cancel_button}}</button>
+        <button mat-raised-button (click)="submit()">{{uiText.add_button}}</button>
+      </div>
+    </form>
+  </div>
+</section>

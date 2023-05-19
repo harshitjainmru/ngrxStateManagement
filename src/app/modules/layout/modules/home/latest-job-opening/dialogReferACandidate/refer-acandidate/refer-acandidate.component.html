@@ -1,0 +1,85 @@
+<section>
+  <div class="header">
+    <h3 class="heading">{{uiText.HEADER_VALUE}}</h3>
+    <div class="cancel-icon" (click)="crossClick()">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+  </div>
+  <div class="form">
+    <div class="hash-heading">
+      <h3 class="mydetails">{{uiText.JOB_DETAIL_VALUE}}</h3>
+    </div>
+    <form [formGroup]="referCandidateForm">
+      <div class="inputs">
+        <span>
+          <app-common-input [data]="uiText.LABEL_DEPARTMENT" [labelStyle]="'customLabel'"
+            [myControlName]="referCandidateControl.department_name" [formFieldCSS]="'referCandidate'">
+          </app-common-input>
+        </span>
+        <span>
+          <app-common-input [data]="uiText.LABEL_JOBCODE" [labelStyle]="'customLabel'"
+            [myControlName]="referCandidateControl.job_code" [formFieldCSS]="'referCandidate'"></app-common-input>
+        </span>
+        <span>
+          <app-common-input [data]="uiText.LABEL_LOCATION" [labelStyle]="'customLabel'"
+            [myControlName]="referCandidateControl.location" [formFieldCSS]="'referCandidate'"></app-common-input>
+        </span>
+        <span>
+          <app-common-input [data]="uiText.LABEL_EXPERIENCE" [labelStyle]="'customLabel'"
+            [myControlName]="referCandidateControl.experience" [formFieldCSS]="'referCandidate'"></app-common-input>
+        </span>
+      </div>
+      <div class="hash-heading">
+        <h3 class="mydetails">{{uiText.CANDIDATE_VALUE}}</h3>
+      </div>
+      <div class="inputs">
+        <span>
+          <app-dropdown [label]="uiText.LABEL_JOBLOC" [Data]="uiText.location_data" [labelStyle]="'labelStyle'"
+            [myControlName]="referCandidateControl.job_location"></app-dropdown>
+        </span>
+        <span>
+          <app-common-input [data]="uiText.LABEL_CANDIDATE_NAME" [labelStyle]="'customLabel'"
+            [myControlName]="referCandidateControl.candidate_name" [formFieldCSS]="'referCandidate'"></app-common-input>
+        </span>
+        <span>
+          <app-common-input [data]="uiText.LABEL_POSITION" [labelStyle]="'customLabel'"
+            [myControlName]="referCandidateControl.position_title" [formFieldCSS]="'referCandidate'" [readonly]="true"></app-common-input>
+        </span>
+        <span>
+          <app-common-input [data]="uiText.LABEL_EXPERIENCE" [labelStyle]="'customLabel'"
+            [myControlName]="referCandidateControl.experience_candidate" [formFieldCSS]="'referCandidate'">
+          </app-common-input>
+        </span>
+        <span>
+          <app-common-input [data]="uiText.LABEL_EMAIL" [labelStyle]="'customLabel'"
+            [myControlName]="referCandidateControl.email" [formFieldCSS]="'referCandidate'"></app-common-input>
+        </span>
+        <span>
+          <app-common-input [data]="uiText.LABEL_PHONE" [labelStyle]="'customLabel'"
+            [myControlName]="referCandidateControl.contact" [formFieldCSS]="'referCandidate'"></app-common-input>
+        </span>
+        <span>
+          <app-common-file-upload [labelData]="uiText.LABEL_UPLOAD" [labelStyle]="'customLabel'"
+            [formcontrolname]="referCandidateControl.upload" [formFieldCSS]="'referCandidate'" [accept]="'.pdf,.doc'"></app-common-file-upload>
+        </span>
+        <div class="formfield 12">
+          <label class="label">{{uiText.LABEL_SKILL}}</label>
+          <mat-form-field appearance="outline">
+            <textarea [maxLength]="maxLength" #textarea formControlName="skill" (keydown)="noSpace($event)" [placeholder]="uiText.PLACEHOLDER_SKILL"
+              cdkTextareaAutosize cdkAutosizeMinRows="5" matInput></textarea>
+            <mat-error class="alertMessage">
+              <span class="errorMessage">{{referCandidateControl.skill | validation : uiText.LABEL_SKILL }}</span>
+            </mat-error>
+          </mat-form-field>
+          <p class="maxlength">
+            {{textarea.value.length}}/{{maxLength}}</p>
+        </div>
+        <!-- <app-common-text-area [labelData]="uiText.LABEL_SKILL" [cdkAutosizeMinRows]="5" [formcontrolname]="this.referCandidateForm.controls.skill" [maxLength]="200"></app-common-text-area> -->
+      </div>
+      <div class="buttonGroup">
+        <button class="cancelButton" (click)="crossClick()">{{uiText.BUTTON_CANCEL}}</button>
+        <button class="classyButton" (click)="Submit()">{{uiText.BUTTON_SUBMIT}}</button>
+      </div>
+    </form>
+  </div>
+</section>

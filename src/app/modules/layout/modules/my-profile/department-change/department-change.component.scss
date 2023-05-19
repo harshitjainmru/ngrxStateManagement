@@ -1,0 +1,31 @@
+@import "../basic-information/basic-information.component.scss";
+@import "../../../../../scss/mixins.scss";
+section{
+  .basic-card{
+    .content{
+      .form{
+        .container{
+          @include grid('grid-template-columns','50% 50%');
+          gap: 10px;
+          .dropdown{
+            margin-top: 2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:650px){
+  section{
+    .basic-card{
+      .content{
+        .form{
+          .container{
+            grid-template-columns: auto;
+          }
+        }
+      }
+    }
+  }
+}

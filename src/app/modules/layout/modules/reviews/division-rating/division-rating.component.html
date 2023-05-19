@@ -1,0 +1,44 @@
+<section>
+  <div class="cancel-icon" (click)="crossClick()">
+    <i class="fa-solid fa-xmark" ></i>
+  </div>
+  <header class="header">
+    <div class="project">
+      <h2 class="heading">{{uiText.project_name}}</h2>
+      <h2 class="name">{{uiText.project_tech}}</h2>
+    </div>
+    <div class="reviewed">
+      <h4 class="review-heading">{{uiText.reviewed_by}}</h4>
+      <h4 class="review-manager">{{uiText.pm_name}}</h4>
+    </div>
+  </header>
+  <div class="container">
+    <div class="honour">
+      <h3 class="honour-heading">{{uiText.HONOURS_VALUE}}</h3>
+      <h3 class="null-value">{{uiText.NULL_VALUE}}</h3>
+    </div>
+    <div class="ratings">
+        <div class="overall">
+          <h2 class="overall-rating">{{data.rating}}</h2>
+        </div>
+        <div class="dividers">
+          <div class="tech skill">
+            <p class="value">{{uiText.TECHNICAL_LABEL}}</p>
+            <h1 class="rating-number">{{data.technical_rating}}</h1>
+          </div>
+          <div class="tech skill">
+            <p class="value">{{uiText.OWNERSHIP_LABEL}}</p>
+            <h1 class="rating-number">{{data.ownership_rating}}</h1>
+          </div>
+          <div class="tech skill">
+            <p class="value">{{uiText.TEAMWORK_LABEL}}</p>
+            <h1 class="rating-number">{{data.teamWork_rating}}</h1>
+          </div>
+          <div class="tech skill">
+            <p class="value">{{uiText.PROCESS_LABEL}}</p>
+            <h1 class="rating-number">{{data.process_rating}}</h1>
+          </div>
+        </div>
+    </div>
+  </div>
+</section>

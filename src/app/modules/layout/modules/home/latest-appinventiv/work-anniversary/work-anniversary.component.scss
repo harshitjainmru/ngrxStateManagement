@@ -1,0 +1,28 @@
+@import "../awards/awards.component.scss";
+@import "../../../../../../scss/var";
+
+section {
+  .award-card {
+    height: 350px;
+    .award-header {
+      .dot {
+        height: 15px;
+        width: 15px;
+        background-color: $workAnniversray-dot-color;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+    }
+    .message {
+      padding: 10px 0px;
+    }
+  }
+}
+@media (max-width:630px){
+  section {
+    .award-card {
+      height: auto;
+    }
+  }
+}

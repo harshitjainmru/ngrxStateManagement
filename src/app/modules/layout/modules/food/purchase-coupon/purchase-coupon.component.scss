@@ -1,0 +1,81 @@
+@import "../../../../../scss/var";
+@import "../../../../../scss/mixins.scss";
+@import "../../../../../scss/job-opening-button";
+section {
+  margin: 20px 30px;
+  .back {
+    .back-link {
+      width: 40px;
+      height: 40px;
+      @include fpos(center, center);
+      border: 2px solid #000;
+      border-radius: 30px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+  }
+  .lunch-coupon {
+    .text {
+      font-weight: 500;
+      margin: 0px 0px 5px;
+    }
+  }
+  .amount-due {
+    margin: 20px 0px;
+  }
+  .coupon-count {
+    @include grid("grid-template-columns", "auto auto auto auto");
+    align-items: center;
+    gap: 20px;
+    background-color: $button-text-color;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ccd2da;
+    .buttonGroup {
+      display: flex;
+      gap: 10px;
+      .classyButton {
+        border-radius: 5px;
+        padding: 12px 20px;
+        width: 100px;
+      }
+      .cancel {
+        border: 1px solid #ccd2da;
+        color: $directory-header-color;
+        padding: 12px 20px;
+        background-color: transparent;
+        border-radius: 6px;
+        width: 100px;
+      }
+    }
+  }
+  .bottom {
+    background-color: $button-text-color;
+    border: 1px solid #ccd2da;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0px;
+  }
+}
+
+@media (max-width: 1075px) {
+  section {
+    .coupon-count {
+      grid-template-columns: auto auto;
+    }
+  }
+}
+@media (max-width: 525px) {
+  section {
+    .coupon-count {
+      grid-template-columns: auto;
+    }
+  }
+}
+@media (max-width: 385px) {
+  section {
+    .bottom {
+      overflow: scroll;
+    }
+  }
+}

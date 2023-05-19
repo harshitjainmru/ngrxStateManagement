@@ -1,0 +1,7 @@
+<ul class="breadcrumb">
+    <li  *ngFor="let route of routes" [ngClass]="{ active: route.value.length === 0 }"  class="item">
+        <a   href="javascript:void(0)"   *ngIf="route.value"   routerLink="{{ route.value }}" >{{ route.key }}</a >
+      <!-- <a href="javascript:void(0)" *ngIf="route.value && id && route.key=='Details'" [routerLink]="getRoute(route.value,id)">{{ route.key }}</a> -->
+      <span *ngIf="!route.value">{{ route.key }}</span>
+    </li>
+  </ul>

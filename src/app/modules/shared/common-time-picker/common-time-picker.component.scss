@@ -1,0 +1,11 @@
+@import "../../../scss/inputFieldStyle";
+@import "../../../scss/error";
+.dsrFormField{
+  width: 250px;
+}
+
+@media (max-width:1798px){
+  .dsrFormField{
+    width: auto !important;
+  }
+}
