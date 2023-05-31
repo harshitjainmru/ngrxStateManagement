@@ -35,6 +35,7 @@ import { DepartmentChangeComponent } from './department-change/department-change
 import { StoreModule } from '@ngrx/store';
 import { GET_PROFILE_IMAGE } from './profileStore/profile.selector';
 import { getPitchIdeaReducer } from './profileStore/profile.reducer';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 @NgModule({
     declarations: [
         MyProfileComponent,
@@ -72,6 +73,7 @@ import { getPitchIdeaReducer } from './profileStore/profile.reducer';
         CommonPasswordInputModule,
         MatIconModule,
         MatCheckboxModule,
+        NgxSkeletonLoaderModule,
         CommonTextAreaModule,
         StoreModule.forFeature(GET_PROFILE_IMAGE,getPitchIdeaReducer)
     ]

@@ -20,6 +20,7 @@ export class MyProfileComponent implements OnInit {
   uiMessage = LAYOUT_MY_PROFILE;
   userInfo = LAYOUT_MY_PROFILE_USER_INFO;
   image
+  loader = false
   constructor(
     private _store:Store
   ) {}
@@ -30,6 +31,10 @@ export class MyProfileComponent implements OnInit {
       console.log(res,'res');
 
     })
+    setTimeout(() => {
+      // Simulate data retrieval after a delay
+      this.loader = true
+    }, 2000); // Delay of 2 seconds
   }
 
   changeTab(data: any) {

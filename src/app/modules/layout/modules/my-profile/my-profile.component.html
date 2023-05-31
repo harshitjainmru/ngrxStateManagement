@@ -1,14 +1,22 @@
 <section>
   <mat-card class="card">
     <mat-card-content class="card-content">
-      <div class="user-img">
+      <ngx-skeleton-loader *ngIf="!loader" [theme]="{width:'180px',height:'180px'}"></ngx-skeleton-loader>
+      <div class="user-img" *ngIf="loader">
         <img [src]="image" *ngIf="image" class="defaultImage">
         <img src="../../../../../assets/images/default_male.jpg" *ngIf="!image" class="defaultImage">
       </div>
       <div class="content">
+       
         <ng-container *ngFor="let item of uiMessage">
-          <p class="user-name">{{item.USER_NAME | titlecase}}</p>
-          <p class="user-details"> <span class="label">{{item.LABEL}} </span> {{item.TEXT}}</p>
+          <div *ngIf="!loader">
+            <ngx-skeleton-loader 
+              [theme]="{width:'450px'}">
+            </ngx-skeleton-loader>
+          </div>
+          <p class="user-name" *ngIf="loader">{{item.USER_NAME | titlecase}}</p>
+
+          <p class="user-details" *ngIf="loader"> <span class="label">{{item.LABEL}} </span> {{item.TEXT}}</p>
         </ng-container>
       </div>
     </mat-card-content>
